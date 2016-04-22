@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: linebacker
+        psr4_prefix: linebacker
+        src_path: app
