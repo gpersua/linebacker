@@ -5,13 +5,20 @@
 @endsection
 
 @section('main-content')
-
-    <h1>Did <a href="{{ url('admin/did/create') }}" class="btn btn-primary pull-right btn-sm">Add New Did</a></h1>
+  <div class="container">
+    <h1>Direct Inward Dialing </h1>
+      
     <div class="table">
+       
         <table class="table table-bordered table-striped table-hover">
             <thead>
+            <th><a href="{{ url('admin/did/upload') }}" class="btn btn-primary pull-left btn-sm">Upload File</a> </th>
+            <th></th>
+            <th></th>
+            <th></th>
+       <th><a href="{{ url('admin/did/create') }}" class="btn btn-primary pull-right btn-sm">Add New Did</a></th>
                 <tr>
-                    <th>S.No</th><th>Did</th><th>Is Available</th><th>Extension</th><th>Actions</th>
+                    <th>#</th><th>Did</th><th>Is Available</th><th>Extension</th><th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,5 +41,6 @@
         </table>
         <div class="pagination"> {!! $did->render() !!} </div>
     </div>
+   </div>
 
 @endsection

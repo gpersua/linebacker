@@ -6,8 +6,11 @@
 
 @section('main-content')
 
-    <h1>Create New Did</h1>
+  <div class="container">
+    <h1>Create Direct Inward Dialing</h1>
     <hr/>
+    <div class="table">
+    
 
     {!! Form::open(['url' => 'admin/did/store', 'class' => 'form-horizontal']) !!}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -53,5 +56,6 @@
             @endforeach
         </ul>
     @endif
-
+    </div>
+  </div>
 @endsection

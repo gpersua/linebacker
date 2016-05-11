@@ -90,6 +90,7 @@ Route::group(['prefix' => 'users/contacts'], function(){
         Route::get('show/{id}', 'ContactsController@show');
 });
 
+
 /*Did*/
 Route::group(['prefix' => 'admin/did'], function(){
     	Route::get('/', 'DidController@index');
@@ -99,6 +100,8 @@ Route::group(['prefix' => 'admin/did'], function(){
 	Route::get('update/{id}', 'DidController@update');
 	Route::get('destroy/{id}', 'DidController@destroy');
         Route::get('show/{id}', 'DidController@show');
+        Route::get('upload', 'DidController@upload');
+        Route::post('save', 'DidController@save');
 });
 
 /*Extension*/
@@ -130,4 +133,10 @@ Route::get('city',  'AccountController@getCity');
 Route::group(array('prefix' => 'api'), function()
 {
     Route::resource('contactsByUser', 'ApiController');
+});
+
+// Route group for wordpress
+Route::group(array('prefix' => 'wordpress'), function()
+{
+    Route::resource('/', '');
 });

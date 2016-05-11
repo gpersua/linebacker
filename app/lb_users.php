@@ -12,9 +12,9 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Bican\Roles\Traits\HasRoleAndPermission;
 use Bican\Roles\Contracts\HasRoleAndPermission as HasRoleAndPermissionContract;
 
-class lb_users extends Model implements AuthenticatableContract, CanResetPasswordContract
+class lb_users extends Model implements AuthenticatableContract, CanResetPasswordContract, HasRoleAndPermissionContract
 {
-    use  Authenticatable,  CanResetPassword;
+    use  Authenticatable,  CanResetPassword, HasRoleAndPermission;
 
     /**
      * The database table used by the model.

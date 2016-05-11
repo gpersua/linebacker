@@ -5,7 +5,21 @@
 @endsection
 
 @section('content')
+
 <body class="login-page">
+<div id="top">
+    <div class="container">
+        <div class="col-md-6 row text-left">
+				<p>
+                                    <a href="{{ url('/home') }}">Home</a>
+				</p>
+				
+    </div>
+        <div class="col-sm-6 col-md-6">
+                                            <p>Need support? <span aria-hidden="true" class="icon_phone"></span> <a href="tel;+18887555555">+1 (888) 755­55­55</a></p>
+					</div>
+    </div>
+</div> 
     <div class="login-box login-box-body">
         <div class="login-logo">
             <a href="{{ url('/home') }}"><image class="logo" src="{{ asset('images/logo.png') }}"/></a>
@@ -43,7 +57,7 @@
             <div class="col-xs-6">
                 <div class="checkbox icheck">
                     <label>
-                        <input type="checkbox" name="remember" style="font-size: 0.81em;"> Remember Me
+                        <input type="checkbox" name="remember" style="font-size: 0.81em;"><p class="link"> Remember Me</p>
                     </label>
                 </div>
             </div><!-- /.col -->
@@ -73,7 +87,7 @@
 </div><!-- /.login-box -->
 
     @include('auth.scripts')
-
+<link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
     <script>
         $(function () {
             $('input').iCheck({
@@ -83,6 +97,16 @@
             });
         });
     </script>
+    
 </body>
+<!-- Footer -->
+        <footer>
+			
+            <div class="new">					
+                    <div class="footer-copyright">
+                        <p>&copy; 2015 LineBacker.  All rights reserved.</p>
+                    </div>                   
+            </div>
+        </footer>
 
 @endsection

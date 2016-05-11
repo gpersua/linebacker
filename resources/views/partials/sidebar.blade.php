@@ -32,6 +32,7 @@
             <li class="active"><a href="{{ url('home') }}"><i class="fa fa-link"></i> <span>Home</span></a></li>
             <!--<li class="header">Administration</li>-->
             <!-- Optionally, you can add icons to the links -->
+            @role('admin')
             <li class="treeview">
                 <a href="#"><i class="fa fa-link"></i> <span>Administration</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -53,7 +54,7 @@
                 </ul>
                 
             </li>
-            
+            @endrole
             <li class="treeview">
                 <a href="#"><i class="fa fa-link"></i> <span>My Account</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">

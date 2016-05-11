@@ -7,7 +7,20 @@
 @section('content')
 
     <body class="register-page">
-    <div class="register-box register-box-body">
+        <div id="top">
+    <div class="container">
+        <div class="col-md-6 row text-left">
+				<p>
+                                    <a href="{{ url('/home') }}">Home</a>
+				</p>
+				
+    </div>
+        <div class="col-sm-6 col-md-6">
+                                            <p>Need support? <span aria-hidden="true" class="icon_phone"></span> <a href="tel;+18887555555">+1 (888) 755­55­55</a></p>
+					</div>
+    </div>
+</div> 
+        <div class="register-box register-box-body">
         <div class="login-logo">
             <a href="{{ url('/home') }}"><image class="logo" src="{{ asset('images/logo.png') }}"/></a>
         </div><!-- /.login-logo -->
@@ -49,9 +62,9 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-6">
-                        <div class="checkbox icheck" style="font-size: 0.81em;">
+                        <div class="checkbox icheck">
                             <label>
-                                <input type="checkbox"> I agree to the <a href="#" class="link">terms</a>
+                                <input type="checkbox"><p class="link">I agree to the <a href="#" class="link">terms</a> </p>
                             </label>
                         </div>
                     </div><!-- /.col -->
@@ -75,7 +88,7 @@
 </div>
         </div><!-- /.form-box -->
     </div><!-- /.register-box -->
-
+    <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
     @include('auth.scripts')
 
     <script>
@@ -87,6 +100,17 @@
             });
         });
     </script>
+    <!-- Footer -->
+        <footer>
+			
+            <div class="new">					
+                    <div class="footer-copyright">
+                        <p>&copy; 2015 LineBacker. All rights reserved. </p>
+                    </div>                   
+            </div>
+        </footer>
+
+    
 </body>
 
 @endsection

@@ -120,7 +120,6 @@ class ExtensionController extends Controller
      */
     public function destroy($id)
     {
-        ini_set('memory_limit','2048M');
         $exten = lb_extension::where('did_extension', $id)->first();
         $ext_num = $exten->extension;
         $secret = $exten->secret;
@@ -155,7 +154,7 @@ class ExtensionController extends Controller
         
         DB::commit();
         $this->scpConnect();
-        $this->sshConnect();
+        //$this->sshConnect();
         
         Session::flash('flash_message', 'lb_extension deleted!');
 
@@ -165,10 +164,12 @@ class ExtensionController extends Controller
     
     public function scpConnect()
     {
-        return SSH::run(array(
-                'scp  /var/www/backend/storage/app/users/*  root@104.156.226.161:/etc/asterisk/',
-                'exit'
-            ));
+        return SSH::into('asterisk')->run(array(
+               'scp root@linebacker.privacyprotector.org:/var/www/backend/storage/app/users/*  /etc/asterisk/',
+               'chown -R asterisk.asterisk /etc/asterisk/',
+               '/etc/init.d/asterisk reload',
+               'exit'
+              ));
     }
     public function sshConnect()
     {
@@ -193,7 +194,8 @@ class ExtensionController extends Controller
     public function deleteFindMeFollow($extension)
     {   
         $file = 'app/users/extensions_additional.conf';
-        $delete = PHP_EOL.';--== end of [ext-findmefollow] ==--;'.PHP_EOL;
+        //$delete = PHP_EOL.';--== end of [ext-findmefollow] ==--;'.PHP_EOL;
+        $delete=PHP_EOL;
         $filename =  storage_path($file);
         $search = 'exten => *21'.$extension.',1,Goto(app-fmf-toggle,*21,1)'.PHP_EOL.'exten => *21'.$extension.',hint,Custom:FOLLOWME'.$extension.PHP_EOL.PHP_EOL.'exten => FM'.$extension.',1,Goto('.$extension.',FM'.$extension.')'.PHP_EOL.'exten => '.$extension.',1,GotoIf($[ "${DB(AMPUSER/'.$extension.'/followme/ddial)}" = "EXTENSION" ]?ext-local,'.$extension.',1)'.PHP_EOL.'exten => '.$extension.',n(FM'.$extension.'),Macro(user-callerid,)'.PHP_EOL.'exten => '.$extension.',n,Set(DIAL_OPTIONS=${DIAL_OPTIONS}I)'.PHP_EOL.'exten => '.$extension.',n,Set(CONNECTEDLINE(num,i)='.$extension.')'.PHP_EOL.'exten => '.$extension.',n,Gosub(sub-presencestate-display,s,1('.$extension.'))'.PHP_EOL.'exten => '.$extension.',n,Set(CONNECTEDLINE(name)=${DB(AMPUSER/'.$extension.'/cidname)}${PRESENCESTATE_DISPLAY})'.PHP_EOL.'exten => '.$extension.',n,Set(FM_DIALSTATUS=${EXTENSION_STATE('.$extension.'@ext-local)})'.PHP_EOL.'exten => '.$extension.',n,Set(__EXTTOCALL=${EXTEN})'.PHP_EOL.'exten => '.$extension.',n,Set(__PICKUPMARK=${EXTEN})'.PHP_EOL.'exten => '.$extension.',n,Macro(blkvm-setifempty,)'.PHP_EOL.'exten => '.$extension.',n,GotoIf($["${GOSUB_RETVAL}" = "TRUE"]?skipov)'.PHP_EOL.'exten => '.$extension.',n,Macro(blkvm-set,reset)'.PHP_EOL.'exten => '.$extension.',n,Set(__NODEST=)'.PHP_EOL.'exten => '.$extension.',n(skipov),Set(RRNODEST=${NODEST})'.PHP_EOL.'exten => '.$extension.',n(skipvmblk),Set(__NODEST=${EXTEN})'.PHP_EOL.'exten => '.$extension.',n,GosubIf($[${DB_EXISTS(AMPUSER/'.$extension.'/followme/changecid)} = 1 & "${DB(AMPUSER/'.$extension.'/followme/changecid)}" != "default" & "${DB(AMPUSER/'.$extension.'/followme/changecid)}" != ""]?sub-fmsetcid,s,1())'.PHP_EOL.'exten => '.$extension.',n,Set(RecordMethod=Group)'.PHP_EOL.'exten => '.$extension.',n(checkrecord),Gosub(sub-record-check,s,1(exten,'.$extension.',))'.PHP_EOL.'exten => '.$extension.',n(skipsimple),Set(RingGroupMethod=ringallv2-prim)'.PHP_EOL.'exten => '.$extension.',n,Set(_FMGRP='.$extension.')'.PHP_EOL.'exten => '.$extension.',n(DIALGRP),GotoIf($[("${DB(AMPUSER/'.$extension.'/followme/grpconf)}"="ENABLED") | ("${FORCE_CONFIRM}"!="") ]?doconfirm)'.PHP_EOL.'exten => '.$extension.',n,Macro(dial,$[ ${DB(AMPUSER/'.$extension.'/followme/grptime)} + ${DB(AMPUSER/'.$extension.'/followme/prering)} ],${DIAL_OPTIONS},${DB(AMPUSER/'.$extension.'/followme/grplist)})'.PHP_EOL.'exten => '.$extension.',n,Goto(nextstep)'.PHP_EOL.'exten => '.$extension.',n(doconfirm),Macro(dial-confirm,$[ ${DB(AMPUSER/'.$extension.'/followme/grptime)} + ${DB(AMPUSER/'.$extension.'/followme/prering)} ],${DIAL_OPTIONS},${DB(AMPUSER/'.$extension.'/followme/grplist)},'.$extension.')'.PHP_EOL.'exten => '.$extension.',n(nextstep),Set(RingGroupMethod=)'.PHP_EOL.'exten => '.$extension.',n,GotoIf($["foo${RRNODEST}" != "foo"]?nodest)'.PHP_EOL.'exten => '.$extension.',n,Set(__NODEST=)'.PHP_EOL.'exten => '.$extension.',n,Set(__PICKUPMARK=)'.PHP_EOL.'exten => '.$extension.',n,Macro(blkvm-clr,)'.PHP_EOL.'exten => '.$extension.',n,Set(DIALSTATUS=${IF($["${FM_DIALSTATUS}"="NOT_INUSE"&"${DIALSTATUS}"!="CHANUNAVAIL"]?NOANSWER:${IF($["${DIALSTATUS}"="CHANUNAVAIL"|"${FM_DIALSTATUS}"="UNAVAILABLE"|"${FM_DIALSTATUS}"$'.PHP_EOL.'exten => '.$extension.',n,Goto(ext-local,'.$extension.',dest)'.PHP_EOL.'exten => '.$extension.',n(nodest),Noop(SKIPPING DEST, CALL CAME FROM Q/RG: ${RRNODEST})';
 
@@ -205,8 +207,8 @@ class ExtensionController extends Controller
     {
         $file = 'app/users/extensions_additional.conf';
         $filename =  storage_path($file);
-        
-        $delete = PHP_EOL.';--== end of [fmgrps] ==--;'.PHP_EOL;
+        $delete=PHP_EOL;
+        //$delete = PHP_EOL.';--== end of [fmgrps] ==--;'.PHP_EOL;
         
         $search = 'exten => _RG-'.$extension.'.,1,NoCDR()'.PHP_EOL.'exten => _RG-'.$extension.'.,n,Macro(dial,${DB(AMPUSER/'.$extension.'/followme/grptime)},${DIAL_OPTIONS}M(confirm^^^'.$extension.'),${EXTEN:7})';
         
@@ -216,7 +218,8 @@ class ExtensionController extends Controller
     public function deleteHints($extension)
     {
         $file = 'app/users/extensions_additional.conf';
-        $delete = PHP_EOL.';--== end of [ext-cf-hints] ==--;'.PHP_EOL;
+        //$delete = PHP_EOL.';--== end of [ext-cf-hints] ==--;'.PHP_EOL;
+        $delete=PHP_EOL;
         $filename =  storage_path($file);
         $search = 'exten => *96'.$extension.',1,Goto(app-cf-toggle,*96,1)'.PHP_EOL.'exten => *96'.$extension.',hint,Custom:DEVCF'.$extension.PHP_EOL.'exten => _*96'.$extension.'.,1,Set(toext=${EXTEN:6})'.PHP_EOL.'exten => _*96'.$extension.'.,n,Goto(app-cf-toggle,*96,setdirect)';
         
@@ -238,7 +241,8 @@ class ExtensionController extends Controller
     public function deleteIvr($extension)
     {
         $file = 'app/users/extensions_additional.conf';
-        $delete = PHP_EOL.';--== end of [from-did-direct-ivr] ==--;'.PHP_EOL;
+        //$delete = PHP_EOL.';--== end of [from-did-direct-ivr] ==--;'.PHP_EOL;
+        $delete=PHP_EOL;
         $filename =  storage_path($file);
         $search = 'exten => *'.$extension.',1,Macro(blkvm-clr,)'.PHP_EOL.'exten => *'.$extension.',n,Set(__NODEST=)'.PHP_EOL.'exten => *'.$extension.',n,Macro(vm,'.$extension.',DIRECTDIAL,${IVR_RETVM})'.PHP_EOL.'exten => *'.$extension.',n,GotoIf($["${IVR_RETVM}" = "RETURN" & "${IVR_CONTEXT}" != ""]?ext-local,vmret,playret)'.PHP_EOL.'exten => '.$extension.',1,Macro(blkvm-clr,)'.PHP_EOL.'exten => '.$extension.',n,Set(__NODEST=)'.PHP_EOL.'exten => '.$extension.',n,Goto(from-did-direct,'.$extension.',1)';
         
@@ -249,7 +253,8 @@ class ExtensionController extends Controller
     {
         $file = 'app/users/extensions_additional.conf';
         $filename =  storage_path($file);
-        $delete =PHP_EOL.';--== end of [ext-did-0002] ==--;'.PHP_EOL;
+        //$delete =PHP_EOL.';--== end of [ext-did-0002] ==--;'.PHP_EOL;
+        $delete=PHP_EOL;
         $search = 'exten => '.$did.',1,Set(__FROM_DID=${EXTEN})'.PHP_EOL.'exten => '.$did.',n,Gosub(app-blacklist-check,s,1())'.PHP_EOL.'exten => '.$did.',n,Set(CDR(did)=${FROM_DID})'.PHP_EOL.'exten => '.$did.',n,ExecIf($[ "${CALLERID(name)}" = "" ] ?Set(CALLERID(name)=${CALLERID(num)}))'.PHP_EOL.'exten => '.$did.',n,Set(CHANNEL(musicclass)=default)'.PHP_EOL.'exten => '.$did.',n,Set(__MOHCLASS=default)'.PHP_EOL.'exten => '.$did.',n,GotoIf($["${__REVERSAL_REJECT}"="TRUE" & "${CHANNEL(reversecharge)}"="1" ]?macro-hangupcall)'.PHP_EOL.'exten => '.$did.',n,Set(__CALLINGPRES_SV=${CALLERPRES()})'.PHP_EOL.'exten => '.$did.',n,Set(CALLERPRES()=allowed_not_screened)'.PHP_EOL.'exten => '.$did.',n(dest-ext),Goto(from-did-direct,'.$extension.',1)';
         
         file_put_contents($filename, str_replace($search, $delete, file_get_contents($filename)));    
@@ -268,7 +273,8 @@ class ExtensionController extends Controller
     {
         $file = 'app/users/extensions_additional.conf';
         $filename =  storage_path($file);
-        $delete = PHP_EOL.';--== end of [park-hints] ==--;'.PHP_EOL;
+        //$delete = PHP_EOL.';--== end of [park-hints] ==--;'.PHP_EOL;
+        $delete=PHP_EOL;
         $search = 'exten => *85'.$extension.',1,Macro(parked-call,,default)'.PHP_EOL.'exten => *85'.$extension.',hint,Custom:PARK'.$extension;
         
         file_put_contents($filename, str_replace($search, $delete, file_get_contents($filename))); 
@@ -288,7 +294,8 @@ class ExtensionController extends Controller
     public function deleteDndHints($extension)
     {
         $file = 'app/users/extensions_additional.conf';
-        $delete = PHP_EOL.';--== end of [ext-dnd-hints] ==--;'.PHP_EOL;
+        //$delete = PHP_EOL.';--== end of [ext-dnd-hints] ==--;'.PHP_EOL;
+        $delete=PHP_EOL;
         $filename =  storage_path($file);
         $search = 'exten => *76'.$extension.',1,Goto(app-dnd-toggle,*76,1)'.$extension.PHP_EOL.'exten => *76'.$extension.',hint,Custom:DEVDND'.$extension.PHP_EOL;
         

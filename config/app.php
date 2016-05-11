@@ -166,6 +166,9 @@ return [
      * Third Party Service Providers...
      */
         Bican\Roles\RolesServiceProvider::class,
+        
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
 
     ],
     /*
@@ -225,6 +228,8 @@ return [
 	/*Facebook, Github, Twitter, Google, Bitbucket*/
 	'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'SSH' => Collective\Remote\RemoteFacade::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        
         
 
     ],

@@ -32,6 +32,7 @@ class PagesController extends Controller {
     public function welcome()
     {
         return View::make('welcome');
+        //return redirect('/wordpress');
     }
     
     public function theme(){

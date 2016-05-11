@@ -19,7 +19,8 @@
         "guzzlehttp/guzzle": "^6.2",
         "firebase/php-jwt": "^3.0",
         "ktamas77/firebase-php": "dev-master",
-        "bican/roles": "2.1.*"
+        "bican/roles": "2.1.*",
+        "maatwebsite/excel": "~2.1.0"
 
     },
     "require-dev": {

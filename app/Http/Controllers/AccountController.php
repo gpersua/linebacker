@@ -1,5 +1,4 @@
 <?php
-
 namespace linebacker\Http\Controllers;
 /*Data for Firebase*/
 const DEFAULT_URL = 'https://mrtest.firebaseio.com/';
@@ -189,7 +188,7 @@ class AccountController extends Controller
             /*Until here*/
             
             $this->scpConnect();
-            $this->sshConnect();
+            //$this->sshConnect();
             
             $this->sendMobile();
             Session::flash('flash_message', 'extension added!');
@@ -411,8 +410,10 @@ class AccountController extends Controller
     
     public function scpConnect()
     {
-        return SSH::run(array(
-               'scp  /var/www/backend/storage/app/users/*  root@104.156.226.161:/etc/asterisk/',
+        return SSH::into('asterisk')->run(array(
+               'scp root@linebacker.privacyprotector.org:/var/www/backend/storage/app/users/*  /etc/asterisk/',
+               'chown -R asterisk.asterisk /etc/asterisk/',
+               '/etc/init.d/asterisk reload',
                'exit'
               ));
     }
@@ -432,7 +433,7 @@ class AccountController extends Controller
         $account = DB::table('lb_account')->where('id', Auth::User()->id)->first();
         $extension = DB::table('lb_extension')->where('userAcc', $account->userAcc)->first();
         $city =  DB::table('lb_city')->where('idlb_city', $account->id_city)->first();
-        $state =  DB::table('lb_state')->where('idlb_city', $city->idlb_state)->first();
+        $state =  DB::table('lb_state')->where('idlb_state', $city->idlb_state)->first();
         $path = $account->userAcc;
         $arr = array( 
 	           "address" => $account->address,
@@ -441,15 +442,16 @@ class AccountController extends Controller
                    "birthday" => $account->birthday,
                    "creationDate" => $account->created_at,
                    "email" => Auth::User()->email,
-                   "firstName" => $account->firstName,
+                   "firstName" => $account->first_name,
                    "gcmRegistrationId" => '',
-                   "lastName" => $account->lastName,
+                   "lastName" => $account->last_name,
                    "phoneNumber" => $account->phone_number,
                    "city" => $city->name,
                    "state" => $state->name,
                    "zipCode"=> $city->zip_code
         );
         $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
-        $firebase->set(DEFAULT_PATH.$path.'/', $arr);
+        var_dump($firebase);
+        $firebase->set(DEFAULT_PATH.$path, $arr);
     }
 }

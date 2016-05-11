@@ -5,9 +5,11 @@
 @endsection
 
 @section('main-content')
-
-    <h1>Edit Did</h1>
+  <div class="container">
+    <h1>Edit Direct Inward Dialing</h1>
     <hr/>
+    <div class="table">
+    
 
     {!! Form::model($did, [
         'method' => 'GET',
@@ -58,5 +60,6 @@
             @endforeach
         </ul>
     @endif
-
+    </div>
+  </div>
 @endsection

@@ -5,10 +5,12 @@ namespace linebacker\Http\Controllers;
 use linebacker\Http\Requests;
 use linebacker\Http\Controllers\Controller;
 
+use Maatwebsite\Excel\Facades\Excel;
 use linebacker\lb_did;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Session;
+use DB;
 
 class DidController extends Controller
 {
@@ -36,6 +38,17 @@ class DidController extends Controller
         return view('admin.did.index', compact('did'));
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function upload()
+    {
+        return view('admin.did.upload');
+    }
+    
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -121,6 +134,50 @@ class DidController extends Controller
         Session::flash('flash_message', 'lb_did deleted!');
 
         return redirect('admin/did');
+    }
+    
+    
+    /**
+    * store a file in local.
+    *
+    * @return Response
+    */
+    public function save(Request $request)
+    {
+
+           //Get field from form
+           $file = $request->file('file');
+
+           //Get name file
+           $name = $file->getClientOriginalName();
+
+           //Store de new file in local disk
+           \Storage::disk('did')->put($name,  \File::get($file));
+           
+           $this->import($name);
+
+           return redirect('admin/did');
+    }
+    public function import($filename)
+    {
+        $path = 'app/did_files/'.$filename;
+    	Excel::load(storage_path($path), function($reader) {
+ 
+     		foreach ($reader->get() as $file) {
+                    $did = DB::table('lb_did')
+                    ->where('did', '=', $file->did)
+                    ->first();
+
+                if (is_null($did)) {
+                        lb_did::create([
+                            'did' => $file->did,
+                            'is_available' =>1,
+                            'extension' =>0
+                        ]);
+                }	
+      		}
+		});
+		return lb_did::all();
     }
 
 }
