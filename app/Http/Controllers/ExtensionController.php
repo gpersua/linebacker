@@ -6,7 +6,7 @@ use linebacker\lb_did;
 use linebacker\lb_findmefollow_asterisk;
 use linebacker\lb_incoming_asterisk;
 use linebacker\lb_sip_asterisk;
-use linebacker\lb_users_asterisk;
+use linebacker\lb_voicemail_asterisk;
 use linebacker\Http\Requests;
 use linebacker\Http\Controllers\Controller;
 use linebacker\lb_extension;
@@ -137,12 +137,12 @@ class ExtensionController extends Controller
         $this->deleteDndHints($ext_num);
         $this->deleteSip($ext_num, $account, $secret);
         
-        $users_asterisk = new lb_users_asterisk();
+        $voicemail_asterisk = new lb_voicemail_asterisk();
         $incoming = new lb_incoming_asterisk();
         $findmefollow = new lb_findmefollow_asterisk();
         $sip = new lb_sip_asterisk();
 
-        $users_asterisk->delete_user($ext_num);
+        $voicemail_asterisk->delete_voicemail($ext_num);
         $incoming->delete_incoming($id);
         $findmefollow->delete_follow($ext_num);
         $sip->delete_sip($ext_num);

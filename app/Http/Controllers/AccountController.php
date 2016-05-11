@@ -10,7 +10,7 @@ use linebacker\Http\Requests;
 use linebacker\Http\Controllers\Controller;
 use linebacker\Http\Controllers\ExtensionController;
 use linebacker\lb_membership;
-use linebacker\lb_users_asterisk;
+use linebacker\lb_voicemail_asterisk;
 use linebacker\lb_findmefollow_asterisk;
 use linebacker\lb_sip_asterisk;
 use linebacker\lb_incoming_asterisk;
@@ -108,7 +108,8 @@ class AccountController extends Controller
 
             }
             $account = Session::get('userAcc');
-             
+            
+            /*
             $this->generateExtLocal($ext_num);
             $this->generateFindMeFollow($ext_num);
             $this->generateFmgrps($ext_num);
@@ -120,7 +121,7 @@ class AccountController extends Controller
             $this->generateParked($ext_num);
             $this->generateDndHints($ext_num);
             $this->generateSip($ext_num, $account, $secret);
-            
+            */
 
             $extension->did_extension = $route_did['did'];
             $extension->extension = $ext_num;
@@ -133,19 +134,9 @@ class AccountController extends Controller
             $did = new lb_did();
             lb_did::where('did', $route_did['did'])->update(array('extension' => $ext_num, 'is_available' => 0));
             DB::commit();
-
-            $sip = new lb_sip_asterisk(); 
-            $sip->sipInsert($ext_num, $secret);
             
             /*Populate users extensions*/
-            $user_asterisk = new lb_users_asterisk;
-
-            $user_asterisk->extension = $ext_num;
-            $user_asterisk->password = '';
-            $user_asterisk->name = $account;
-            $user_asterisk->voicemail = 'default';
-            $user_asterisk->ringtimer =0;
-            $user_asterisk->save();
+            $this->generaExtension($ext_num, $secret);
             /*Until here*/
             /*Populate Findmefollow*/
             $findmefollow = new lb_findmefollow_asterisk;
@@ -294,6 +285,13 @@ class AccountController extends Controller
     public function assignDid(){
         $did = new lb_did();
         return $did->getDid();
+    }
+    
+    public function generaExtension($extension, $secret){
+        $sip = new lb_sip_asterisk(); 
+        $sip->sipInsert($extension, $secret);
+        $voicemail_asterisk = new lb_voicemail_asterisk;
+        $voicemail_asterisk->voicemailInsert($extension);
     }
     
     public function generateExtLocal($extension)
@@ -451,7 +449,6 @@ class AccountController extends Controller
                    "zipCode"=> $city->zip_code
         );
         $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
-        var_dump($firebase);
         $firebase->set(DEFAULT_PATH.$path, $arr);
     }
 }
