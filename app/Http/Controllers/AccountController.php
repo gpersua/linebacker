@@ -250,9 +250,9 @@ class AccountController extends Controller
     public function generaExtension($extension, $secret){
         $sip = new lb_sip_asterisk(); 
         $sip->sipInsert($extension, $secret);
-        $voicemail_asterisk = new lb_voicemail_asterisk;
+        $voicemail_asterisk = new lb_voicemail_asterisk();
         $voicemail_asterisk->voicemailInsert($extension);
-        $extensions= lb_extensions_asterisk();
+        $extensions = new lb_extensions_asterisk();
         $extensions->extensionInsert($extension);
         
     }
