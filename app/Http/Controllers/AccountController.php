@@ -101,7 +101,7 @@ class AccountController extends Controller
             $route_did = $this->assignDid();
             $extension = new lb_extension();
             if ($extension->is_empty()==0){
-                $ext_num = 733;
+                $ext_num = 7802;
             }else{
                 $ext = lb_extension::select('extension')->orderby('extension','desc')->first();
                 $ext_num = $ext->extension + 1;
