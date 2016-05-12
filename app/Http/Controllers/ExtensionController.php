@@ -129,7 +129,7 @@ class ExtensionController extends Controller
         $sip = new lb_sip_asterisk();
 
         $voicemail_asterisk->delete_voicemail($ext_num);
-        $extensions->delete_extension($ext_num);
+        $extensions->delete_extension($id);
         $sip->delete_sip($ext_num);
         
         lb_extension::destroy($id);
