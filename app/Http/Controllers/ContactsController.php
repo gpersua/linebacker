@@ -12,7 +12,6 @@ use Session;
 
 class ContactsController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +23,6 @@ class ContactsController extends Controller
 
         return view('users.contacts.index', compact('contacts'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -34,7 +32,6 @@ class ContactsController extends Controller
     {
         return view('users.contacts.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -49,7 +46,6 @@ class ContactsController extends Controller
 
         return redirect('users/contacts');
     }
-
     /**
      * Display the specified resource.
      *
@@ -63,7 +59,6 @@ class ContactsController extends Controller
 
         return view('users.contacts.show', compact('contact'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -77,7 +72,6 @@ class ContactsController extends Controller
 
         return view('users.contacts.edit', compact('contact'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -95,7 +89,6 @@ class ContactsController extends Controller
 
         return redirect('users/contacts');
     }
-
     /**
      * Remove the specified resource from storage.
      *
