@@ -3,8 +3,7 @@
 namespace linebacker\Http\Controllers;
 
 use linebacker\lb_did;
-use linebacker\lb_findmefollow_asterisk;
-use linebacker\lb_incoming_asterisk;
+use linebacker\lb_extensions_asterisk;
 use linebacker\lb_sip_asterisk;
 use linebacker\lb_voicemail_asterisk;
 use linebacker\Http\Requests;
@@ -125,7 +124,7 @@ class ExtensionController extends Controller
         $secret = $exten->secret;
         $account = Session::get('userAcc');
         
-        $this->deleteExtLocal($ext_num);
+        /*$this->deleteExtLocal($ext_num);
         $this->deleteFindMeFollow($ext_num);
         $this->deleteFmgrps($ext_num);
         $this->deleteHints($ext_num);
@@ -135,16 +134,14 @@ class ExtensionController extends Controller
         $this->deleteVoicemail($ext_num);
         $this->deleteParked($ext_num);
         $this->deleteDndHints($ext_num);
-        $this->deleteSip($ext_num, $account, $secret);
+        $this->deleteSip($ext_num, $account, $secret);*/
         
         $voicemail_asterisk = new lb_voicemail_asterisk();
-        $incoming = new lb_incoming_asterisk();
-        $findmefollow = new lb_findmefollow_asterisk();
+        $extensions = new lb_extensions_asterisk();
         $sip = new lb_sip_asterisk();
 
         $voicemail_asterisk->delete_voicemail($ext_num);
-        $incoming->delete_incoming($id);
-        $findmefollow->delete_follow($ext_num);
+        $extensions->delete_extension($ext_num);
         $sip->delete_sip($ext_num);
         
         lb_extension::destroy($id);
@@ -165,8 +162,8 @@ class ExtensionController extends Controller
     public function scpConnect()
     {
         return SSH::into('asterisk')->run(array(
-               'scp root@linebacker.privacyprotector.org:/var/www/backend/storage/app/users/*  /etc/asterisk/',
-               'chown -R asterisk.asterisk /etc/asterisk/',
+              // 'scp root@linebacker.privacyprotector.org:/var/www/backend/storage/app/users/*  /etc/asterisk/',
+               //'chown -R asterisk.asterisk /etc/asterisk/',
                '/etc/init.d/asterisk reload',
                'exit'
               ));

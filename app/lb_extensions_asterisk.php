@@ -29,9 +29,17 @@ class lb_extensions_asterisk extends Model
      */
     protected $fillable = ['id','context','exten','priority','app','appdata'];
 
-     public function delete_follow($extension)
+    public function extensionInsert($extension){
+        
+        return DB::connection('main')->table('extensions')->insert([
+           ['context'=>'from-sip', 'exten'=>'123','priority'=>1,'app'=>'ExecIf', 'appdata'=>'$[ "${CALLERID(name)}" = "" ] ?Set(CALLERID(name)=${CALLERID(num)})'],
+           ['context'=>'from-sip', 'exten'=>'123','priority'=>2,'app'=>'Macro', 'appdata'=>'custom-screen,'.$extension],
+        ]);
+    }
+  
+     public function delete_extension($extension)
     {
-       return DB::connection('main')->table('extensions')->where('exten', '=', $extension)->delete();
+       return DB::connection('main')->table('extensions')->where('exten', '=','123')->delete();
 
     }
 }

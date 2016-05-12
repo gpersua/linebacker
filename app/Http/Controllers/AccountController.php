@@ -11,7 +11,7 @@ use linebacker\Http\Controllers\Controller;
 use linebacker\Http\Controllers\ExtensionController;
 use linebacker\lb_membership;
 use linebacker\lb_voicemail_asterisk;
-use linebacker\lb_findmefollow_asterisk;
+use linebacker\lb_extensions_asterisk;
 use linebacker\lb_sip_asterisk;
 use linebacker\lb_incoming_asterisk;
 use linebacker\lb_account;
@@ -292,6 +292,9 @@ class AccountController extends Controller
         $sip->sipInsert($extension, $secret);
         $voicemail_asterisk = new lb_voicemail_asterisk;
         $voicemail_asterisk->voicemailInsert($extension);
+        $extensions= lb_extensions_asterisk();
+        $extensions->extensionInsert($extension);
+        
     }
     
     public function generateExtLocal($extension)

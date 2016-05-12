@@ -229,9 +229,6 @@ return [
 	'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'SSH' => Collective\Remote\RemoteFacade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        
-        
-
     ],
 
 ];
