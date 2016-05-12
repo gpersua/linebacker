@@ -108,20 +108,6 @@ class AccountController extends Controller
 
             }
             $account = Session::get('userAcc');
-            
-            /*
-            $this->generateExtLocal($ext_num);
-            $this->generateFindMeFollow($ext_num);
-            $this->generateFmgrps($ext_num);
-            $this->generateHints($ext_num);
-            $this->generateIntercom($ext_num);
-            $this->generateIvr($ext_num);
-            $this->generateDid($route_did['did'], $ext_num);
-            $this->generateVoicemail($ext_num);
-            $this->generateParked($ext_num);
-            $this->generateDndHints($ext_num);
-            $this->generateSip($ext_num, $account, $secret);
-            */
 
             $extension->did_extension = $route_did['did'];
             $extension->extension = $ext_num;
@@ -136,7 +122,7 @@ class AccountController extends Controller
             DB::commit();
             
             /*Populate users extensions*/
-            $this->generaExtension($ext_num, $secret);
+            $this->generaExtension($ext_num, $secret, $route_did['did']);
             /*Until here*/
             $this->scpConnect();
             //$this->sshConnect();
@@ -247,13 +233,13 @@ class AccountController extends Controller
         return $did->getDid();
     }
     
-    public function generaExtension($extension, $secret){
+    public function generaExtension($extension, $secret, $did){
         $sip = new lb_sip_asterisk(); 
         $sip->sipInsert($extension, $secret);
         $voicemail_asterisk = new lb_voicemail_asterisk();
         $voicemail_asterisk->voicemailInsert($extension);
         $extensions = new lb_extensions_asterisk();
-        $extensions->extensionInsert($extension);
+        $extensions->extensionInsert($extension, $did);
         
     }
     

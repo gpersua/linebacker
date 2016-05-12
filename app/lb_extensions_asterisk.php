@@ -29,7 +29,7 @@ class lb_extensions_asterisk extends Model
      */
     protected $fillable = ['id','context','exten','priority','app','appdata'];
 
-    public function extensionInsert($extension){
+    public function extensionInsert($extension,$did){
         
         return DB::connection('main')->table('extensions')->insert([
            ['context'=>'from-sip', 'exten'=>'123','priority'=>1,'app'=>'ExecIf', 'appdata'=>'$[ "${CALLERID(name)}" = "" ] ?Set(CALLERID(name)=${CALLERID(num)})'],
@@ -37,9 +37,9 @@ class lb_extensions_asterisk extends Model
         ]);
     }
   
-     public function delete_extension($extension)
+     public function delete_extension($did)
     {
-       return DB::connection('main')->table('extensions')->where('exten', '=','123')->delete();
+       return DB::connection('main')->table('extensions')->where('exten', '=',$did)->delete();
 
     }
 }
