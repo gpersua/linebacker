@@ -32,8 +32,8 @@ class lb_extensions_asterisk extends Model
     public function extensionInsert($extension,$did){
         
         return DB::connection('main')->table('extensions')->insert([
-           ['context'=>'from-sip', 'exten'=>'123','priority'=>1,'app'=>'ExecIf', 'appdata'=>'$[ "${CALLERID(name)}" = "" ] ?Set(CALLERID(name)=${CALLERID(num)})'],
-           ['context'=>'from-sip', 'exten'=>'123','priority'=>2,'app'=>'Macro', 'appdata'=>'custom-screen,'.$extension],
+           ['context'=>'from-sip', 'exten'=>$did,'priority'=>1,'app'=>'ExecIf', 'appdata'=>'$[ "${CALLERID(name)}" = "" ] ?Set(CALLERID(name)=${CALLERID(num)})'],
+           ['context'=>'from-sip', 'exten'=>$did,'priority'=>2,'app'=>'Macro', 'appdata'=>'custom-screen,'.$extension],
         ]);
     }
   
