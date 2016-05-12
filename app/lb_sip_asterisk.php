@@ -46,7 +46,7 @@ class lb_sip_asterisk extends Model
     public function sipInsert($extension, $secret){
         
     return DB::connection('main')->table('sipusers')->insert([
-           ['name'=>$extension, 'defaultuser'=>$extension, 'secret'=>$secret, 'context'=>'from-sip','HOST'=>'dynamic','nat'=>'yes','qualify'=>'no','TYPE'=>'friend','transport'=>'udp','dtmfmode'=>'rfc2833','directmedia'=>'no','callerid'=>$extension,'mailbox'=>$extension,'fromdomain'=>'voip.mylinebacker.net','fromuser'=>$extension,'qualify'=>'yes','qualifyfreq'=>60,'sippasswd'=>$secret],
+           ['name'=>$extension, 'defaultuser'=>$extension, 'secret'=>$secret, 'context'=>'from-sip','HOST'=>'dynamic','nat'=>'force_rport,comedia','qualify'=>'no','TYPE'=>'friend','transport'=>'udp','dtmfmode'=>'rfc2833','directmedia'=>'no','callerid'=>$extension,'mailbox'=>$extension,'fromdomain'=>'voip.mylinebacker.net','fromuser'=>$extension,'qualify'=>'yes','qualifyfreq'=>60,'sippasswd'=>$secret],
         ]);
   }
   
