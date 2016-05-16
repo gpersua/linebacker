@@ -11,7 +11,7 @@
 
     {!! Form::model($contact, [
         'method' => 'PATCH',
-        'url' => ['users/contacts', $contact->id],
+        'url' => ['users/contacts/update', $contact->id],
         'class' => 'form-horizontal'
     ]) !!}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
