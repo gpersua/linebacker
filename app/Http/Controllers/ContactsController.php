@@ -40,7 +40,18 @@ class ContactsController extends Controller
     public function store(Request $request)
     {
         
-        lb_contacts::create($request->all());
+       // lb_contacts::create($request->all());
+            $contact = new lb_contacts();
+            $contact->userAcc = Input::get('userAcc');
+            $contact->first_name = Input::get('first_name');
+            $contact->last_name = Input::get('last_name');
+            $contact->address = Input::get('address');
+            $contact->email = Input::get('email');
+            $contact->primary_phone = Input::get('primary_phone');
+            $contact->second_phone = Input::get('second_phone');
+            $contact->third_phone = Input::get('third_phone');
+
+            $contact->save();
 
         Session::flash('flash_message', 'lb_contacts added!');
 
