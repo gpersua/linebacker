@@ -17,7 +17,7 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group {{ $errors->has('userAcc') ? 'has-error' : ''}}">
-                {!! Form::label('userAcc', 'Useracc: ', ['class' => 'col-sm-3 control-label']) !!}
+                {!! Form::label('userAcc', 'User ID: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::text('userAcc', null, ['class' => 'form-control', 'required' => 'required', 'disabled' => 'true']) !!}
                     {!! $errors->first('userAcc', '<p class="help-block">:message</p>') !!}
