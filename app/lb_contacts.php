@@ -10,14 +10,14 @@ class lb_contacts extends Model
 {
     protected $connection= 'main';
 
-    protected $primaryKey = 'userAcc';
+    protected $primaryKey = 'id';
 
     /**
      * Ramsey.
      *
      * @var string
      */
-    protected static function boot() {
+    /*protected static function boot() {
 	parent::boot();
 	static::creating(function($model) {
 		$model->{$model->getKeyName()} = (binary) $model->generateID();
@@ -26,7 +26,7 @@ class lb_contacts extends Model
 
     public function generateID() {
 	return Uuid::uuid4();
-    }
+    }*/
 
     /**
      * The database table used by the model.
