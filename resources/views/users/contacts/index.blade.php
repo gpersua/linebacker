@@ -25,16 +25,11 @@
                     <td>{{ $x }}</td>
                     <td><a href="{{ url('users/contacts/show/', $item->id) }}">{{ $item->userAcc }}</a></td><td>{{ $item->first_name }}</td><td>{{ $item->last_name }}</td>
                     <td>
-                        <a href="{{ url('users/contacts/edit/' . $item->id ) }}">
-                            <button type="submit" class="btn btn-primary btn-xs">Update</button>
-                        </a> /
-                        {!! Form::open([
-                            'method'=>'DELETE',
-                            'url' => ['users/contacts/destroy/', $item->id],
-                            'style' => 'display:inline'
-                        ]) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                        {!! Form::close() !!}
+                        
+                        <a href="{{ url('users/contacts/edit/' . $item->id ) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
+                        
+                        <a title="Destroy" href="{{ URL::to('users/contacts/destroy/' . $item->id ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+
                     </td>
                 </tr>
             @endforeach
