@@ -9,7 +9,7 @@ use linebacker\lb_contacts;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Session;
-
+use Input;
 class ContactsController extends Controller
 {
     /**
