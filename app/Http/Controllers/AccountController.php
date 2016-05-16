@@ -196,6 +196,8 @@ class AccountController extends Controller
     public function destroy($id)
     {
         $exten = DB::table('lb_extension')->where('userAcc', $id)->first();
+        $contacts = new lb_account();
+        $contacts->delete_contacts($id);
         if($exten){
         $ext=new ExtensionController();
         $ext->destroy($exten->did_extension);
@@ -203,8 +205,7 @@ class AccountController extends Controller
         }else{
             lb_account::destroy($id);
         }
-        $contacts = new lb_account();
-        $contacts->delete_contacts($id);
+       
 
         Session::flash('flash_message', 'lb_account deleted!');
 
