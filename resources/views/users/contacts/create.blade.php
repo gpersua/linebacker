@@ -9,7 +9,7 @@
     <h1>Create New Contact</h1>
     <hr/>
 
-    {!! Form::open(['url' => 'users/contacts', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['url' => 'users/contacts/store', 'class' => 'form-horizontal']) !!}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group {{ $errors->has('userAcc') ? 'has-error' : ''}}">
