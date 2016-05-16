@@ -203,6 +203,8 @@ class AccountController extends Controller
         }else{
             lb_account::destroy($id);
         }
+        $contacts = new lb_account();
+        $contacts->delete_contacts($id);
 
         Session::flash('flash_message', 'lb_account deleted!');
 

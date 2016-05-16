@@ -54,4 +54,8 @@ class lb_account extends Model
     {
         return $this->userAcc;
     } 
+    public function delete_contacts($userAcc)
+    {
+       return DB::connection('main')->table('lb_contacts')->where('userAcc', '=', $userAcc)->delete();
+    }
 }
