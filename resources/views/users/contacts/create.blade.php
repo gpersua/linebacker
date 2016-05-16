@@ -12,14 +12,17 @@
     {!! Form::open(['url' => 'users/contacts/store', 'class' => 'form-horizontal']) !!}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <div class="form-group {{ $errors->has('userAcc') ? 'has-error' : ''}}">
+                <!--<div class="form-group {{ $errors->has('userAcc') ? 'has-error' : ''}}">
                 {!! Form::label('userAcc', 'Useracc: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::text('userAcc', null, ['class' => 'form-control', 'required' => 'required']) !!}
                     {!! $errors->first('userAcc', '<p class="help-block">:message</p>') !!}
                 </div>
-            </div>
-            <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
+            </div>-->
+                @if(Session::has('userAcc'))
+              <input type="hidden" name="id" id="id" value="{{ Session::get('userAcc') }}" />
+                @endif
+                  <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
                 {!! Form::label('first_name', 'First Name: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
