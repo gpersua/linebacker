@@ -23,14 +23,14 @@
                 {{-- */$x++;/* --}}
                 <tr>
                     <td>{{ $x }}</td>
-                    <td><a href="{{ url('users/contacts', $item->id) }}">{{ $item->userAcc }}</a></td><td>{{ $item->first_name }}</td><td>{{ $item->last_name }}</td>
+                    <td><a href="{{ url('users/contacts/show/', $item->id) }}">{{ $item->userAcc }}</a></td><td>{{ $item->first_name }}</td><td>{{ $item->last_name }}</td>
                     <td>
-                        <a href="{{ url('users/contacts/' . $item->id . '/edit') }}">
+                        <a href="{{ url('users/contacts/edit/' . $item->id ) }}">
                             <button type="submit" class="btn btn-primary btn-xs">Update</button>
                         </a> /
                         {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['users/contacts', $item->id],
+                            'url' => ['users/contacts/destroy/', $item->id],
                             'style' => 'display:inline'
                         ]) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
