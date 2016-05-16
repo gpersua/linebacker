@@ -11,7 +11,7 @@
         <table class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
-                    <th>ID.</th> <th>UserAcc</th><th>First Name</th><th>Last Name</th>
+                    <th>ID.</th> <th>User Account:</th><th>First Name</th><th>Last Name</th>
                 </tr>
             </thead>
             <tbody>
