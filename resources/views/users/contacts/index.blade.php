@@ -1,15 +1,13 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Contacts 
+    My Contacts 
 @endsection
 
 @section('main-content')
 
 
-    <h1>Contacts @if(Session::has('userAcc'))
-    {{ Session::get('userAcc') }}
-@endif <a href="{{ url('users/contacts/create') }}" class="btn btn-primary pull-right btn-sm">Add New Contact</a></h1>
+    <h1>My Contacts <a href="{{ url('users/contacts/create') }}" class="btn btn-primary pull-right btn-sm">Add New Contact</a></h1>
     <div class="table">
         <table class="table table-bordered table-striped table-hover">
             <thead>
