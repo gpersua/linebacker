@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use linebacker\lb_membership;
 use linebacker\lb_city;
 use linebacker\lb_users;
+use DB;
 
 class lb_account extends Model
 {
