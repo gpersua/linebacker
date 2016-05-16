@@ -20,7 +20,7 @@
                 </div>
             </div>-->
                 @if(Session::has('userAcc'))
-              <input type="hidden" name="userAcc" id="userAcc" value="{{ Session::get('userAcc') }}" />
+              <input type="hidden" name="id" id="id" value="{{ Session::get('userAcc') }}" />
                 @endif
                   <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
                 {!! Form::label('first_name', 'First Name: ', ['class' => 'col-sm-3 control-label']) !!}
