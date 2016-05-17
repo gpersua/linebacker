@@ -8,7 +8,6 @@ use linebacker\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use linebacker\Http\Requests;
-use linebacker\Http\Controllers\Controller;
 class AuthController extends Controller
 {
     /*
