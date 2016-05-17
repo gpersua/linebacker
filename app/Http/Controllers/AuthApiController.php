@@ -18,7 +18,7 @@ use Validator;
 use linebacker\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-class AuthApiController extends AuthController {  
+class AuthApiController extends Auth\AuthController {  
     public function login() {  
         $username = Request::get('username');  
         $password = Request::get('password');  
