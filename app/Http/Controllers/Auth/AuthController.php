@@ -7,6 +7,7 @@ use Validator;
 use linebacker\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Response;
 use Illuminate\Http\Request;
 class AuthController extends Controller
 {
@@ -63,13 +64,14 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    
     public function login() {  
         $username = Request::get('username');  
         $password = Request::get('password');  
    
         $userdata = array(  
             'username' => $username,  
-            'password' => $password  
+            'password' => bcrypt($password), 
         );  
    
         $error = true;  
@@ -79,7 +81,7 @@ class AuthController extends Controller
             $error = false;  
             $user = array(  
                 'id' => Auth::user()->id,  
-                'username' => Auth::user()->username  
+                'username' => Auth::user()->email  
             );  
         }  
    
