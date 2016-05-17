@@ -176,7 +176,7 @@ class ApiController extends Controller
         $error = true;  
         $user = array();  
    
-        if (Auth::attemp($userdata)) {  
+        if(Auth::attempt($userdata)) {  
             $error = false;  
             $user = array(  
                 'id' => Auth::user()->id,  
