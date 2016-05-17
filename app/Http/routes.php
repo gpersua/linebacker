@@ -133,6 +133,9 @@ Route::get('city',  'AccountController@getCity');
 Route::group(array('prefix' => 'api'), function()
 {
     Route::resource('contactsByUser', 'ApiController');
+    
+    Route::post('/login', array('uses' => 'AuthController@login' ));  
+        
 });
 
 // Route group for wordpress

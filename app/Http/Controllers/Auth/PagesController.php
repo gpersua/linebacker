@@ -40,5 +40,4 @@ class PagesController extends Controller {
     Session::put('skin', $theme);
     return redirect('/home');
     }
-
 }
