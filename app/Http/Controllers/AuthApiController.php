@@ -15,9 +15,12 @@ namespace linebacker\Http\Controllers;
 
 use linebacker\lb_users;
 use Validator;
-use linebacker\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+
+use linebacker\Http\Requests;
+use linebacker\Http\Controllers\Controller;
 class AuthApiController extends Auth\AuthController {  
     public function login() {  
         $username = Request::get('username');  
