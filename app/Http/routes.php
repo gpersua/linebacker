@@ -41,7 +41,7 @@
 	Route::get('google', 'SocialController@google');
 	Route::get('google/login', 'SocialController@googleCallback');
         Route::get('register/activation/{confirmationCode}', array('as' => 'confirmation_path', 'uses' => 'SocialController@confirm'));
-        Route::post('api/login', 'AuthController@login');   
+           
     });
 
  /*Password Recovery Reminder*/
@@ -133,7 +133,7 @@ Route::get('city',  'AccountController@getCity');
 Route::group(array('prefix' => 'api'), function()
 {
     Route::resource('contactsByUser', 'ApiController');
-    
+    Route::post('login', 'ApiController@login');
 });
 
 // Route group for wordpress
