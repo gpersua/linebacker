@@ -180,7 +180,7 @@ class ApiController extends Controller
             $error = false;  
             $user = array(  
                 'id' => Auth::user()->id,  
-                'username' => Auth::user()->email  
+                'email' => Auth::user()->email  
             );  
         }  
    
