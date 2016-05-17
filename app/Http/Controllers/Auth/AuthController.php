@@ -7,7 +7,8 @@ use Validator;
 use linebacker\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-
+use linebacker\Http\Requests;
+use linebacker\Http\Controllers\Controller;
 class AuthController extends Controller
 {
     /*
@@ -63,4 +64,29 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    public function login() {  
+        $username = Request::get('username');  
+        $password = Request::get('password');  
+   
+        $userdata = array(  
+            'username' => $username,  
+            'password' => $password  
+        );  
+   
+        $error = true;  
+        $user = array();  
+   
+        if (Auth::attemp($userdata)) {  
+            $error = false;  
+            $user = array(  
+                'id' => Auth::user()->id,  
+                'username' => Auth::user()->username  
+            );  
+        }  
+   
+        return Response::json(array(  
+            'error' => $error,  
+            'user' => $user  
+        ), 200);  
+    }  
 }
