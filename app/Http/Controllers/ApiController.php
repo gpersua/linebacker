@@ -165,11 +165,11 @@ class ApiController extends Controller
         //
     }
     public function login(Request $request) {  
-        $username = Input::get('username');  
+        $username = Input::get('email');  
         $password = Input::get('password');  
    
         $userdata = array(  
-            'username' => $username,  
+            'email' => $username,  
             'password' => bcrypt($password), 
         );  
    
