@@ -164,9 +164,9 @@ class ApiController extends Controller
     {
         //
     }
-    public function login() {  
-        $username = Request::get('username');  
-        $password = Request::get('password');  
+    public function login(Request $request) {  
+        $username = Input::get('username');  
+        $password = Input::get('password');  
    
         $userdata = array(  
             'username' => $username,  
