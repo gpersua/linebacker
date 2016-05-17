@@ -134,7 +134,7 @@ Route::group(array('prefix' => 'api'), function()
 {
     Route::resource('contactsByUser', 'ApiController');
     
-    Route::post('/login', array('uses' => 'Auth/AuthController@login' ));  
+    Route::post('/login', array('uses' => 'Auth\AuthController@login' ));  
         
 });
 
