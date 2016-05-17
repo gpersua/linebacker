@@ -170,7 +170,7 @@ class ApiController extends Controller
    
         $userdata = array(  
             'email' => $username,  
-            'password' => bcrypt($password), 
+            'password' => $password, 
         );  
    
         $error = true;  
