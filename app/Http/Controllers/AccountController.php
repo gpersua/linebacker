@@ -90,9 +90,9 @@ class AccountController extends Controller
 
             $account->save();
 
-            $account = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
+            $acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
 
-            Session::put('userAcc', $account);
+            Session::put('userAcc', $acc);
 
            /*Add Extension*/
             $sc = new lb_sip_asterisk();
