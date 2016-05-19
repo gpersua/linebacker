@@ -67,8 +67,11 @@ class SessionsController extends Controller {
         {
             return Redirect::back()->withInput()->withErrors(['credentials' => 'We were unable to sign you in']);
         }else{
-                     
-                return Redirect::home()->with('status','Welcome back ');
+            $acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
+
+            Session::put('userAcc', $acc);
+ 
+            return Redirect::home()->with('status','Welcome back ');
                 
         }
 	}
@@ -81,6 +84,7 @@ class SessionsController extends Controller {
 	public function destroy()
 	{
 	Auth::logout();
+        Session::flush();
         return Redirect::home();
 	}
 
