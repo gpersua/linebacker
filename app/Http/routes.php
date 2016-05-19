@@ -129,11 +129,15 @@ Route::group(['prefix' => 'admin/roles'], function(){
 
 Route::get('city',  'AccountController@getCity');
 
-// Route group for API versioning
+// Route group for API login
 Route::group(array('prefix' => 'api'), function()
 {
-    Route::resource('contactsByUser', 'ApiController');
     Route::post('login', 'ApiController@login');
+});
+// Route group for API Contacts
+Route::group(array('prefix' => 'api',  'before' => 'auth.basic'), function()
+{
+    Route::resource('contactsByUser', 'ApiController');
 });
 
 // Route group for wordpress
