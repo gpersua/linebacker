@@ -73,6 +73,7 @@ class ApiController extends Controller
      */
     public function store(Request $request)
     {
+        $acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
 	DB::beginTransaction();
 	   try {
 		$validate= Validator::make(Input::all(), lb_contacts::$new);
@@ -88,7 +89,7 @@ class ApiController extends Controller
 		$contacts->primary_phone = Input::get("primary_phone");
 		$contacts->second_phone = Input::get("second_phone");
 		$contacts->third_phone = Input::get("third_phone");
-		$contacts->id = Auth::user()->id;
+		$contacts->userAcc = $acc;
 		$contacts->save();
 
 		DB::commit();
