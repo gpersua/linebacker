@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('htmlheader_title')
-    My Contacts 
+    My Contacts {{ Session::get('userAcc') }}
 @endsection
 
 @section('main-content')
