@@ -49,8 +49,6 @@ class lb_contacts extends Model
 	public static $new = array(
 		"first_name" => "required",
 		"last_name" => "required",
-		"primary_phone" => "required",
-		"second_phone" => "required",
-		"third_phone" => "required"
+		"primary_phone" => "required"
 	);
 }
