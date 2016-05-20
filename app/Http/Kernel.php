@@ -29,6 +29,7 @@ class Kernel extends HttpKernel
         'auth' => \linebacker\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \linebacker\Http\Middleware\RedirectIfAuthenticated::class,
+        'simpleauth' => \linebacker\Http\Middleware\ApiAuthMiddleware::class,
         
         'role' => \Bican\Roles\Middleware\VerifyRole::class,
         'permission' => \Bican\Roles\Middleware\VerifyPermission::class,

@@ -135,11 +135,14 @@ Route::group(array('prefix' => 'api'), function()
     Route::post('login', 'ApiController@login');
 });
 // Route group for API Contacts
-Route::group(array('prefix' => 'api',  'before' => 'auth.basic'), function()
+/*Route::group(array('prefix' => 'api',  'before' => 'auth.basic'), function()
 {
     Route::resource('contactsByUser', 'ApiController');
     Route::post('contactsByUser/store', 'ApiController@store');
-});
+});*/
+
+Route::get('contactsByUser', ['uses' => 'ApiController@index','middleware'=>'simpleauth']);
+Route::post('contactsByUser/store', ['uses' => 'ApiController@store','middleware'=>'simpleauth']);
 
 // Route group for wordpress
 Route::group(array('prefix' => 'wordpress'), function()
