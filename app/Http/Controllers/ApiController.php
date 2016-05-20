@@ -73,7 +73,8 @@ class ApiController extends Controller
      */
     public function store(Request $request)
     {
-        $acc = DB::table('lb_account')->where('id', Auth::user()->id)->value('userAcc');
+        
+        $acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
 	DB::beginTransaction();
 	   try {
 		$validate= Validator::make(Input::all(), lb_contacts::$new);
