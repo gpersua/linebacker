@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Session;
 use Input;
+use DB;
 class ContactsController extends Controller
 {
     /**
