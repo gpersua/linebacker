@@ -45,7 +45,7 @@
     });
 
  /*Password Recovery Reminder*/
-  Route::controllers([ 'password' => '\linebacker\Http\Controllers\Auth\PasswordController',]);     
+  Route::controllers([ 'password' => 'Auth\PasswordController',]);     
   
   Route::post('city', 'AccountController@autocompleteCity'); 
   Route::get('city?input=', 'AccountController@getCity'); 
