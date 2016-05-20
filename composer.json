@@ -33,10 +33,7 @@
         "classmap": [
             "database"
         ],
-        "psr-0": {
-            "linebacker\\": "app/",
-            "storage\\": "storage/app/users"
-        },
+        
         "psr-4": {
             "linebacker\\": "app/",
             "storage\\": "storage/app/users"
