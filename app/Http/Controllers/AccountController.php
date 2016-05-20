@@ -1,8 +1,8 @@
 <?php
 namespace linebacker\Http\Controllers;
 /*Data for Firebase*/
-const DEFAULT_URL = 'https://mrtest1.firebaseio.com/';
-const DEFAULT_TOKEN = 'ymcqjZyiHRCVe9qykVwxtOlpX0IB13fjmmhY6eVb';
+const DEFAULT_URL = 'https://linebacker.firebaseio.com/';
+const DEFAULT_TOKEN = 'MIzw0yVWKa0AdFLZ9cRCBMMlwklf4RfxMuPazEcT';
 const DEFAULT_PATH = '/user/';
 date_default_timezone_set('America/New_York');
 /*Until here*/
