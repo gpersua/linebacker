@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use Session;
 use Input;
 use DB;
+use Auth;
 class ContactsController extends Controller
 {
     /**
