@@ -278,6 +278,7 @@ class AccountController extends Controller
 	           "address" => $account->address,
 	           "asteriskDid" => $extension->did_extension,
                    "asteriskExtension" => $extension->extension,
+                   "asteriskExtensionPass" => $extension->secret,
                    "birthday" => $account->birthday,
                    "creationDate" => $account->created_at,
                    "email" => Auth::User()->email,
