@@ -15,30 +15,6 @@ class ApiAuthMiddleware
      */
     public function handle($request, Closure $next)
     {
-        //return Auth::onceBasic('key') ?: $next($request);
-        $username = Input::get('email');  
-        $password = Input::get('password');  
-   
-        $userdata = array(  
-            'email' => $username,  
-            'password' => $password, 
-        );  
-   
-        $error = true;  
-        $user = array();  
-   
-        if(Auth::attempt($userdata)) {  
-            $error = false;  
-            $user = array(  
-                'id' => Auth::user()->id,  
-                'email' => Auth::user()->email  
-            );  
-        }  
-   
-        return Response::json(array(  
-            'error' => $error,  
-            'user' => $user  
-        ), 200)?: $next($request);  
-    }  
-    
+        return Auth::onceBasic('key') ?: $next($request);
+    }
 }
