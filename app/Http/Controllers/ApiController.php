@@ -264,17 +264,17 @@ class ApiController extends Controller
                       for($j=0; $j< count($key);$j++){
                           
                           foreach ($valor as $k){
-var_dump($k);
+//var_dump($k);
                           $id_contact=$k;
                           $name=$valor['name'];
                           if(count($key['emails'])!=0){
                                 $contact->email=$key[0];
-                                echo $key[0];
+                                //echo $key[0];
                           }
                           
                              if(isset($valor['phones'][0])){
 				  $phone0=$this->cleanPhone($valor['phones'][0]);
-                                  echo $phone0;
+                                 // echo $phone0;
 				  $contact->primary_phone=$phone0;
                               }  else {
                               $phone0=NULL;    
@@ -301,6 +301,6 @@ var_dump($k);
                             
                           
                          }
-                         
+                        return true; 
                     }
 }
