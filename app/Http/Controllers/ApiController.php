@@ -248,7 +248,7 @@ class ApiController extends Controller
                 foreach ($array as $key => $valor)
                     { 
                       $contact=new lb_contacts();
-                      $iduser=$key;
+                      $iduser=$id;
                       echo $iduser;
                       if($iduser==$id){
                       $extension = DB::table('lb_extension')->where('userAcc', $id)->first();
