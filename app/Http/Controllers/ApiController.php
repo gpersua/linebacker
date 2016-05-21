@@ -267,22 +267,23 @@ var_dump($k);
                           $id_contact=$k;
                           $name=$valor['name'];
                           if(count($key['emails'])!=0)
-                                $email=$k[0];
+                                $email=$key[0];
+                          echo $email;
                           $n=count($valor['phones']);
                           echo $n;
                              if(isset($k['phones'][0])){
-				  $phone0=$this->cleanPhone($v['phones'][0]);
+				  $phone0=$this->cleanPhone($k['phones'][0]);
 				  $contact->primary_phone=$phone0;
                               }  else {
                               $phone0=NULL;    
                               }
-                              if (isset($v['phones'][1])) {
-                                  $phone1=$this->cleanPhone($v['phones'][1]);
+                              if (isset($k['phones'][1])) {
+                                  $phone1=$this->cleanPhone($k['phones'][1]);
                               }else{
                                   $phone1=NULL;
                               }   
-                              if (isset($v['phones'][2])) {
-                                $phone2=$this->cleanPhone($v['phones'][2]);
+                              if (isset($k['phones'][2])) {
+                                $phone2=$this->cleanPhone($k['phones'][2]);
                               }
                               else {$phone2=NULL;}
                               
