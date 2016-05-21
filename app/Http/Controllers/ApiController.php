@@ -233,7 +233,7 @@ class ApiController extends Controller
         
         $jsondata = file_get_contents('https://linebacker.firebaseio.com/contactsByUser/'.$id.'.json'); 
 	
-	echo $jsondata;
+	//echo $jsondata;
         
         $array = json_decode($jsondata, true);
 
@@ -249,6 +249,7 @@ class ApiController extends Controller
                     { 
                       $contact=new lb_contacts();
                       $iduser=$key;
+                      echo $iduser;
                       if($iduser==$id){
                       $extension = DB::table('lb_extension')->where('userAcc', $id)->first();
                       $did=$extension->did_extension;
