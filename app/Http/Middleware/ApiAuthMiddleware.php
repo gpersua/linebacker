@@ -15,7 +15,6 @@ class ApiAuthMiddleware
      */
     public function handle($request, Closure $next)
     {
-        //return Auth::onceBasic('key') ?: $next($request);
-        return  $next($request);
+        return Auth::onceBasic('key') ?: $next($request);
     }
 }
