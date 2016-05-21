@@ -246,6 +246,8 @@ class ApiController extends Controller
         
         for ($i = 0; $i < count($array); $i++)
             {
+                $account = new lb_account();
+                $account->delete_contacts($id);
                 foreach ($array as $key => $valor)
                     { 
                       $contact=new lb_contacts();
@@ -255,8 +257,7 @@ class ApiController extends Controller
                       $extension = DB::table('lb_extension')->where('userAcc', $id)->first();
                       $did=$extension->did_extension;
                       $contact->userAcc = $iduser;
-                      $account = new lb_account();
-                      $account->delete_contacts($id);
+                      
                        /*if(!$contact->isEmptyTable()){
                            $contact->remove();
                        }*/
