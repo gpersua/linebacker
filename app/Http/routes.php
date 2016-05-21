@@ -142,7 +142,7 @@ Route::group(array('prefix' => 'api'), function()
 });*/
 
 Route::get('contactsByUser', ['uses' => 'ApiController@index','middleware'=>'simpleauth']);
-Route::post('contactsByUser/store/{userAcc}/{first_name}/{last_name}/{email}/{primary_phone}/{second_phone}', ['uses' => 'ApiController@store','middleware'=>'simpleauth']);
+Route::post('contactsByUser/store', ['uses' => 'ApiController@store','middleware'=>'simpleauth']);
 
 // Route group for wordpress
 Route::group(array('prefix' => 'wordpress'), function()
