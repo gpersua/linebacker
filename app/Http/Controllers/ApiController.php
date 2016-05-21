@@ -266,9 +266,10 @@ class ApiController extends Controller
 var_dump($k);
                           $id_contact=$k;
                           $name=$valor['name'];
-                          if(count($key['emails'])!=0)
+                          if(count($key['emails'])!=0){
                                 $email=$key[0];
-                          echo $email;
+                                echo $email;
+                          }
                           $n=count($valor['phones']);
                           echo $n;
                              if(isset($k['phones'][0])){
