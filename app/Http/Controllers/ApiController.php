@@ -244,8 +244,8 @@ class ApiController extends Controller
         $phone2='';
         $phone='phone';
         
-        /*for ($i = 0; $i < count($array); $i++)
-            {*/
+        for ($i = 0; $i < count($array); $i++)
+            {
                 foreach ($array as $key => $valor)
                     { 
                       $contact=new lb_contacts();
@@ -299,7 +299,7 @@ var_dump($k);
                         }
                             
                           
-                         // }
+                         }
                          
                     }
 }
