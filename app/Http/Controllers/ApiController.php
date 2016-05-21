@@ -267,25 +267,25 @@ var_dump($k);
                           $id_contact=$k;
                           $name=$valor['name'];
                           if(count($key['emails'])!=0){
-                                $email=$key[0];
-                                echo $email;
+                                $contact->email=$key[0];
+                                echo $key[0];
                           }
                           $n=count($valor['phones']);
                           echo $n;
                              if(isset($valor['phones'][0])){
 				  $phone0=$this->cleanPhone($valor['phones'][0]);
-                                  echo $phone0;
+                                  //echo $phone0;
 				  $contact->primary_phone=$phone0;
                               }  else {
                               $phone0=NULL;    
                               }
-                              if (isset($k['phones'][1])) {
-                                  $phone1=$this->cleanPhone($k['phones'][1]);
+                              if (isset($valor['phones'][1])) {
+                                  $phone1=$this->cleanPhone($valor['phones'][1]);
                               }else{
                                   $phone1=NULL;
                               }   
-                              if (isset($k['phones'][2])) {
-                                $phone2=$this->cleanPhone($k['phones'][2]);
+                              if (isset($valor['phones'][2])) {
+                                $phone2=$this->cleanPhone($valor['phones'][2]);
                               }
                               else {$phone2=NULL;}
                               
@@ -293,7 +293,6 @@ var_dump($k);
                               
                          } 
                      }
-                                $contact->email = $email;
                                 $contact->second_phone = $phone1;
                                 $contact->third_phone = $phone2;
                                 $contact->save();
