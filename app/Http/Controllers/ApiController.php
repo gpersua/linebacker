@@ -19,6 +19,11 @@ use Illuminate\Http\Request;
 use linebacker\Http\Requests;
 use linebacker\Http\Controllers\Controller;
 
+const DEFAULT_URL = 'https://linebacker.firebaseio.com/';
+const DEFAULT_TOKEN = 'MIzw0yVWKa0AdFLZ9cRCBMMlwklf4RfxMuPazEcT';
+const DEFAULT_PATH = '/contactsByUser';
+const DEFAULT_PATH_USER = '/user/';
+
 class ApiController extends Controller
 {
     /**
@@ -107,6 +112,29 @@ class ApiController extends Controller
 			)); 
 	      }
     }
+    
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeAll($id)
+    {
+       $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+        
+        if($this->jsonToMysql($id)){
+            return Response::json(array(
+			'success' => true,
+			'msg' => 'Contacts uploaded!'
+		)); 
+        }else{
+            return Response::json(array(
+				'success' => false,
+				'msg' => array('ERROR ('.$e->getCode().'):'=> $e->getMessage())
+            )); 
+        }
+    }
 
     /**
      * Display the specified resource.
@@ -189,5 +217,82 @@ class ApiController extends Controller
             'error' => $error,  
             'user' => $user  
         ), 200);  
-    }  
+    }
+    public function cleanPhone($stringphone){
+        set_time_limit(0);
+        ini_set('max_execution_time', 0);
+        $garbage= array( "-", "~","#", "@", "|","·", "$", "%", "&", "/","(", ")", "?", "'", "¡","¿", "[", "^", "<code>", "]","+", "}", "{", "¨", "´",">", "< ", ";", ",", ":",".", " ", "â", "€", "ª", "¬", "_", "“", "Â ", "â€¬", "â€“", "A", "a", "B", "b","C","c","D","d","E","e","F", "f","G","g","H","h","I","i","J","j","K","k","L","l","M","m","N","n","O","o","P","p","Q","q","R","r","S","s","T","t","U","u","V","v","W","w","X","x","Y","y","Z","z", "Â", "â","€","“");
+        $result = str_replace($garbage,'',$stringphone);
+        return $result;
+    }
+    public function jsonToMysql($id){
+        
+        $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+        
+        //obtain from Firebase
+        
+        $jsondata = file_get_contents('https://linebacker.firebaseio.com/contactsByUser/'.$id.'.json'); 
+	
+//	echo $jsondata;
+        
+        $array = json_decode($jsondata, true);
+
+        //var_dump( $array = json_decode($jsondata, true));
+        $phone0='';
+        $phone1='';
+        $phone2='';
+        $phone='phone';
+        
+        /*for ($i = 0; $i < count($array); $i++)
+            {*/
+                foreach ($array as $key => $valor)
+                    { 
+                      $contact=new lb_contacts();
+                      $iduser=$key;
+                      if($iduser==$id){
+                      $extension = DB::table('lb_extension')->where('userAcc', $id)->first();
+                      $did=$extension->did_extension;
+                      $contact->userAcc = $iduser;
+                      $contact->delete_contacts($id);
+                       /*if(!$contact->isEmptyTable()){
+                           $contact->remove();
+                       }*/
+                      for($j=0; $j< count($key);$j++){
+                          
+                          foreach ($valor as $k => $v){
+                          $id_contact=$k;
+                          $name=$v['name'];
+                          $email=$v['emails'][0];
+                          $n=count($v['phones']);
+                             if(isset($v['phones'][0])){
+				  $phone0=$this->cleanPhone($v['phones'][0]);
+				  $contact->primary_phone=$phone0;
+                              }  else {
+                              $phone0=NULL;    
+                              }
+                              if (isset($v['phones'][1])) {
+                                  $phone1=$this->cleanPhone($v['phones'][1]);
+                              }else{
+                                  $phone1=NULL;
+                              }   
+                              if (isset($v['phones'][2])) {
+                                $phone2=$this->cleanPhone($v['phones'][2]);
+                              }
+                              else {$phone2=NULL;}
+                              
+                              $contact->first_name = $name;
+                              
+                         } 
+                     }
+                                $contact->email = $email;
+                                $contact->second_phone = $phone1;
+                                $contact->third_phone = $phone2;
+                                $contact->save();
+                              }
+                        }
+                            
+                          
+                         // }
+                         
+                    }
 }
