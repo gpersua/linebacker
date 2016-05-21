@@ -16,5 +16,6 @@ class VerifyCsrfToken extends BaseVerifier
          'api/login',
          'api/contactsByUser',
          'api/contactsByUser/store',
+         'contactsByUser/store/{userAcc}/{first_name}/{last_name}/{email}/{primary_phone}/{second_phone}',
     ];
 }
