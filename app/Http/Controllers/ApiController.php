@@ -264,7 +264,7 @@ class ApiController extends Controller
                           
                           foreach ($valor as $k => $v){
                           $id_contact=$k;
-                          $name=$v['name'];
+                          $name=$k['name'];
                           $email=$v['emails'][0];
                           $n=count($v['phones']);
                              if(isset($v['phones'][0])){
