@@ -263,13 +263,14 @@ class ApiController extends Controller
                       for($j=0; $j< count($key);$j++){
                           
                           foreach ($valor as $k){
-var_dump($valor);
+var_dump($k);
                           $id_contact=$k;
                           $name=$valor['name'];
-                          $email=$k['emails'][0];
-                          $n=count($k['phones']);
+                          if(count($valor['emails']))
+                                $email=$k['emails'][0];
+                          $n=count($valor['phones']);
                           echo $n;
-                             if(isset($v['phones'][0])){
+                             if(isset($k['phones'][0])){
 				  $phone0=$this->cleanPhone($v['phones'][0]);
 				  $contact->primary_phone=$phone0;
                               }  else {
