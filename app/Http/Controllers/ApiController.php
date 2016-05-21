@@ -273,7 +273,7 @@ var_dump($k);
                           
                              if(isset($valor['phones'][0])){
 				  $phone0=$this->cleanPhone($valor['phones'][0]);
-                                  //echo $phone0;
+                                  echo $phone0;
 				  $contact->primary_phone=$phone0;
                               }  else {
                               $phone0=NULL;    
