@@ -244,8 +244,8 @@ class ApiController extends Controller
         $phone2='';
         $phone='phone';
         
-        for ($i = 0; $i < count($array); $i++)
-            {
+        /*for ($i = 0; $i < count($array); $i++)
+            {*/
                 $account = new lb_account();
                 $account->delete_contacts($id);
                 foreach ($array as $key => $valor)
@@ -300,7 +300,7 @@ class ApiController extends Controller
                         }
                             
                           
-                         }
+                         //}
                         return true; 
                     }
 }
