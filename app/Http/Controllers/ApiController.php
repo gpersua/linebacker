@@ -4,6 +4,7 @@ namespace linebacker\Http\Controllers;
 //*******agregar esta linea******//
 use linebacker\lb_users;
 use linebacker\lb_contacts;
+use linebacker\lb_account;
 use Auth;
 use Input;
 use Response;
@@ -249,12 +250,13 @@ class ApiController extends Controller
                     { 
                       $contact=new lb_contacts();
                       $iduser=$id;
-                      echo $iduser;
+                      //echo $iduser;
                       if($iduser==$id){
                       $extension = DB::table('lb_extension')->where('userAcc', $id)->first();
                       $did=$extension->did_extension;
                       $contact->userAcc = $iduser;
-                      $contact->delete_contacts($id);
+                      $account = new lb_account();
+                      $account->delete_contacts($id);
                        /*if(!$contact->isEmptyTable()){
                            $contact->remove();
                        }*/
