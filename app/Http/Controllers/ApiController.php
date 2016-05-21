@@ -270,8 +270,7 @@ var_dump($k);
                                 $contact->email=$key[0];
                                 echo $key[0];
                           }
-                          $n=count($k['phones']);
-                          echo $n;
+                          
                              if(isset($valor['phones'][0])){
 				  $phone0=$this->cleanPhone($valor['phones'][0]);
                                   //echo $phone0;
