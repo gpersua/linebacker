@@ -131,7 +131,7 @@ class ApiController extends Controller
         }else{
             return Response::json(array(
 				'success' => false,
-				'msg' => array('ERROR ('.$e->getCode().'):'=> $e->getMessage())
+				'msg' => 'Failed uploading'
             )); 
         }
     }
