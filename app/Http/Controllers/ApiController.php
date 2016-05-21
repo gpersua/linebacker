@@ -233,7 +233,7 @@ class ApiController extends Controller
         
         $jsondata = file_get_contents('https://linebacker.firebaseio.com/contactsByUser/'.$id.'.json'); 
 	
-//	echo $jsondata;
+	echo $jsondata;
         
         $array = json_decode($jsondata, true);
 
