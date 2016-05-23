@@ -108,7 +108,7 @@ class ApiSendController extends Controller
                                "isContact" => $contact,
                                "isOnCase" => false,
                                "wasAlreadyPlayed" => false,
-                               "phoneNumber" => $key['cnum']
+                               "phoneNumber" => $key['src']
             //)
                     );
             $json_call = json_encode($arr);
