@@ -80,6 +80,7 @@ class ApiSendController extends Controller
      */
     public function getAudioAll($id)
     {
+        $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
         $data = lb_cdr_asterisk::select('calldate', 'clid', 'src', 'dst', 'dcontext', 'channel', 'dstchannel', 'lastapp', 'lastdata', 'duration', 'billsec', 'disposition', 'amaflags', 'accountcode', 'uniqueid', 'userfield', 'did', 'recordingfile', 'user_id', 'is_contact', 'sent')
 	->where('user_id', '=', $id)
         ->where('sent', '=', 0)
