@@ -140,6 +140,7 @@ Route::group(array('prefix' => 'api',  'before' => 'auth.basic'), function()
     Route::resource('contactsByUser', 'ApiController');
     Route::post('contactsByUser/store', 'ApiController@store');
     Route::get('contactsByUser/store/all/{id}', 'ApiController@storeAll');
+    Route::get('recordedAudiosByUser/audio/all/{id}', 'ApiSendController@getAudioAll');
 });
 
 Route::get('contactsByUser', ['uses' => 'ApiController@index','middleware'=>'simpleauth']);
