@@ -17,6 +17,8 @@ class lb_cdr_asterisk extends Model
      * @var string
      */
     protected $table = 'cdr';
+    
+    public $timestamps = false;
 
     /**
      * Attributes that should be mass-assignable.

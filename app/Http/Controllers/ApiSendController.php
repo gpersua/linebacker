@@ -103,7 +103,7 @@ class ApiSendController extends Controller
                  $arr = array( //(int)$minus_date=> array(
                                "audioName" => $key['recordingfile'],
                                "callDate" => $key['calldate'],
-                               "audioFileUrl" => 'http://linebacker.privacyprotector.org/GRABACIONES/'.$key['recordingfile'],
+                               "audioFileUrl" => 'http://linebacker.privacyprotector.org'.$key['recordingfile'],
                                "datetime" => (double)$key['uniqueid'],
                                "duration" => $key['duration'],
                                "isContact" => $contact,
@@ -136,6 +136,8 @@ class ApiSendController extends Controller
             echo $new_path;
             //$firebase->set($new_path, $arr);
             }
+            lb_cdr_asterisk::where('user_id', $id)->update(array('sent' => 1));
+            DB::commit();
             }
 
         
@@ -152,8 +154,7 @@ class ApiSendController extends Controller
 				'msg' => 'Failed uploading'
             )); 
         }*/
-     lb_cdr_asterisk::where('user_id', $id)->update(array('sent' => 1));
-     DB::commit();
+     
     }
 
     /**
