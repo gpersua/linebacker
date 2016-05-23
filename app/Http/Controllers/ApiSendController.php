@@ -85,7 +85,8 @@ class ApiSendController extends Controller
 	->where('user_id', '=', $id)
         ->where('sent', '=', 0)
 	->get()->toArray();
-        var_dump($data);
+        //var_dump($data);
+        if( sizeof($data) != 0 ){ 
             foreach ($data as $key){
                 /*$dt =substr($key['calldate'],0,10);
                 $date_array = explode("-", $dt);
@@ -113,7 +114,7 @@ class ApiSendController extends Controller
             //)
                     );
             $json_call = json_encode($arr);
-            echo $json_call;
+            //echo $json_call;
             //var_dump($json_call);
 
 
@@ -125,7 +126,7 @@ class ApiSendController extends Controller
 
             //$path = $path.date_timestamp_get($minus_date);
 
-            echo $path;
+            //echo $path;
             $number=99999999999999;
             $a=$number-(int)$minus_date;
             //$clave=array((int)$minus_date=>(int)"1");
@@ -133,12 +134,23 @@ class ApiSendController extends Controller
             $firebase->set(DEFAULT_PATH.$path.'/'.$a, $arr);
             //$firebase->push(DEFAULT_PATH.$path,$clave);
             $new_path=DEFAULT_PATH.$path.'/'.$a.'/';
-            echo $new_path;
+            //echo $new_path;
             //$firebase->set($new_path, $arr);
             }
             lb_cdr_asterisk::where('user_id', $id)->update(array('sent' => 1));
             DB::commit();
             }
+            
+            return Response::json(array(
+			'success' => true,
+			'msg' => 'Audio Files downloaded!'
+		)); 
+        }else{
+            return Response::json(array(
+			'success' => false,
+			'msg' => 'you do not have new calls'
+            )); 
+        }
 
         
        /*$firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
