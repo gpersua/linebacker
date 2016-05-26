@@ -210,7 +210,7 @@ class ApiController extends Controller
         if(Auth::attempt($userdata)) {  
             //$error = false;  
             $errorId = array(
-                'errorId' => ​0,
+                'errorId' => 0,
                 'errorMessage' => '',
                 'resultObject' => '' 
             );
