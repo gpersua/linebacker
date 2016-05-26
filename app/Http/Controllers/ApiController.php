@@ -203,7 +203,7 @@ class ApiController extends Controller
             'password' => $password, 
         );  
    
-        $error = true;  
+        $error = 1;  
         $user = array();  
           
         
@@ -220,7 +220,12 @@ class ApiController extends Controller
                 ),
                 );
             
-        }  
+        } else{
+            $result= array(
+                'errorId' => $error,
+                'errorMessage' => 'User or password Invalid',
+                );
+        }
    
         return Response::json(array(  
             //'error' => $errorId,  
