@@ -208,12 +208,14 @@ class ApiController extends Controller
           
         
         if(Auth::attempt($userdata)) {  
-            //$error = false;  
+            $error = 0;  
+            $acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
            $result= array(
-                'errorId' => 0,
+                'errorId' => $error,
                 'errorMessage' => '',
                 'resultObject' => array(  
-                'id' => Auth::user()->id,  
+                'id' => Auth::user()->id,
+                'account' => $acc,
                 'email' => Auth::user()->email  
                 ),
                 );
