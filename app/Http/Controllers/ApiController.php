@@ -223,7 +223,7 @@ class ApiController extends Controller
         return Response::json(array(  
             //'error' => $errorId,  
             //'user' => $user  
-            $result;
+            $result
         ), 200);  
     }
     public function cleanPhone($stringphone){
