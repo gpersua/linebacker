@@ -205,9 +205,15 @@ class ApiController extends Controller
    
         $error = true;  
         $user = array();  
-   
+          
+        
         if(Auth::attempt($userdata)) {  
-            $error = false;  
+            //$error = false;  
+            $errorId = array(
+                'errorId' => ​0,
+                'errorMessage' => '',
+                'resultObject' => '' 
+            );
             $user = array(  
                 'id' => Auth::user()->id,  
                 'email' => Auth::user()->email  
@@ -215,7 +221,7 @@ class ApiController extends Controller
         }  
    
         return Response::json(array(  
-            'error' => $error,  
+            'error' => $errorId,  
             'user' => $user  
         ), 200);  
     }
