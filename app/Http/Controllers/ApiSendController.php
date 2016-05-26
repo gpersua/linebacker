@@ -147,7 +147,7 @@ class ApiSendController extends Controller
 		)); 
         }else{
             return Response::json(array(
-                        'errorId' => 2,
+                        'errorId' => 0,
 			'errorMessage' => 'you do not have new calls'
             )); 
         }
