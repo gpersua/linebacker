@@ -142,13 +142,13 @@ class ApiSendController extends Controller
             }
             
             return Response::json(array(
-			'success' => true,
-			'msg' => 'Audio Files downloaded!'
+                        'errorId' => 0,
+			'errorMessage' => 'Audio Files downloaded!'
 		)); 
         }else{
             return Response::json(array(
-			'success' => false,
-			'msg' => 'you do not have new calls'
+                        'errorId' => 0,
+			'errorMessage' => 'you do not have new calls'
             )); 
         }
 
