@@ -209,20 +209,21 @@ class ApiController extends Controller
         
         if(Auth::attempt($userdata)) {  
             //$error = false;  
-            $errorId = array(
+           $result= array(
                 'errorId' => 0,
                 'errorMessage' => '',
-                'resultObject' => '' 
-            );
-            $user = array(  
+                'resultObject' => array(  
                 'id' => Auth::user()->id,  
                 'email' => Auth::user()->email  
-            );  
+                ),
+                );
+            
         }  
    
         return Response::json(array(  
-            'error' => $errorId,  
-            'user' => $user  
+            //'error' => $errorId,  
+            //'user' => $user  
+            $result;
         ), 200);  
     }
     public function cleanPhone($stringphone){
