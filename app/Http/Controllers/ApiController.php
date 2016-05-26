@@ -131,7 +131,7 @@ class ApiController extends Controller
 		)); 
         }else{
             return Response::json(array(
-			'errorId' => 0,
+			'errorId' => 1,
 			'errorMessage' => 'Failed uploading'
             )); 
         }
