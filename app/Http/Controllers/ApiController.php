@@ -126,13 +126,13 @@ class ApiController extends Controller
         
         if($this->jsonToMysql($id)){
             return Response::json(array(
-			'success' => true,
-			'msg' => 'Contacts uploaded!'
+			'errorId' => 0,
+			'errorMessage' => 'Contacts uploaded!'
 		)); 
         }else{
             return Response::json(array(
-				'success' => false,
-				'msg' => 'Failed uploading'
+			'errorId' => 0,
+			'errorMessage' => 'Failed uploading'
             )); 
         }
     }
@@ -228,8 +228,6 @@ class ApiController extends Controller
         }
    
         return Response::json(array(  
-            //'error' => $errorId,  
-            //'user' => $user  
             $result
         ), 200);  
     }
