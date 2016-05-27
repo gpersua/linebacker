@@ -21,7 +21,8 @@
         "ktamas77/firebase-php": "dev-master",
         "bican/roles": "2.1.*",
         "maatwebsite/excel": "~2.1.0",
-        "pingpong/support": "2.1.*"
+        "pingpong/support": "2.1.*",
+        "pingpong/modules": "dev-feature/5.1"
 
     },
     "require-dev": {
