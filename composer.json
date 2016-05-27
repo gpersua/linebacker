@@ -20,9 +20,7 @@
         "firebase/php-jwt": "^3.0",
         "ktamas77/firebase-php": "dev-master",
         "bican/roles": "2.1.*",
-        "maatwebsite/excel": "~2.1.0",
-        "pingpong/support": "2.1.*",
-        "pingpong/modules": "2.1.*"
+        "maatwebsite/excel": "~2.1.0"
 
     },
     "require-dev": {
@@ -30,6 +28,7 @@
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1"
+        
     },
     "autoload": {
         "classmap": [
@@ -65,6 +64,7 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "minimum-stability": "dev"
     }
 }
