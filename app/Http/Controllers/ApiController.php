@@ -227,9 +227,9 @@ class ApiController extends Controller
                 );
         }
    
-        return Response::json(array(  
+        return Response::json(
             $result
-        ), 200);  
+       );  
     }
     public function cleanPhone($stringphone){
         set_time_limit(0);
