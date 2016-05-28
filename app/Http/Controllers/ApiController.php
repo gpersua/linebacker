@@ -277,7 +277,7 @@ class ApiController extends Controller
                           $name=$key['name'];
                           echo $name;
                           var_dump($key);
-                      for($j=0; $j< count($key);$j++){
+                     /* for($j=0; $j< count($key);$j++){
                           foreach ($valor as $k){
                           //var_dump($k);
                           if(count($key['emails'])!=0){
@@ -305,7 +305,7 @@ class ApiController extends Controller
                               $contact->first_name = $name;
                               
                          } 
-                     }
+                     }*/
                                 $contact->second_phone = $phone1;
                                 $contact->third_phone = $phone2;
                                 $contact->save();
