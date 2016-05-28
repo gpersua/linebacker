@@ -274,7 +274,7 @@ class ApiController extends Controller
                            $contact->remove();
                        }*/
                           $id_contact=$key;
-                          $name=$array['name'];
+                          $name=$key['name'];
                           echo $name;
                           var_dump($key);
                       for($j=0; $j< count($key);$j++){
