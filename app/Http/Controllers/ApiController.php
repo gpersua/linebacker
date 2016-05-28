@@ -250,7 +250,7 @@ class ApiController extends Controller
         
         $array = json_decode($jsondata, true);
 
-        //var_dump( $array = json_decode($jsondata, true));
+        var_dump( $array = json_decode($jsondata, true));
         $phone0='';
         $phone1='';
         $phone2='';
