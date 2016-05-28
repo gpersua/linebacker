@@ -269,7 +269,7 @@ class ApiController extends Controller
                       $extension = DB::table('lb_extension')->where('userAcc', $id)->first();
                       $did=$extension->did_extension;
                       $contact->userAcc = $iduser;
-
+                      var_dump($k);
                       for($j=0; $j< count($key);$j++){
                           
                           foreach ($valor as $k){
