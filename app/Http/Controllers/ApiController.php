@@ -273,8 +273,8 @@ class ApiController extends Controller
                        /*if(!$contact->isEmptyTable()){
                            $contact->remove();
                        }*/
-                       $id_contact=$valor;
-                          $name=$valor['name'];
+                          $id_contact=$key;
+                          $name=$array['name'];
                           echo $name;
                           var_dump($key);
                       for($j=0; $j< count($key);$j++){
