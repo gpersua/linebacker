@@ -269,7 +269,6 @@ class ApiController extends Controller
                       $extension = DB::table('lb_extension')->where('userAcc', $id)->first();
                       $did=$extension->did_extension;
                       $contact->userAcc = $iduser;
-                      
                        /*if(!$contact->isEmptyTable()){
                            $contact->remove();
                        }*/

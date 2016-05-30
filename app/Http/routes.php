@@ -137,8 +137,8 @@ Route::group(array('prefix' => 'api'), function()
 // Route group for API Contacts
 Route::group(array('prefix' => 'api',  'before' => 'auth.basic'), function()
 {
-    Route::resource('contactsByUser', 'ApiController');
-    Route::post('contactsByUser/store', 'ApiController@store');
+    //Route::resource('contactsByUser', 'ApiController');
+    //Route::post('contactsByUser/store', 'ApiController@store');
     Route::get('contactsByUser/store/all/{id}', 'ApiController@storeAll');
     Route::get('recordedAudiosByUser/audio/{id}', 'ApiSendController@getAudioAll');
 });
