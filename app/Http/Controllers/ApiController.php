@@ -279,7 +279,7 @@ class ApiController extends Controller
                       for($j=0; $j< count($key);$j++){
                           foreach ($valor as $k){
                           //var_dump($k);
-                          $name=$k['name'];
+                          $name=$valor['name'];
                           echo $name;
                           if(count($key['emails'])!=0){
                                 $contact->email=$key[0];
