@@ -250,7 +250,7 @@ class ApiController extends Controller
         
         $array = json_decode($jsondata, true);
 
-        var_dump( $array = json_decode($jsondata, true));
+        //var_dump( $array = json_decode($jsondata, true));
         $phone0='';
         $phone1='';
         $phone2='';
@@ -274,7 +274,6 @@ class ApiController extends Controller
                            $contact->remove();
                        }*/
                           $id_contact=$key;
-                          
                           //var_dump($key);
                       for($j=0; $j< count($key);$j++){
                           foreach ($valor as $k){
@@ -285,7 +284,6 @@ class ApiController extends Controller
                                 $contact->email=$key[0];
                                 //echo $key[0];
                           }
-                          
                              if(isset($valor['phones'][0])){
 				  $phone0=$this->cleanPhone($valor['phones'][0]);
                                  // echo $phone0;
