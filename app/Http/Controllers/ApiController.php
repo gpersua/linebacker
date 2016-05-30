@@ -300,19 +300,15 @@ class ApiController extends Controller
                                 $phone2=$this->cleanPhone($valor['phones'][2]);
                               }
                               else {$phone2=NULL;}
-                              
                               $contact->first_name = $name;
-                              
                          } 
                      }
                                 $contact->second_phone = $phone1;
                                 $contact->third_phone = $phone2;
                                 $contact->save();
                               }
-                        }
-                            
-                          
+                        }  
                          //}
-                        return true; 
+                        return true;
                     }
 }
