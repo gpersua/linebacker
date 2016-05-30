@@ -274,12 +274,13 @@ class ApiController extends Controller
                            $contact->remove();
                        }*/
                           $id_contact=$key;
-                          $name=$key['name'];
-                          echo $name;
+                          
                           var_dump($key);
                       for($j=0; $j< count($key);$j++){
                           foreach ($valor as $k){
                           //var_dump($k);
+                          $name=$k['name'];
+                          echo $name;
                           if(count($key['emails'])!=0){
                                 $contact->email=$key[0];
                                 //echo $key[0];
