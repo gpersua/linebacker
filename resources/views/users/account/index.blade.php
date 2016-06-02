@@ -20,7 +20,7 @@
                 {{-- */$x++;/* --}}
                 <tr>
                     <td>{{ $x }}</td>
-                    <td><td>{{ $item->$item->userAcc }}</td><a href="{{ url('users/account/show/'. $item->userAcc) }}">{{ $item->id_membership }}</a></td><td>{{ $item->id_city }}</td><td>{{ $item->first_name }}</td>
+                    <td><td>{{ $item->userAcc }}</td><a href="{{ url('users/account/show/'. $item->userAcc) }}">{{ $item->id_membership }}</a></td><td>{{ $item->id_city }}</td><td>{{ $item->first_name }}</td>
                     <td>
                         <a href="{{ url('users/account/edit/' . $item->userAcc) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
                         
