@@ -11,7 +11,7 @@
         <table class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
-                    <th>S.No</th><th>Id Membership</th><th>Id City</th><th>First Name</th><th>Actions</th>
+                    <th>S.No</th><th>User Acc</th><th>Id Membership</th><th>Id City</th><th>First Name</th><th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,7 +20,7 @@
                 {{-- */$x++;/* --}}
                 <tr>
                     <td>{{ $x }}</td>
-                    <td><a href="{{ url('users/account/show/'. $item->userAcc) }}">{{ $item->id_membership }}</a></td><td>{{ $item->id_city }}</td><td>{{ $item->first_name }}</td>
+                    <td><td>{{ $item->$item->userAcc }}</td><a href="{{ url('users/account/show/'. $item->userAcc) }}">{{ $item->id_membership }}</a></td><td>{{ $item->id_city }}</td><td>{{ $item->first_name }}</td>
                     <td>
                         <a href="{{ url('users/account/edit/' . $item->userAcc) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
                         
