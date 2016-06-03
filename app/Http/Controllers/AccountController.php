@@ -4,6 +4,7 @@ namespace linebacker\Http\Controllers;
 const DEFAULT_URL = 'https://linebacker.firebaseio.com/';
 const DEFAULT_TOKEN = 'MIzw0yVWKa0AdFLZ9cRCBMMlwklf4RfxMuPazEcT';
 const DEFAULT_PATH = '/user/';
+const DEFAULT_SETTINGS_PATH = '/setting/';
 date_default_timezone_set('America/New_York');
 /*Until here*/
 use linebacker\Http\Requests;
@@ -290,7 +291,14 @@ class AccountController extends Controller
                    "state" => $state->name,
                    "zipCode"=> $city->zip_code
         );
+        $arrSetting= array(
+            "blockCalls" => true,
+            "deleteAudiosEveryWeeks" => 4,
+            "emailNotification" => false,
+            "mobileNotification" => true
+        );
         $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
         $firebase->set(DEFAULT_PATH.$path, $arr);
+        $firebase->set(DEFAULT_SETTINGS_PATH.$path, $arrSetting);
     }
 }
