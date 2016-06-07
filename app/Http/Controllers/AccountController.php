@@ -225,7 +225,8 @@ class AccountController extends Controller
 		->take(10)->get();
 	foreach ($queries as $res)
 	{
-	    $results[] = [ 'id' => $res->idlb_city, 'value' => $res->idlb_city.'-'.$res->zip_code.' '.$res->name ];
+	    //$results[] = [ 'id' => $res->idlb_city, 'value' => $res->idlb_city.'-'.$res->zip_code.' '.$res->name ];
+            $results[] = [ 'id' => $res->idlb_city, 'value' => $res->zip_code.' '.$res->name ];
 	}
         return Response::json($results);
     
