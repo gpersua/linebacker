@@ -28,6 +28,7 @@ var city_list = new Bloodhound({
 
                     $("#id_city").typeahead({
                         hint: true,
+                        displayKey: 'id',
                         highlight: true,
                         minLength: 3
                     }, {
