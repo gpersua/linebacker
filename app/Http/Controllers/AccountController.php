@@ -50,12 +50,12 @@ class AccountController extends Controller
         //$acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
         if (Auth::User()->is('admin')){ 
         $account = lb_account::paginate(10);
-         return view('users.account.index', compact('account'));
         }else{
         $account = lb_account::select('id', 'userAcc', 'id_membership', 'id_city', 'first_name', 'last_name', 'address', 'birthday', 'phone_number', 'second_phone')
 	->where('id', '=', Auth::User()->id)
-	->first();
-         return view('users.account.index')->with('account', $account);
+	->first()
+        ->paginate(1);
+         return view('users.account.index', compact('account'));
         }
        
     }
