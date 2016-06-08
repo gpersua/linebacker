@@ -52,6 +52,7 @@ class AccountController extends Controller
         if (Auth::User()->is('admin')){ 
         $account = lb_account::paginate(10);
         }else{
+    var_dump(Auth::User()->id);
         $account = lb_account::select('id', 'userAcc', 'id_membership', 'id_city', 'first_name', 'last_name', 'address', 'birthday', 'phone_number', 'second_phone')
 	->where('id', '=', Auth::User()->id)
 	->first()
