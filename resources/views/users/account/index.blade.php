@@ -15,8 +15,8 @@
                 </tr>
             </thead>
             <tbody>
-            {{-- */$x=0;/* --}}
             @if(count($account)>0)
+            {{-- */$x=0;/* --}}
             @foreach($account as $item)
                 {{-- */$x++;/* --}}
                 <tr>
