@@ -34,7 +34,7 @@
             @endif
             </tbody>
         </table>
-        <div class="pagination"> {!! $account->render() !!} </div>
+        <div class="pagination"> @if(count($account)>0) {!! $account->render() !!} @endif </div>
     </div>
 
 @endsection
