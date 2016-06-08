@@ -15,6 +15,24 @@
                 </tr>
             </thead>
             <tbody>
-                {{ count($account) }}
+            {{-- */$x=0;/* --}}
+            @foreach($account as $item)
+                {{-- */$x++;/* --}}
+                <tr>
+                    <td>{{ $x }}</td>
+                    <td><a href="{{ url('users/account/show/'. $item->userAcc) }}">{{ $item->id_membership }}</a></td><td>{{ $item->userAcc }}</td><td>{{ $item->id_city }}</td><td>{{ $item->first_name }}</td>
+                    <td>
+                        <a href="{{ url('users/account/edit/' . $item->userAcc) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
+                        
+                        <a title="Destroy" href="{{ URL::to('users/account/destroy/' . $item->userAcc ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+                        
+                        
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+        <div class="pagination"> {!! $account->render() !!} </div>
+    </div>
 
 @endsection
