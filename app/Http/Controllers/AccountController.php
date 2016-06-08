@@ -57,6 +57,11 @@ class AccountController extends Controller
 	->where('id', '=', Auth::User()->id)
 	->first()
         ->paginate(10);
+var_dump($account);
+var_dump( $account = lb_account::select('id', 'userAcc', 'id_membership', 'id_city', 'first_name', 'last_name', 'address', 'birthday', 'phone_number', 'second_phone')
+	->where('id', '=', Auth::User()->id)
+	->first()
+        ->paginate(10));
          return view('users.account.index')->with('account', $account);
         }
        
