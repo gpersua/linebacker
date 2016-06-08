@@ -16,7 +16,7 @@
             </thead>
             <tbody>
                 {{ count($account) }}
-            @if(count($account)>0)
+            <!--@if(count($account)>0)
             {{-- */$x=0;/* --}}
             @foreach($account as $item)
                 {{-- */$x++;/* --}}
@@ -37,5 +37,5 @@
         </table>
         <div class="pagination"> @if(count($account)>0) {!! $account->render() !!} @endif </div>
     </div>
-
+-->
 @endsection
