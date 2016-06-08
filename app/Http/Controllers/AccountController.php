@@ -57,7 +57,7 @@ class AccountController extends Controller
 	->where('id', '=', Auth::User()->id)
 	->first()
         ->paginate(10);
-         return view('users.account.index', compact('account', $account));
+         return view('users.account.index')->with('account', $account);
         }
        
     }
