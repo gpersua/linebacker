@@ -76,8 +76,6 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        
-        
         try {
             $validator = Validator::make(Input::all(), lb_account::$new);
             if ($validator->fails()) {
