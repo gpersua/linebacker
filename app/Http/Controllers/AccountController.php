@@ -55,7 +55,7 @@ class AccountController extends Controller
         $account = lb_account::select('id', 'userAcc', 'id_membership', 'id_city', 'first_name', 'last_name', 'address', 'birthday', 'phone_number', 'second_phone')
 	->where('id', '=', Auth::User()->id)
 	->first();
-         return view('users.account.index', compact('account', $account));
+         return view('users.account.index')->with('account', $account);
         }
        
     }
