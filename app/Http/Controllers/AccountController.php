@@ -81,7 +81,7 @@ class AccountController extends Controller
             $account = new lb_account();
             $account->id = Input::get("id");
             $account->id_membership = Input::get("id_membership");
-            $account->id_city = $new_id[0];
+            $account->id_city = $new_id[1];
             $account->first_name = Input::get('first_name');
             $account->last_name = Input::get('last_name');
             $account->address = Input::get('address');
@@ -225,8 +225,8 @@ class AccountController extends Controller
 		->take(10)->get();
 	foreach ($queries as $res)
 	{
-	    //$results[] = [ 'id' => $res->idlb_city, 'value' => $res->idlb_city.'-'.$res->zip_code.' '.$res->name ];
-            $results[] = [ 'id' => $res->idlb_city, 'value' => $res->zip_code.' '.$res->name ];
+	    $results[] = [ 'id' => $res->idlb_city, 'value' => $res->zip_code.' '.$res->name.'-'.$res->idlb_city ];
+            //$results[] = [ 'id' => $res->idlb_city, 'value' => $res->zip_code.' '.$res->name ];
 	}
         return Response::json($results);
     
