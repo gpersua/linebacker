@@ -55,7 +55,7 @@ class AccountController extends Controller
 	->where('id', '=', Auth::User()->id)
 	->first();
         }
-        return view('users.account.index', compact('account'));
+        return view('users.account.index', $account);
     }
 
     /**
