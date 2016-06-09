@@ -31,10 +31,10 @@
                     </td>
                 </tr>
             @endforeach
-            @endrole
+            
             </tbody>
         </table>
-        <div class="pagination">  @role('admin') {!! $account->render() !!} @enrole </div>
+        <div class="pagination"> {!! $account->render() !!} @enrole </div>
     </div>
 
 @endsection
