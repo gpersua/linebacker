@@ -15,7 +15,7 @@
                 </tr>
             </thead>
             <tbody>
-            @if(isset(account))
+            @if(isset($account === true))
             {{-- */$x=0;/* --}}
             @foreach($account as $item)
                 {{-- */$x++;/* --}}
