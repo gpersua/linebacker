@@ -15,7 +15,6 @@
                 </tr>
             </thead>
             <tbody>
-            @role('admin')
             {{-- */$x=0;/* --}}
             @foreach($account as $item)
                 {{-- */$x++;/* --}}
@@ -34,7 +33,7 @@
             
             </tbody>
         </table>
-        <div class="pagination"> {!! $account->render() !!} @enrole </div>
+        <div class="pagination"> {!! $account->render() !!} </div>
     </div>
 
 @endsection
