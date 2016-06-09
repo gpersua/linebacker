@@ -60,7 +60,7 @@ class AccountController extends Controller
 	->where('userAcc', '=', $acc)
 	->first()
         ->paginate(10);*/
-         return view('users.account.index')->with('account1',$account1);
+         return view('users.account.index')->with(['account1'=>$account1,'account'=>null]);
         }
        
     }
