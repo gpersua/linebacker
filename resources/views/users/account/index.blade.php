@@ -15,7 +15,7 @@
                 </tr>
             </thead>
             <tbody>
-            @if(isset($account === true))
+            @if(is_null($account) === false)
             {{-- */$x=0;/* --}}
             @foreach($account as $item)
                 {{-- */$x++;/* --}}
@@ -33,7 +33,7 @@
             @endforeach
             <div class="pagination"> {!! $account->render() !!} </div>
             @endif
-            @if(count(account1)>0)
+             @if(is_null($account1) === false)
             
              @foreach($account1 as $item)
                 <tr>
