@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        @yield('contentheader_title', 'Page Header here')
+        @yield('contentheader_title', 'Keep your privacy private or make it profitable')
         <small>@yield('contentheader_description')</small>
     </h1>
     <ol class="breadcrumb">
