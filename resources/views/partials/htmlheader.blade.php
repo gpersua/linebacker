@@ -17,7 +17,7 @@
      @if(Session::has('skin'))
      <link href="/css/skins/{{ Session::get('skin') }}.css"  rel="stylesheet" type="text/css" />
     @else
-    <link href="{{ asset('css/skins/skin-black-light.css') }}"  rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/skins/skin-blue.css') }}"  rel="stylesheet" type="text/css" />
      @endif
     
     <!-- iCheck -->

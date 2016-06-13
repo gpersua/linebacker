@@ -120,7 +120,7 @@
                             <img src="{{ Auth::user()->avatar }}" class="img-circle" alt="User Image" />
                             <p>
                                 {{ Auth::user()->name }}
-                                <small>Member since Nov. 2012</small>
+                                <small></small>
                             </p>
                         </li>
                         <!-- Menu Body -->
