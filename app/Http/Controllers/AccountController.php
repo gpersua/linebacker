@@ -51,6 +51,7 @@ class AccountController extends Controller
       //  var_dump(Auth::User()->is('admin'));
         if (Auth::User()->is('admin')){ 
         $account = lb_account::paginate(10);
+        return view('users.account.index', compact('account'))->with('account1',null);
         }else{
     //var_dump(Auth::User()->id);
             $id = Auth::User()->id;
