@@ -126,7 +126,7 @@
                     <ul class="slides">
                         <li>
                                             <video id="video" loop="" width="100%" autoplay="true">
-                                                    <source src="{{ asset('/assets/img/Linebackerwebsitebanner.mp4') }}" type="video/mp4">
+                                                    <source src="{{ asset('/assets/img/bannerproject720p.mp4') }}" type="video/mp4">
                                             </video>
             </li>
                     </ul>
