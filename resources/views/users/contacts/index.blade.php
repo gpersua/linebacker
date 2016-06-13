@@ -38,6 +38,7 @@
             @endif
             @if(is_null($contacts1) === false)
         <tr>
+            <td></td>
                     <td><a href="{{ url('users/contacts/show', $contacts1['id']) }}">{{ $contacts1['userAcc'] }}</a></td><td>{{ $contacts1['first_name'] }}</td><td>{{ $contacts1['last_name'] }}</td>
                     <td>
                         
