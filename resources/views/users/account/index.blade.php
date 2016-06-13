@@ -43,7 +43,7 @@
                 <tr>
                     <td></td>
                     <td>{{ $account1['id_membership'] }}</td>
-                    <td><a href="{{ url('users/account/show/'. $account1['userAcc']) }}"></a></td><td>{{ $account1['userAcc'] }}</td><td>{{ $account1['id_city'] }}</td><td>{{ $account1['first_name'] }}</td>
+                    <td><a href="{{ url('users/account/show/'. $account1['userAcc']) }}">{{ $account1['userAcc'] }}</a></td><td>{{ $account1['id_city'] }}</td><td>{{ $account1['first_name'] }}</td>
                     <td>
                         <a href="{{ url('users/account/edit/' . $account1['userAcc']) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
                         
