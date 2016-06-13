@@ -32,7 +32,7 @@
                 </tr>
             @endforeach
             <tr>
-                <td>
+                <td colspan="5">
                     <div class="pagination"> {!! $account->render() !!} </div>    
                 </td>
             

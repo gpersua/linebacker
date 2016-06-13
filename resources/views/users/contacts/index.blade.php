@@ -31,7 +31,7 @@
                 </tr>
             @endforeach
             <tr>
-                <td>
+                <td colspan="5">
                     <div class="pagination"> {!! $contacts->render() !!} </div>
                 </td>
             </tr>   
