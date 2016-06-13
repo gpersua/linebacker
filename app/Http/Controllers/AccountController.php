@@ -54,7 +54,7 @@ class AccountController extends Controller
         }else{
     //var_dump(Auth::User()->id);
             $id = Auth::User()->id;
-            var_dump($acc);
+            //var_dump($acc);
              $account1=lb_account::where('userAcc', '=', $acc)->first();
        /*$account1 = lb_account::select('id', 'userAcc', 'id_membership', 'id_city', 'first_name', 'last_name', 'address', 'birthday', 'phone_number', 'second_phone')
 	->where('userAcc', '=', $acc)

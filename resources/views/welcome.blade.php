@@ -125,10 +125,10 @@
                 <div class="flexslider">
                     <ul class="slides">
                         <li>
-							<video id="video" loop="" width="100%" autoplay="true">
-								<source src="{{ asset('/assets/img/videoloop.mp4') }}" type="video/mp4">
-							</video>
-                        </li>
+                                            <video id="video" loop="" width="100%" autoplay="true">
+                                                    <source src="{{ asset('/assets/img/Linebackerwebsitebanner.mp4') }}" type="video/mp4">
+                                            </video>
+            </li>
                     </ul>
                 </div>
             </div>
