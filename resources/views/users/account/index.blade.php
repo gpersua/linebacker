@@ -31,11 +31,15 @@
                     </td>
                 </tr>
             @endforeach
-            <div class="pagination"> {!! $account->render() !!} </div>
+            <tr>
+                <td>
+                    <div class="pagination"> {!! $account->render() !!} </div>    
+                </td>
+            
+            </tr>
+            
             @endif
              @if(is_null($account1) === false)
-            
-
                 <tr>
                     <td><a href="{{ url('users/account/show/'. $account1['userAcc']) }}">{{ $account1['id_membership'] }}</a></td><td>{{ $account1['userAcc'] }}</td><td>{{ $account1['id_city'] }}</td><td>{{ $account1['first_name'] }}</td>
                     <td>

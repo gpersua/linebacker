@@ -5,8 +5,6 @@
 @endsection
 
 @section('main-content')
-
-
     <h1>My Contacts <a href="{{ url('users/contacts/create') }}" class="btn btn-primary pull-right btn-sm">Add New Contact</a></h1>
     <div class="table">
         <table class="table table-bordered table-striped table-hover">
@@ -32,7 +30,11 @@
                     </td>
                 </tr>
             @endforeach
-             <div class="pagination"> {!! $contacts->render() !!} </div>
+            <tr>
+                <td>
+                    <div class="pagination"> {!! $contacts->render() !!} </div>
+                </td>
+            </tr>   
             @endif
             @if(is_null($contacts1) === false)
         <tr>
@@ -48,11 +50,7 @@
             @endif
             </tbody>
         </table>
-       
-        
-        
-        
-        
+  
     </div>
 
 @endsection
