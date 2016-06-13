@@ -30,7 +30,7 @@ desired effect
  @if(Session::has('skin'))
      <body class="{{ Session::get('skin') }} sidebar-mini">
     @else
-    <body class="skin-black-light sidebar-mini">
+    <body class="skin-blue-light sidebar-mini">
      @endif
 
 <div class="wrapper">
