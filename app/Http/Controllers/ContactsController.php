@@ -30,6 +30,7 @@ class ContactsController extends Controller
       
         if (Auth::User()->is('admin')){ 
          $contacts = lb_contacts::paginate(15);
+         return view('users.contacts.index', compact('contacts'))->with('contacts1',null);
         }else{
             $id = Auth::User()->id;
             $contacts1= lb_contacts::where('userAcc', '=', $acc)->first();
