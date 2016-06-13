@@ -33,7 +33,7 @@ class ContactsController extends Controller
          return view('users.contacts.index', compact('contacts'))->with('contacts1',null);
         }else{
             $id = Auth::User()->id;
-            $contacts1= lb_contacts::where('userAcc', '=', $acc);
+            $contacts1= lb_contacts::where('userAcc', '=', $acc)->get();
        
          return view('users.contacts.index')->with(['contacts1'=>$contacts1,'contacts'=>null]);
         }
