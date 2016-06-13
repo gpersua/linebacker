@@ -37,17 +37,19 @@
             </tr>   
             @endif
             @if(is_null($contacts1) === false)
+            @foreach($contacts1 as $contact)
         <tr>
             <td></td>
-                    <td><a href="{{ url('users/contacts/show', $contacts1['id']) }}">{{ $contacts1['userAcc'] }}</a></td><td>{{ $contacts1['first_name'] }}</td><td>{{ $contacts1['last_name'] }}</td>
+                    <td><a href="{{ url('users/contacts/show', $contact['id']) }}">{{ $contact['userAcc'] }}</a></td><td>{{ $contact['first_name'] }}</td><td>{{ $contact['last_name'] }}</td>
                     <td>
                         
-                        <a href="{{ url('users/contacts/edit/' . $contacts1['id'] ) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
+                        <a href="{{ url('users/contacts/edit/' . $contact['id'] ) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
                         
-                        <a title="Destroy" href="{{ URL::to('users/contacts/destroy/' . $contacts1['id'] ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+                        <a title="Destroy" href="{{ URL::to('users/contacts/destroy/' . $contact['id'] ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
 
                     </td>
                 </tr>
+                 @endforeach
             @endif
             </tbody>
         </table>
