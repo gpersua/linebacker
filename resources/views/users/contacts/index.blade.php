@@ -16,6 +16,7 @@
                 </tr>
             </thead>
             <tbody>
+            @if(is_null($contacts) === false)
             {{-- */$x=0;/* --}}
             @foreach($contacts as $item)
                 {{-- */$x++;/* --}}
@@ -31,9 +32,28 @@
                     </td>
                 </tr>
             @endforeach
+            
+             <div class="pagination"> {!! $contacts->render() !!} </div>
+            @endif
+            @if(is_null($contacts1) === false)
+        <tr>
+                    <td><a href="{{ url('users/contacts/show', $contacts1['id']) }}">{{ $contacts1['userAcc'] }}</a></td><td>{{ $contacts1['first_name'] }}</td><td>{{ $contacts1['last_name'] }}</td>
+                    <td>
+                        
+                        <a href="{{ url('users/contacts/edit/' . $contacts1['id'] ) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
+                        
+                        <a title="Destroy" href="{{ URL::to('users/contacts/destroy/' . $contacts1['id'] ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+
+                    </td>
+                </tr>
+            @endif
             </tbody>
         </table>
-        <div class="pagination"> {!! $contacts->render() !!} </div>
+       
+        
+        
+        
+        
     </div>
 
 @endsection

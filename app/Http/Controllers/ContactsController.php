@@ -21,9 +21,24 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        $contacts = lb_contacts::paginate(15);
+       // $contacts = lb_contacts::paginate(15);
 
-        return view('users.contacts.index', compact('contacts'));
+       // return view('users.contacts.index', compact('contacts'));
+        
+        
+         $acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
+      
+        if (Auth::User()->is('admin')){ 
+         $contacts = lb_contacts::paginate(15);
+        }else{
+            $id = Auth::User()->id;
+            $contacts1= lb_contacts::where('userAcc', '=', $acc)->first()->paginate(15);
+       
+         return view('users.contacts.index')->with(['contacts1'=>$contacts1,'contacts'=>null]);
+        }
+        
+        
+        
     }
     /**
      * Show the form for creating a new resource.
