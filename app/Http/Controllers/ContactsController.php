@@ -32,7 +32,7 @@ class ContactsController extends Controller
          $contacts = lb_contacts::paginate(15);
         }else{
             $id = Auth::User()->id;
-            $contacts1= lb_contacts::where('userAcc', '=', $acc)->first()->paginate(15);
+            $contacts1= lb_contacts::where('userAcc', '=', $acc)->first();
        
          return view('users.contacts.index')->with(['contacts1'=>$contacts1,'contacts'=>null]);
         }

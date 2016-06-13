@@ -32,7 +32,6 @@
                     </td>
                 </tr>
             @endforeach
-            
              <div class="pagination"> {!! $contacts->render() !!} </div>
             @endif
             @if(is_null($contacts1) === false)
