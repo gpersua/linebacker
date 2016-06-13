@@ -125,7 +125,7 @@
                 <div class="flexslider">
                     <ul class="slides">
                         <li>
-                                            <video id="video" loop="" width="100%" autoplay="true">
+                            <video id="video" loop="" width="100%" height="90%" autoplay="true">
                                                     <source src="{{ asset('/assets/img/bannerproject720p.mp4') }}" type="video/mp4">
                                             </video>
             </li>
