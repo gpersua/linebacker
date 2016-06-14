@@ -250,7 +250,7 @@ a.big-link-3:active {
 	-moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
 	-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
-	position: absolute;
+	position: fixed;
 	width: 100%;
 }
 .navbar .container {
