@@ -133,11 +133,12 @@ a.big-link-3:active {
 }
 /***** Top ******/
 #top {
-	background: #2471D6;
-	padding: 10px 0;
-        z-index: 99;
+	background: #2471d6 none repeat scroll 0 0;
+        margin-top: 0;
+        padding: 10px 0;
         position: fixed;
-	margin-bottom: 0;
+        width: 100%;
+        z-index: 100;
         }
 
 #top p {
