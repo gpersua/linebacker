@@ -134,7 +134,8 @@ a.big-link-3:active {
 /***** Top ******/
 #top {
 	background: #2471D6;
-	padding: 10px 0;}
+	padding: 10px 0;
+        position: fixed;}
 #top p {
     color: white;
 }
