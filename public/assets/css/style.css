@@ -147,6 +147,12 @@ a.big-link-3:active {
 #top p a {
     color: white;
 }
+#top1 {
+	background: #2471d6 none repeat scroll 0 0;
+        margin-top: 0;
+        padding: 10px 0;
+        
+        }
 .btn-go {
   display:inline;
   border-radius: 15px;

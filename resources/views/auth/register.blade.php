@@ -7,7 +7,7 @@
 @section('content')
 
     <body class="register-page">
-        <div id="top">
+        <div id="top1">
     <div class="container">
         <div class="col-md-6 row text-left">
 				<p>
