@@ -14,7 +14,7 @@
 
 				<div class="panel-body">
                                     <div class="col-md-3">
-                                        <a href="{{ asset('/users/account/create') }}"><img src="{{ asset('/assets/img/telefono-icon-grande.png') }}">Create an account extension</a>	
+                                        <a href="{{ asset('/users/account/create') }}"><img src="{{ asset('/assets/img/telefono-icon-grande.png') }}"><br /> Create an account extension</a>	
                                     </div>
 				</div>
 			</div>
