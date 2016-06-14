@@ -51,7 +51,7 @@ class User extends Model implements AuthenticatableContract,
 
 	/*new user*/
 	public static $new = array(
-		'name' => 'required|min:6',
+		'name' => 'required|min:2',
 		'email' => 'required|email|unique:lb_users',
 		'password' => 'required|confirmed|min:6|max:30',
 		"password_confirmation" => "required|alpha_dash|min:6|max:30"
@@ -59,7 +59,7 @@ class User extends Model implements AuthenticatableContract,
 
 	/*edit user*/
 	public static $edit = array(
-		'name' => 'required|min:6',
+		'name' => 'required|min:2',
 		'email' => 'required|email',
 		'password' => 'required|confirmed|min:6|max:30',
 		"password_confirmation" => "required|alpha_dash|min:6|max:30"
