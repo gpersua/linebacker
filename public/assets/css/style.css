@@ -135,7 +135,7 @@ a.big-link-3:active {
 #top {
 	background: #2471D6;
 	padding: 10px 0;}
-#top fixed {
+.fixed {
         position: fixed;
         top: initial;
 }
