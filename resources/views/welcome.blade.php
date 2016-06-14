@@ -61,8 +61,8 @@
 	}(document, 'script', 'facebook-jssdk'));
 </script>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        <div id="top" class="fixed">
-		<div class="container">
+        <div id="top">
+		<div class="container fixed">
 			<div class="col-md-4 row text-left">
 				<p>
                                     <a href="https://twitter.com/PProtector_org"><span aria-hidden="true" class="social_twitter"></span></a>
