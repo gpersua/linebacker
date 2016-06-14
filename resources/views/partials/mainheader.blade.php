@@ -22,36 +22,36 @@
                         <i class="fa fa-envelope-o"></i>
                         <span class="label label-success">4</span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <!--<ul class="dropdown-menu">
                         <li class="header">You have 4 messages</li>
-                        <li>
+                        <li>-->
                             <!-- inner menu: contains the messages -->
-                            <ul class="menu">
+                           <!-- <ul class="menu">
                                 <li><!-- start message -->
-                                    <a href="#">
+                                   <!-- <a href="#">
                                         <div class="pull-left">
                                             <!-- User Image -->
-                                            <img src="{{ Auth::user()->avatar }}" class="img-circle" alt="User Image"/>
+                                          <!--  <img src="{{ Auth::user()->avatar }}" class="img-circle" alt="User Image"/>
                                         </div>
                                         <!-- Message title and timestamp -->
-                                        <h4>
+                                        <!--<h4>
                                             Support Team
                                             <small><i class="fa fa-clock-o"></i> 5 mins</small>
                                         </h4>
                                         <!-- The message -->
-                                        <p>Why not buy a new awesome theme?</p>
+                                        <!--<p>Why not buy a new awesome theme?</p>
                                     </a>
                                 </li><!-- end message -->
-                            </ul><!-- /.menu -->
-                        </li>
+                           <!-- </ul><!-- /.menu -->
+                        <!--</li>
                         <li class="footer"><a href="#">See All Messages</a></li>
                     </ul>
                 </li><!-- /.messages-menu -->
 
                 <!-- Notifications Menu -->
-                <li class="dropdown notifications-menu">
+               <!-- <li class="dropdown notifications-menu">
                     <!-- Menu toggle button -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-bell-o"></i>
                         <span class="label label-warning">10</span>
                     </a>
@@ -59,21 +59,21 @@
                         <li class="header">You have 10 notifications</li>
                         <li>
                             <!-- Inner Menu: contains the notifications -->
-                            <ul class="menu">
+                           <!-- <ul class="menu">
                                 <li><!-- start notification -->
-                                    <a href="#">
+                            <!--        <a href="#">
                                         <i class="fa fa-users text-aqua"></i> 5 new members joined today
                                     </a>
                                 </li><!-- end notification -->
-                            </ul>
+                       <!--     </ul>
                         </li>
                         <li class="footer"><a href="#">View all</a></li>
                     </ul>
                 </li>
                 <!-- Tasks Menu -->
-                <li class="dropdown tasks-menu">
+              <!--  <li class="dropdown tasks-menu">
                     <!-- Menu Toggle Button -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                   <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-flag-o"></i>
                         <span class="label label-danger">9</span>
                     </a>
@@ -81,24 +81,24 @@
                         <li class="header">You have 9 tasks</li>
                         <li>
                             <!-- Inner menu: contains the tasks -->
-                            <ul class="menu">
+                         <!--   <ul class="menu">
                                 <li><!-- Task item -->
-                                    <a href="#">
+                                  <!--  <a href="#">
                                         <!-- Task title and progress text -->
-                                        <h3>
+                                      <!--  <h3>
                                             Design some buttons
                                             <small class="pull-right">20%</small>
                                         </h3>
                                         <!-- The progress bar -->
-                                        <div class="progress xs">
+                                    <!--    <div class="progress xs">
                                             <!-- Change the css width attribute to simulate progress -->
-                                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                        <!--    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                                                 <span class="sr-only">20% Complete</span>
                                             </div>
                                         </div>
                                     </a>
                                 </li><!-- end task item -->
-                            </ul>
+                          <!--  </ul>
                         </li>
                         <li class="footer">
                             <a href="#">View all tasks</a>
@@ -124,7 +124,7 @@
                             </p>
                         </li>
                         <!-- Menu Body -->
-                        <li class="user-body">
+                        <!--<li class="user-body">
                             <div class="col-xs-4 text-center">
                                 <a href="#">Followers</a>
                             </div>
@@ -134,7 +134,7 @@
                             <div class="col-xs-4 text-center">
                                 <a href="#">Friends</a>
                             </div>
-                        </li>
+                        </li>-->
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
