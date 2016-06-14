@@ -13,7 +13,7 @@
 				<div class="panel-heading">Home</div>
 
 				<div class="panel-body">
-					
+                                    <a href="{{ asset('/users/account/create') }}"><img src="{{ asset('/assets/img/telefono-icon-grande.png') }}"></a>	
 				</div>
 			</div>
 		</div>
