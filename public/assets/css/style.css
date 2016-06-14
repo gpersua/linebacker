@@ -148,7 +148,7 @@ a.big-link-3:active {
     color: white;
 }
 .btn-go {
-    display:inline;
+  display:inline;
   border-radius: 15px;
   color: #ffffff;
   max-width:65px;
@@ -248,6 +248,7 @@ a.big-link-3:active {
 .navbar {
 	z-index: 99;
 	margin-bottom: 0;
+        margin-top: 5px;
 	background: #fff;
 	border: 0;
 	-moz-border-radius: 0;
