@@ -133,10 +133,10 @@ a.big-link-3:active {
 }
 /***** Top ******/
 #top {
-        position: fixed;
+        position: absolute;
 	background: #2471D6;
 	padding: 10px 0;
-        top: 10px;
+        
         }
 #top p {
     color: white;
