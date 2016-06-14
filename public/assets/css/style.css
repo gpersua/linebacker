@@ -153,6 +153,12 @@ a.big-link-3:active {
         padding: 10px 0;
         
         }
+#top1 p {
+    color: white;
+}
+#top1 p a {
+    color: white;
+}
 .btn-go {
   display:inline;
   border-radius: 15px;
