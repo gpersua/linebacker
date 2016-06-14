@@ -247,8 +247,8 @@ a.big-link-3:active {
 
 .navbar {
 	z-index: 99;
-	margin-bottom: 0;
-        margin-top: 22px;
+	margin-bottom: 0px;
+        margin-top: 26px;
 	background: #fff;
 	border: 0;
 	-moz-border-radius: 0;
