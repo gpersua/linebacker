@@ -74,11 +74,11 @@
      <label class="col-sm-3 control-label" for="query">City:</label>
      
                          
-      <div class="col-sm-6">  
+<div class="col-sm-6">  
     {!! Form::text('id_city', null, ['class' => 'form-control typeahead', 'placeholder' => 'Search...', 'id' => 'id_city', 'data-provide' => 'typeahead', 'autocomplete' => 'off']) !!}
                        
      {!! $errors->first('id_city', '<p class="help-block">:message</p>') !!}
-      </div>              
+</div>              
             
  </div>
     <input type="hidden" name="id" id="id" value="{{ Auth::User()->id }}" />

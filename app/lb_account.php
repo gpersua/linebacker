@@ -12,7 +12,7 @@ class lb_account extends Model
 {
     protected $table = 'lb_account';
     protected $primaryKey = 'userAcc';
-    protected $fillable = ['id', 'userAcc', 'id_membership', 'id_city', 'first_name', 'last_name', 'address', 'birthday', 'phone_number', 'second_phone'];
+    protected $fillable = ['id', 'userAcc', 'id_membership', 'id_city', 'city', 'first_name', 'last_name', 'address', 'birthday', 'phone_number', 'second_phone'];
     
     protected static function boot() {
 		parent::boot();
