@@ -22,8 +22,6 @@ var city_list = new Bloodhound({
     }
 });
  
-
-        
                     city_list.initialize();
 
                     $("#id_city").typeahead({
