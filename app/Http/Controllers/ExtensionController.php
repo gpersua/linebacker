@@ -138,7 +138,7 @@ class ExtensionController extends Controller
         lb_did::where('did', $id)->update(array('extension' => null, 'is_available' => 1));
         
         DB::commit();
-        $this->scpConnect();
+        ////////$this->scpConnect();
         //$this->sshConnect();
         
         Session::flash('flash_message', 'lb_extension deleted!');
