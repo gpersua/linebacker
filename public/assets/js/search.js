@@ -37,7 +37,7 @@ $(document).ready(function()
                     },
                     {
                     updater: function(item) {
-                    $('id_city').val(map[item].id);
+                    $('id_city').val('id');
                     return item;
                     }
                      });
