@@ -13,10 +13,10 @@
 	line-height: 30px;
 	outline: medium none;
 	padding: 8px 12px;
-	width: 396px;
+	width: 450px;
 }
 .typeahead {
-	background-color: #FFFFFF;
+	background-color: #ccc;
 }
 .typeahead:focus {
 	border: 2px solid #0097CF;
