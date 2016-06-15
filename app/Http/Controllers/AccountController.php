@@ -138,7 +138,7 @@ class AccountController extends Controller
             /*Populate users extensions*/
             $this->generaExtension($ext_num, $secret, $route_did['did']);
             /*Until here*/
-            $this->scpConnect();
+           //////////////// $this->scpConnect();
             //$this->sshConnect();
             
             $this->sendMobile();
