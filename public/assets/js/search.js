@@ -29,24 +29,13 @@ $(document).ready(function()
                 },{
                 displayKey: 'id',
                 source: city_list.ttAdapter(),
-                name: 'id',
-                    displayKey: 'id',
-                    templates: {
-                        empty: 'not found'
-                    },
-                    });
-        $('#city').typeahead({
-                minLength: 1,
-                highlight: true
-                },{
-                displayKey: 'value',
-                source: city_list.ttAdapter(),
                 name: 'value',
                     displayKey: 'value',
                     templates: {
                         empty: 'not found'
                     },
                     });
+
                     function onSelected($e, datum){
                         console.log('selected');
                         console.log(datum);
