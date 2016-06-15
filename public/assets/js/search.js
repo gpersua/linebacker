@@ -35,7 +35,12 @@ $(document).ready(function()
                         empty: 'not found'
                     },
                     },
-                     $('id_city').val('id'));
+                    {
+                    updater: function(item) {
+                    $('id_city').val(map[item].id);
+                    return item;
+                    }
+                     });
 
                     function onSelected($e, datum){
                         console.log('selected');
