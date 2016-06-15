@@ -23,18 +23,19 @@ $(document).ready(function()
         });
         city_list.initialize();
 
-        $('#id_city').typeahead({
+        $('#city').typeahead({
                 minLength: 1,
                 highlight: true
                 },{
-                displayKey: 'id',
+                displayKey: 'value',
                 source: city_list.ttAdapter(),
                 name: 'value',
                     displayKey: 'value',
                     templates: {
                         empty: 'not found'
                     },
-                    });
+                    },
+                     $('id_city').val('id'));
 
                     function onSelected($e, datum){
                         console.log('selected');
@@ -45,6 +46,7 @@ $(document).ready(function()
                         console.log(datum);
 
                     };
+
 
 
 
