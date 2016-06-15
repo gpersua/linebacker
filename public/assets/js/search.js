@@ -34,7 +34,7 @@ $(document).ready(function()
                     templates: {
                         empty: 'not found'
                     },
-                    }).bind('typeahead:select', function(ev, suggestion) {
+                    }).on('typeahead:select', function(ev, suggestion) {
             $('#city_id').val(suggestion.id);
 });
 
