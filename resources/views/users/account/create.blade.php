@@ -16,7 +16,7 @@
 	width: 450px;
 }
 .typeahead {
-	background-color: #ccc;
+	background-color: #fff;
 }
 .typeahead:focus {
 	border: 2px solid #0097CF;
