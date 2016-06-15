@@ -13,7 +13,7 @@
 	line-height: 30px;
 	outline: medium none;
 	padding: 8px 12px;
-	width: 460px;
+	width: 470px;
 }
 .typeahead {
 	background-color: #fff;
@@ -37,8 +37,8 @@
 	width: 422px;
 }
 .tt-suggestion {
-	font-size: 24px;
-	line-height: 24px;
+	font-size: 15px;
+	line-height: 15px;
 	padding: 3px 20px;
 }
 .tt-suggestion.tt-is-under-cursor {
