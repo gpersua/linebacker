@@ -17,7 +17,7 @@ $(document).ready(function()
                                 return url + suggestion.input;
                         },
                         filter: function (data) {
-                                return $.map(data, function(v,i) { return { id: v.id,  value: v.value }; });
+                                return $.map(data, function(v,i) { $('#id_city').val(v.id); return { id: v.id,  value: v.value }; });
                                 }
                 }
         });
@@ -34,14 +34,8 @@ $(document).ready(function()
                     templates: {
                         empty: 'not found'
                     },
-                    },
-                    {
-                    updater: function(item) {
-                    $('id_city').val('id');
-                    return item;
-                    }
-                     });
-
+                    });
+                    
                     function onSelected($e, datum){
                         console.log('selected');
                         console.log(datum);
