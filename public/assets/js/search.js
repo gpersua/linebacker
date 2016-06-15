@@ -23,22 +23,19 @@ $(document).ready(function()
         });
         city_list.initialize();
 
-        $('#city').typeahead({
+        $('#id_city').typeahead({
                 minLength: 1,
                 highlight: true
                 },{
-                displayKey: 'value' + 'id',
+                displayKey: 'value',
                 source: city_list.ttAdapter(),
                 name: 'value',
                     displayKey: 'value',
                     templates: {
                         empty: 'not found'
                     },
-                    }).on('typeahead:select', function(ev, suggestion) {
-            $('#city_id').val(suggestion.id);
-});
+                    });
 
-                    
                     function onSelected($e, datum){
                         console.log('selected');
                         console.log(datum);

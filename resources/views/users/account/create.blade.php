@@ -76,7 +76,7 @@
                          
       <div class="col-sm-6">  
     {!! Form::hidden('id_city', null, ['class' => 'form-control typeahead', 'placeholder' => 'Search...', 'id' => 'id_city', 'data-provide' => 'typeahead', 'autocomplete' => 'off']) !!}
-    {!! Form::text('city', null, ['class' => 'form-control typeahead', 'placeholder' => 'Search...', 'id' => 'city', 'data-provide' => 'typeahead', 'autocomplete' => 'off']) !!}                    
+                       
      {!! $errors->first('id_city', '<p class="help-block">:message</p>') !!}
       </div>              
             

@@ -89,11 +89,12 @@ class AccountController extends Controller
             if ($validator->fails()) {
                     return Redirect::back()->withErrors($validator)->withInput(Input::except("pass"));
             }    
-            $new_id=explode('-', Input::get('id_city'));
+            $new_id=explode('.', Input::get('id_city'));
             $account = new lb_account();
             $account->id = Input::get("id");
             $account->id_membership = Input::get("id_membership");
-            $account->id_city = $new_id[1];
+            $account->id_city = $new_id[0];
+            $account->city = $new_id[1];
             $account->first_name = Input::get('first_name');
             $account->last_name = Input::get('last_name');
             $account->address = Input::get('address');
@@ -238,7 +239,7 @@ class AccountController extends Controller
 	foreach ($queries as $res)
 	{
 	   // $results[] = [ 'id' => $res->idlb_city, 'value' => $res->zip_code.' '.$res->name.'-'.$res->idlb_city ];
-           $results[] = [ 'id' => $res->idlb_city, 'value' => $res->zip_code.' '.$res->name ];
+           $results[] = [ 'id' => $res->idlb_city, 'value' => $res->zip_code.'. '.$res->name ];
 	}
         return Response::json($results);
     
@@ -300,7 +301,7 @@ class AccountController extends Controller
                    "gcmRegistrationId" => '',
                    "lastName" => $account->last_name,
                    "phoneNumber" => $account->phone_number,
-                   "city" => $city->name,
+                   "city" => $account->city,
                    "state" => $state->name,
                    "zipCode"=> $city->zip_code
         );
