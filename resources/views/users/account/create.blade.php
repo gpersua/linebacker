@@ -6,14 +6,14 @@
 	margin: 100px;
 }
 .typeahead, .tt-query, .tt-hint {
-	border: 2px solid #CCCCCC;
-	border-radius: 8px;
-	font-size: 24px;
+	border: 1px solid #CCCCCC;
+	border-radius: 2px;
+	font-size: 15px;
 	height: 30px;
 	line-height: 30px;
 	outline: medium none;
 	padding: 8px 12px;
-	width: 450px;
+	width: 460px;
 }
 .typeahead {
 	background-color: #fff;
