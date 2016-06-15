@@ -27,7 +27,7 @@ $(document).ready(function()
                 minLength: 1,
                 highlight: true
                 },{
-                displayKey: 'value',
+                displayKey: 'value' + 'id',
                 source: city_list.ttAdapter(),
                 name: 'value',
                     displayKey: 'value',
