@@ -34,9 +34,10 @@ $(document).ready(function()
                     templates: {
                         empty: 'not found'
                     },
-                    }).on('typeahead:selected', function() {
-                        $('#id_city').val('id');
-                    });
+                    }).bind('typeahead:select', function(ev, suggestion) {
+            $('#city_id').val(suggestion.id);
+});
+
                     
                     function onSelected($e, datum){
                         console.log('selected');
