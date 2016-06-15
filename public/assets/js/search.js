@@ -35,7 +35,7 @@ $(document).ready(function()
                         empty: 'not found'
                     },
                     }).on('typeahead:selected', function() {
-                        $('#id_city').val(id);
+                        $('#id_city').val('id');
                     });
                     
                     function onSelected($e, datum){
