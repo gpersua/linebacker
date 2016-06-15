@@ -34,7 +34,7 @@ $(document).ready(function()
                     templates: {
                         empty: 'not found'
                     },
-                    }).on('city:select', function(ev, suggestion) {
+                    }).on('select', function() {
                         $('#id_city').val(id);
                     });
                     
