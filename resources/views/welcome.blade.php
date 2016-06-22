@@ -47,8 +47,8 @@
 }
 video {
     background-size: cover;
-    min-height: 100%;
-    min-width: 100%;
+    min-height: auto;
+    min-width: 430px;
     width: auto;
     z-index: 100;
 }
@@ -132,7 +132,7 @@ video {
                 <div class="flexslider">
                     <ul class="slides">
                         <li>
-                            <video controls height="auto" poster="/tests/images/BBB_480_Poster.jpg" src="http://linebacker.privacyprotector.org/assets/img/bannerproject720p.flv.mp4" width="auto"></video>
+                            <video controls height="auto" poster="{{ asset('/assets/img/video.png') }}" src="http://linebacker.privacyprotector.org/assets/img/bannerproject720p.flv.mp4" width="auto"></video>
                             <!--<video id="video" loop="" width="100%" height="auto" autoplay="true">
                             <source src="http://linebacker.privacyprotector.org/assets/img/bannerproject720p.flv.mp4" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2">
                                             </video>-->
