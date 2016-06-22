@@ -54,7 +54,7 @@ video {
     position: fixed;
     right: 0;
     width: auto;
-    z-index: -100;
+    z-index: 100;
 }
 </style>
 </head>
