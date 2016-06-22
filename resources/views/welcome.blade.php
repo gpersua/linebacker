@@ -45,6 +45,17 @@
     text-decoration: none;
     color: #fff;
 }
+video {
+    background-size: cover;
+    bottom: 0;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    right: 0;
+    width: auto;
+    z-index: -100;
+}
 </style>
 </head>
 
