@@ -130,7 +130,14 @@ and open the template in the editor.
                         height: 15px;
                         padding: 2%;
                        
-                }              
+                }  
+                video {
+                    background-size: cover;
+                    min-height: auto;
+                    min-width: 460px;
+                    width: 100%;
+                    z-index: 100;
+                }
                 }
 /* Pantallas grandes ———– */
                 @media only screen
@@ -511,6 +518,13 @@ and open the template in the editor.
                         text-align: center;
                         margin-bottom: 7px;
                 }
+                video {
+                background-size: cover;
+                min-height: auto;
+                min-width: 460px;
+                max-width: 100%;
+                z-index: 100;
+            }
                 }
                 
                  /* Smartphones (landscape) ———– */

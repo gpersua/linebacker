@@ -45,13 +45,7 @@
     text-decoration: none;
     color: #fff;
 }
-video {
-    background-size: cover;
-    min-height: auto;
-    min-width: 460px;
-    max-width: 100%;
-    z-index: 100;
-}
+
 </style>
 </head>
 
