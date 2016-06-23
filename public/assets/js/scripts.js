@@ -17,7 +17,10 @@ jQuery(document).ready(function() {
 		smoothHeight: true,
 		
     });
-	document.getElementById('video').play();
+	var video = document.getElementById('video');
+        video.addEventListener('click',function(){
+          video.play();
+        },false);
 	
 	/*
 	    Image popup (home latest work)
