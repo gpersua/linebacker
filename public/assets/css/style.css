@@ -1529,7 +1529,7 @@ footer .footer span {
         min-height: auto;
         min-width: 768px;
         max-width: 1024px;
-        width: 1024px;
+        width: 100%;
         z-index: 100;
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
@@ -1556,7 +1556,7 @@ footer .footer span {
         max-height: 320px;
         min-width: 580px;
         max-width: 767px;
-        width: 767px;
+        width: 100%;
         z-index: 100;
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
@@ -1583,7 +1583,7 @@ footer .footer span {
         max-height: 320px;
         min-width: 461px;
         max-width: 580px;
-        width: 580px;
+        width: 100%;
         z-index: 100;
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
@@ -1610,7 +1610,7 @@ footer .footer span {
         max-height: 240px;
         min-width: 321px;
         max-width: 460px;
-        width: 460px;
+        width: 100%;
         z-index: 100;
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
@@ -1635,7 +1635,7 @@ footer .footer span {
         max-height: 220px;
         min-width: 300px;
         max-width: 320px;
-        width: 320px;
+        width: 100%;
         z-index: 100;
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
