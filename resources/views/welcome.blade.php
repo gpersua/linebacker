@@ -126,7 +126,7 @@
                 <div class="flexslider">
                     <ul class="slides">
                         <li>
-                            <video id="video" controls  src="http://linebacker.privacyprotector.org/assets/img/bannerproject720p.flv.mp4" ></video>
+                            <video id="video" controls loop="yes" src="http://linebacker.privacyprotector.org/assets/img/bannerproject720p.flv.mp4" type="video/mp4"></video>
                             <!--<video id="video" loop="" width="100%" height="auto" autoplay="true">
                             <source src="http://linebacker.privacyprotector.org/assets/img/bannerproject720p.flv.mp4" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2">
                                             </video>-->
