@@ -119,7 +119,8 @@
 				</div>
 			</div>
 		</nav>
-<video id="video" controls loop="yes" src="http://linebacker.privacyprotector.org/assets/img/bannerproject720p.flv.mp4" type="video/mp4"></video>
+        <div class="container" ><video id="video" controls loop="yes" src="http://linebacker.privacyprotector.org/assets/img/bannerproject720p.flv.mp4" type="video/mp4"></video></div>
+
         <!-- Slider -->
         <!--<div class="slider-container">
             <div class="slider">
