@@ -1432,6 +1432,9 @@ footer .footer span {
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
     }
+    .video-container {
+        padding: 0 0;
+       }
     }
 /* Pantallas grandes ———– */
     @media only screen
@@ -1446,6 +1449,9 @@ footer .footer span {
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
         }
+        .video-container {
+        padding: 0 0;
+       }
     }
 
     @media only screen
@@ -1461,6 +1467,9 @@ footer .footer span {
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
         }
+        .video-container {
+        padding: 0 0;
+       }
     }
 
                 
@@ -1477,6 +1486,9 @@ footer .footer span {
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
         }
+        .video-container {
+        padding: 0 0;
+       }
     }
 
     /* iPads (landscape) ———– */
@@ -1494,6 +1506,9 @@ footer .footer span {
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
         }
+        .video-container {
+        padding: 0 0;
+       }
 
     }
                 
@@ -1511,6 +1526,9 @@ footer .footer span {
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
         }
+        .video-container {
+        padding: 0 0;
+       }
     }
 
      /* Smartphones (landscape) ———– */
@@ -1528,7 +1546,9 @@ footer .footer span {
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
         }
-
+        .video-container {
+        padding: 0 0;
+       }
     }
 
 
@@ -1546,6 +1566,9 @@ footer .footer span {
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
         }
+        .video-container {
+        padding: 0 0;
+       }
     }
     
     /* Smartphones (portrait) ———– */
@@ -1561,6 +1584,9 @@ footer .footer span {
           background: url(assets/img/video.png) no-repeat;
           background-size: cover;
         }
+       .video-container {
+        padding: 0 0;
+       }
     }
 
                     
