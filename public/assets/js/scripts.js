@@ -4,14 +4,11 @@
     }
 
     function enableVideoClicks() {
-       var videos = document.getElementsByTagName('video')[0].play();
-      for (var i = 0; i < videos.length; i++) {
-        videos[i].addEventListener('click', function(videoNode) {
-          return function() {
-            videoNode.play();
-          };
-        }(videos[i]));
-      }
+        document.getElementById('video').play();
+        var video = document.getElementById('video');
+        video.addEventListener('click',function(){
+          video.play();
+        },false);
     }
 jQuery(document).ready(function() {
 	console.log($('body').width()+' '+$('.presentation-container-2 ').width());
