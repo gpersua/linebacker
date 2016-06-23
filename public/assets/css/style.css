@@ -1425,12 +1425,14 @@ footer .footer span {
     and (max-device-width: 2024px){
      
     video {
-        background-size: cover;
         min-height: auto;
         min-width: 1820px;
         width: 110%;
         z-index: -100;
-        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          background: url(assets/img/video.png) no-repeat;
+          background-size: cover;
     }
     }
 /* Pantallas grandes ———– */
@@ -1443,7 +1445,10 @@ footer .footer span {
         min-width: 2025px;
         max-width: 110%;
         z-index: -100;
-        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          background: url(assets/img/video.png) no-repeat;
+          background-size: cover;
         }
     }
 
@@ -1457,7 +1462,10 @@ footer .footer span {
         min-width: 1025px;
         max-width: 1820px;
         z-index: -100;
-        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          background: url(assets/img/video.png) no-repeat;
+          background-size: cover;
         }
     }
 
@@ -1472,7 +1480,10 @@ footer .footer span {
         min-width: 768px;
         max-width: 1024px;
         z-index: -100;
-        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          background: url(assets/img/video.png) no-repeat;
+          background-size: cover;
         }
     }
 
@@ -1488,7 +1499,10 @@ footer .footer span {
         min-width: 768px;
         max-width: 1024px;
         z-index: -100;
-        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          background: url(assets/img/video.png) no-repeat;
+          background-size: cover;
         }
 
     }
@@ -1504,7 +1518,10 @@ footer .footer span {
         min-width: 580px;
         max-width: 767px;
         z-index: -100;
-        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          background: url(assets/img/video.png) no-repeat;
+          background-size: cover;
         }
     }
 
@@ -1520,7 +1537,10 @@ footer .footer span {
         min-width: 461px;
         max-width: 580px;
         z-index: -100;
-        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          background: url(assets/img/video.png) no-repeat;
+          background-size: cover;
         }
 
     }
@@ -1537,7 +1557,10 @@ footer .footer span {
         min-width: 321px;
         max-width: 460px;
         z-index: -100;
-        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          background: url(assets/img/video.png) no-repeat;
+          background-size: cover;
         }
     }
     
@@ -1551,7 +1574,10 @@ footer .footer span {
         min-width: 300px;
         max-width: 320px;
         z-index: -100;
-        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          background: url(assets/img/video.png) no-repeat;
+          background-size: cover;
         }
     }
 
