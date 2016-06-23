@@ -139,6 +139,7 @@ a.big-link-3:active {
         position: fixed;
         width: 100%;
         z-index: 100;
+        top: 0;
         }
 
 #top p {
