@@ -17,7 +17,8 @@ jQuery(document).ready(function() {
 		smoothHeight: true,
 		
     });
-	var video = document.getElementById('video');
+	//document.getElementById('video').play();
+        var video = document.getElementById('video');
         video.addEventListener('click',function(){
           video.play();
         },false);
