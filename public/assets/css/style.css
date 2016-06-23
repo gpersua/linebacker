@@ -1429,7 +1429,8 @@ footer .footer span {
         min-height: auto;
         min-width: 1820px;
         width: 110%;
-        z-index: 100;
+        z-index: -100;
+        transform: translateY(-50%) translateX(-50%);
     }
     }
 /* Pantallas grandes ———– */
@@ -1441,7 +1442,8 @@ footer .footer span {
         min-height: auto;
         min-width: 2025px;
         max-width: 110%;
-        z-index: 100;
+        z-index: -100;
+        transform: translateY(-50%) translateX(-50%);
         }
     }
 
@@ -1454,7 +1456,8 @@ footer .footer span {
         min-height: auto;
         min-width: 1025px;
         max-width: 1820px;
-        z-index: 100;
+        z-index: -100;
+        transform: translateY(-50%) translateX(-50%);
         }
     }
 
@@ -1468,7 +1471,8 @@ footer .footer span {
         min-height: auto;
         min-width: 768px;
         max-width: 1024px;
-        z-index: 100;
+        z-index: -100;
+        transform: translateY(-50%) translateX(-50%);
         }
     }
 
@@ -1483,7 +1487,8 @@ footer .footer span {
         min-height: auto;
         min-width: 768px;
         max-width: 1024px;
-        z-index: 100;
+        z-index: -100;
+        transform: translateY(-50%) translateX(-50%);
         }
 
     }
@@ -1498,7 +1503,8 @@ footer .footer span {
         max-height: 320px;
         min-width: 580px;
         max-width: 767px;
-        z-index: 100;
+        z-index: -100;
+        transform: translateY(-50%) translateX(-50%);
         }
     }
 
@@ -1513,7 +1519,8 @@ footer .footer span {
         max-height: 320px;
         min-width: 461px;
         max-width: 580px;
-        z-index: 100;
+        z-index: -100;
+        transform: translateY(-50%) translateX(-50%);
         }
 
     }
@@ -1529,7 +1536,8 @@ footer .footer span {
         max-height: 240px;
         min-width: 321px;
         max-width: 460px;
-        z-index: 100;
+        z-index: -100;
+        transform: translateY(-50%) translateX(-50%);
         }
     }
     
@@ -1542,7 +1550,8 @@ footer .footer span {
         max-height: 220px;
         min-width: 300px;
         max-width: 320px;
-        z-index: 100;
+        z-index: -100;
+        transform: translateY(-50%) translateX(-50%);
         }
     }
 
