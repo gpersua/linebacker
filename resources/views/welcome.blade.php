@@ -49,7 +49,7 @@
 </style>
 </head>
 
-<body>
+<body onload="init()">
 <div id="fb-root"></div>
 <script>
 	(function(d, s, id) {

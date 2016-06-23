@@ -1,4 +1,19 @@
 
+    function init() {
+      enableVideoClicks();
+    }
+
+    function enableVideoClicks() {
+      var videos = document.getElementsByTagName('video') || [];
+      for (var i = 0; i < videos.length; i++) {
+        // TODO: use attachEvent in IE
+        videos[i].addEventListener('click', function(videoNode) {
+          return function() {
+            videoNode.play();
+          };
+        }(videos[i]));
+      }
+    }
 jQuery(document).ready(function() {
 	console.log($('body').width()+' '+$('.presentation-container-2 ').width());
 	/*
@@ -17,12 +32,13 @@ jQuery(document).ready(function() {
 		smoothHeight: true,
 		
     });
+    
 	//document.getElementById('video').play();
-        var video = document.getElementById('video');
+        /*var video = document.getElementById('video');
         video.addEventListener('click',function(){
           video.play();
         },false);
-	
+	*/
 	/*
 	    Image popup (home latest work)
 	*/
