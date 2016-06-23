@@ -4,9 +4,8 @@
     }
 
     function enableVideoClicks() {
-      var videos = document.getElementsByTagName('video') || [];
+       var videos = document.getElementsByTagName('video')[0].play();
       for (var i = 0; i < videos.length; i++) {
-        // TODO: use attachEvent in IE
         videos[i].addEventListener('click', function(videoNode) {
           return function() {
             videoNode.play();
