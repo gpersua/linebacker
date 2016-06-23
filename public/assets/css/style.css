@@ -1478,7 +1478,13 @@ footer .footer span {
     and (max-device-width : 1024px)
     and (orientation : landscape) {
 
-    
+        video {
+        background-size: cover;
+        min-height: auto;
+        min-width: 768px;
+        max-width: 1024px;
+        z-index: 100;
+        }
 
     }
                 
@@ -1490,7 +1496,7 @@ footer .footer span {
         background-size: cover;
         min-height: auto;
         min-width: 580px;
-        max-width: 767;
+        max-width: 767px;
         z-index: 100;
         }
     }
@@ -1500,7 +1506,13 @@ footer .footer span {
     and (min-width : 461px) 
     and (max-device-width : 580px){
 
-
+    video {
+        background-size: cover;
+        min-height: auto;
+        min-width: 461px;
+        max-width: 580px;
+        z-index: 100;
+        }
 
     }
 
@@ -1509,8 +1521,27 @@ footer .footer span {
     @media only screen
     and (min-device-width: 321px) 
     and (max-device-width: 460px){
-       
+       video {
+        background-size: cover;
+        min-height: auto;
+        min-width: 321px;
+        max-width: 460px;
+        z-index: 100;
+        }
     }
+    
+    /* Smartphones (portrait) ———– */
+    @media only screen
+    and (max-device-width : 320px) {
+        video {
+        background-size: cover;
+        min-height: auto;
+        min-width: 300px;
+        max-width: 320px;
+        z-index: 100;
+        }
+    }
+
                     
                 
     
