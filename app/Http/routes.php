@@ -43,8 +43,15 @@
         Route::get('register/activation/{confirmationCode}', array('as' => 'confirmation_path', 'uses' => 'SocialController@confirm'));
         
        // Route API Register
+        //*Users*/
+Route::group(['prefix' => 'api'], function(){
+	Route::post('register', 'ApiRegistrationController@store');
+        Route::post('confirmation', 'ApiRegistrationController@confirm');
+	
+});
+        /*
         Route::resource('api/apiRegister', 'ApiRegistrationController',
-                ['only' => ['index', 'store', 'update', 'destroy', 'show', 'confirmation']]);    
+                ['only' => ['index', 'store', 'update', 'destroy', 'show', 'confirmation']]); */   
     });
 
  /*Password Recovery Reminder*/
