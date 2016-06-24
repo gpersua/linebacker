@@ -20,7 +20,8 @@ use Response;
 use Crypt;
 use Mail;
 use DB;
-class RegistrationController extends Controller {
+use Illuminate\Support\Facades\Log;
+class ApiRegistrationController extends Controller {
 
     public function __construct()
     {
@@ -31,35 +32,31 @@ class RegistrationController extends Controller {
      *
      * @return Response
      */
-    public function create()
+   /* public function create()
     {
     return View::make('auth.register');
-    }
+    }*/
         
-    public function store()
+    public function store(Request $request)
     {
+        
         $rules = [
             'name' => 'required|min:3',
             'email' => 'required|email|unique:lb_users',
             'password' => 'required|confirmed|min:6'
-        ];
-
-        $input = Input::only(
-            'name',
-            'email',
-            'password',
-            'password_confirmation'
-        );
-
-        $validator = Validator::make($input, $rules);
-
-        if($validator->fails())
-        {
-            return Redirect::back()->withInput()->withErrors($validator);
-        }
-
+            ];
+ 
+         try {
+            $validator = \Validator::make($request->all(), $rules);
+            if ($validator->fails()) {
+                return [
+                    'created' => false,
+                    'errors'  => $validator->errors()->all()
+                ];
+            }
+ 
         $confirmation_code  = array( 'confirmation_code' => str_random(32));
-        
+
         $email=Input::get('email');
         $name=Input::get('name');
 
@@ -80,12 +77,28 @@ class RegistrationController extends Controller {
                 );
         }catch(\Exception $e){
             
-            return Redirect::back()->with('status', 'There was an error sending email');
-
+            $result= array(
+                'created' => false,
+                'errors'  => 'There was an error sending email',
+                );
+            
+            return Response::json(
+                $result
+            );  
         }
-			
-
-        return Redirect::back()->with('status', 'Thanks for signing up on LineBacker! Please check your email.');
+	$result= array(
+                'created' => true,
+                'message'  => 'Thanks for signing up on LineBacker! Please check your email.',
+                );
+        
+        return Response::json(
+                $result
+            );  
+         }catch (Exception $e) {
+            Log::info('Error creating user: '.$e);
+            return Response::json(['created' => false], 500);
+        }
+       
     }
     
     public function confirm($confirmation_code)
@@ -97,7 +110,7 @@ class RegistrationController extends Controller {
 
         $user = lb_users::whereConfirmationCode($confirmation_code)->first();
 
-        if ( ! $user)
+        if ( !$user)
         {
             throw new InvalidConfirmationCodeException;
         }
@@ -107,6 +120,14 @@ class RegistrationController extends Controller {
         $user->confirmation_code = null;
         $user->save();
 
-        return Redirect::route('login_path')->with('status','You have successfully verified your account.');
+        $result= array(
+                'confirmed' => true,
+                'message'  => 'You have successfully verified your account.',
+                );
+        
+        return Response::json(
+                $result
+            );  
+
     }
 }
