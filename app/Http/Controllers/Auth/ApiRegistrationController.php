@@ -37,7 +37,7 @@ class ApiRegistrationController extends Controller {
     return View::make('auth.register');
     }*/
         
-    public function store(Request $request)
+    public function store()
     {
         
         $rules = [
@@ -46,8 +46,13 @@ class ApiRegistrationController extends Controller {
             'password' => 'required|confirmed|min:6'
             ];
  
+        $input = Input::only(
+            'name',
+            'email',
+            'password'
+        );
          try {
-            $validator = Validator::make($request->all(), $rules);
+            $validator = Validator::make($input, $rules);
             if ($validator->fails()) {
                 return [
                     'created' => false,
