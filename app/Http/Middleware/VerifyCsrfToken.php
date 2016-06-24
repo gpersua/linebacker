@@ -16,5 +16,6 @@ class VerifyCsrfToken extends BaseVerifier
          'api/login',
          'api/contactsByUser',
          'api/contactsByUser/store',
+         'api/apiRegister',
     ];
 }
