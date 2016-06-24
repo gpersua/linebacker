@@ -37,7 +37,7 @@ class ApiRegistrationController extends Controller {
     return View::make('auth.register');
     }*/
         
-    public function store(Request $request)
+    public function store()
     {
         
         $rules = [
