@@ -47,7 +47,7 @@ class ApiRegistrationController extends Controller {
             ];
  
          try {
-            $validator = \Validator::make($request->all(), $rules);
+            $validator = Validator::make($request->all(), $rules);
             if ($validator->fails()) {
                 return [
                     'created' => false,
