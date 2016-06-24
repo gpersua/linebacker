@@ -42,20 +42,22 @@
 	Route::get('google/login', 'SocialController@googleCallback');
         Route::get('register/activation/{confirmationCode}', array('as' => 'confirmation_path', 'uses' => 'SocialController@confirm'));
         
-       // Route API Register
+       
+    });
+
+ /*Password Recovery Reminder*/
+  Route::controllers([ 'password' => 'Auth\PasswordController',]);     
+  
+  // Route API Register
         //*Users*/
 Route::group(['prefix' => 'api'], function(){
-	Route::post('register', 'ApiRegistrationController@store');
-        Route::get('confirmation', 'ApiRegistrationController@confirm');
+	Route::post('register', 'Auth\ApiRegistrationController@store');
+        Route::get('confirmation', 'Auth\ApiRegistrationController@confirm');
 	
 });
         /*
         Route::resource('api/apiRegister', 'ApiRegistrationController',
                 ['only' => ['index', 'store', 'update', 'destroy', 'show', 'confirmation']]); */   
-    });
-
- /*Password Recovery Reminder*/
-  Route::controllers([ 'password' => 'Auth\PasswordController',]);     
   
   Route::post('city', 'AccountController@autocompleteCity'); 
   Route::get('city?input=', 'AccountController@getCity'); 
