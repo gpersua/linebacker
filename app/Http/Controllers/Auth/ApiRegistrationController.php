@@ -43,13 +43,15 @@ class ApiRegistrationController extends Controller {
         $rules = [
             'name' => 'required|min:3',
             'email' => 'required|email|unique:lb_users',
-            'password' => 'required|confirmed|min:6'
+            'password' => 'required|confirmed|min:6|max:30',
+	    'password_confirmation' => 'required|alpha_dash|min:6|max:30'
             ];
  
         $input = Input::only(
             'name',
             'email',
-            'password'
+            'password',
+            'password_confirmation'    
         );
          try {
             $validator = Validator::make($input, $rules);
