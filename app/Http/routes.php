@@ -43,7 +43,7 @@
         Route::get('register/activation/{confirmationCode}', array('as' => 'confirmation_path', 'uses' => 'SocialController@confirm'));
         
        // Route API Register
-        Route::resource('apiRegister', 'ApiRegistrationController',
+        Route::resource('api/apiRegister', 'ApiRegistrationController',
                 ['only' => ['index', 'store', 'update', 'destroy', 'show', 'confirmation']]);    
     });
 
