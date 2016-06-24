@@ -52,7 +52,7 @@
         //*Users*/
 Route::group(['prefix' => 'api'], function(){
 	Route::post('register', 'Auth\ApiRegistrationController@store');
-        Route::get('confirmation', 'Auth\ApiRegistrationController@confirm');
+        Route::get('confirmation/{confirmationCode}', 'Auth\ApiRegistrationController@confirm');
 	
 });
         /*

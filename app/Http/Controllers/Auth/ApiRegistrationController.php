@@ -76,7 +76,7 @@ class ApiRegistrationController extends Controller {
         ]);
         
         try{
-            Mail::send('email.verify', array('confirmation_code' =>$confirmation_code), 
+            Mail::send('email.api_verify', array('confirmation_code' =>$confirmation_code), 
                 function($message) use ($email, $name){
                        $message->from('no-reply@privacyprotector.org', 'Linebacker');
                        $message->to($email, $name)->subject('Verify your email address');
