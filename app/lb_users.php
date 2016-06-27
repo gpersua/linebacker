@@ -46,7 +46,7 @@ class lb_users extends Model implements AuthenticatableContract, CanResetPasswor
     }
 	/*new user*/
 	public static $new = array(
-		'name' => 'required|min:6',
+		'name' => 'required|min:2',
 		'email' => 'required|email|unique:lb_users',
 		'password' => 'required|confirmed|min:6|max:30',
 		"password_confirmation" => "required|alpha_dash|min:6|max:30"

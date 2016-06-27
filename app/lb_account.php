@@ -43,7 +43,7 @@ class lb_account extends Model
 		'last_name' => 'required',
 		'phone_number' => 'required|min:6|max:30',
                 'birthday' => 'required|date',
-                'id_city' => 'required|min:6'
+                'id_city' => 'required|exists:lb_city,zip_code:min:6'
 	);
     
     public function getUserId()
@@ -55,8 +55,10 @@ class lb_account extends Model
     {
         return $this->userAcc;
     } 
+    
     public function delete_contacts($userAcc)
     {
        return DB::connection('main')->table('lb_contacts')->where('userAcc', '=', $userAcc)->delete();
     }
+    
 }
