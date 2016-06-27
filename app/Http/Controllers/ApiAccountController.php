@@ -58,6 +58,15 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
+        
+        $rules = [
+            'id' => 'required|unique:lb_account,id',
+		'first_name' => 'required|min:2',
+		'last_name' => 'required',
+		'phone_number' => 'required|min:6|max:30',
+                'birthday' => 'required|date',
+                'id_city' => 'required|exists:lb_city,zip_code:min:6'
+            ];
         try {
             $validator = Validator::make(Input::all(), lb_account::$new);
             if ($validator->fails()) {
