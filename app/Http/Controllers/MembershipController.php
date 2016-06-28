@@ -49,13 +49,14 @@ class MembershipController extends Controller
         
         lb_membership::create($request->all());
 
-        Session::flash('flash_message', 'lb_membership added!');
-            $membership->membership = Input::get("description");
+        
+            $membership->membership = Input::get('description');
             $member = DB::table('lb_membership')->where('description', $membership->membership)->first();
             $path = $member->idlb_membership;
             $arrMember= array(
             "levelName" => $member->description
             );
+            Session::flash('flash_message', 'lb_membership added!');
             $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
             $firebase->set(DEFAULT_PATH.$path, $arrMember);
         return redirect('admin/membership');
