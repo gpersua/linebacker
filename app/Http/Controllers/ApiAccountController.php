@@ -296,6 +296,7 @@ class ApiAccountController extends Controller
     }
   
     public function sendMobile($id_user){
+        var_dump($id_user);
         $account = DB::table('lb_account')->where('id', $id_user)->first();
         $extension = DB::table('lb_extension')->where('userAcc', $account->userAcc)->first();
         $city =  DB::table('lb_city')->where('idlb_city', $account->id_city)->first();
