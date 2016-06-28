@@ -11,6 +11,7 @@ use linebacker\Http\Controllers\Controller;
 use linebacker\lb_membership;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Input;
 use Session;
 
 class MembershipController extends Controller
