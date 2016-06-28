@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Input;
 use Session;
+use DB;
 
 class MembershipController extends Controller
 {
