@@ -28,7 +28,7 @@ use Response;
 use Validator;
 use Redirect;
 use SSH;
-class AccountController extends Controller
+class ApiAccountController extends Controller
 {
     /**
      * Create a new controller instance.
