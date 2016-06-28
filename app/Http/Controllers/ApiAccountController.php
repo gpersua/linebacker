@@ -112,7 +112,7 @@ class ApiAccountController extends Controller
             }
             //$account = Session::get('userAcc');
 
-            $extension->did_extension = $route_did['did'];
+            $extension->did_extension = $route_did;
             $extension->extension = $ext_num;
             $extension->server_url = 'http://voip.mylinebacker.net/';
             $extension->userAcc = $acc;
@@ -121,11 +121,11 @@ class ApiAccountController extends Controller
             $extension->save();
 
             $did = new lb_did();
-            lb_did::where('did', $route_did['did'])->update(array('extension' => $ext_num, 'is_available' => 0));
+            lb_did::where('did', $route_did)->update(array('extension' => $ext_num, 'is_available' => 0));
             DB::commit();
             
             /*Populate users extensions*/
-            $this->generaExtension($ext_num, $secret, $route_did['did']);
+            $this->generaExtension($ext_num, $secret, $route_did);
             /*Until here*/
            //////////////// $this->scpConnect();
             //$this->sshConnect();
@@ -140,7 +140,7 @@ class ApiAccountController extends Controller
                     'id' => $idUser,
                     'account' => $acc,
                     'extension' => $ext_num,
-                    'did' => $route_did['did'],
+                    'did' => $route_did,
                     'secret' => $secret
                 ),
                 );
