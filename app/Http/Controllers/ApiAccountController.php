@@ -112,7 +112,7 @@ class ApiAccountController extends Controller
             }
             //$account = Session::get('userAcc');
 
-            $extension->did_extension = $route_did;
+            $extension->did_extension = $route_did['did'];
             $extension->extension = $ext_num;
             $extension->server_url = 'http://voip.mylinebacker.net/';
             $extension->userAcc = $acc;
@@ -121,11 +121,11 @@ class ApiAccountController extends Controller
             $extension->save();
 
             $did = new lb_did();
-            lb_did::where('did', $route_did)->update(array('extension' => $ext_num, 'is_available' => 0));
+            lb_did::where('did', $route_did['did'])->update(array('extension' => $ext_num, 'is_available' => 0));
             DB::commit();
             
             /*Populate users extensions*/
-            $this->generaExtension($ext_num, $secret, $route_did);
+            $this->generaExtension($ext_num, $secret, $route_did['did']);
             /*Until here*/
            //////////////// $this->scpConnect();
             //$this->sshConnect();
@@ -140,7 +140,7 @@ class ApiAccountController extends Controller
                     'id' => $idUser,
                     'account' => $acc,
                     'extension' => $ext_num,
-                    'did' => $route_did,
+                    'did' => $route_did['did'],
                     'secret' => $secret
                 ),
                 );
@@ -294,6 +294,7 @@ class ApiAccountController extends Controller
   
     public function sendMobile($id_user){
         $account = DB::table('lb_account')->where('id', $id_user)->first();
+        $user = DB::table('lb_users')->where('id', $id_user)->first();
         $extension = DB::table('lb_extension')->where('userAcc', $account->userAcc)->first();
         $city =  DB::table('lb_city')->where('idlb_city', $account->id_city)->first();
         $state =  DB::table('lb_state')->where('idlb_state', $city->idlb_state)->first();
@@ -305,7 +306,7 @@ class ApiAccountController extends Controller
                    "asteriskExtensionPass" => $extension->secret,
                    "birthday" => $account->birthday,
                    "creationDate" => $account->created_at,
-                   "email" => Auth::User()->email,
+                   "email" => $user->email,
                    "firstName" => $account->first_name,
                    "gcmRegistrationId" => '',
                    "lastName" => $account->last_name,
