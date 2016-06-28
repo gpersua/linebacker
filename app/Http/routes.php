@@ -151,8 +151,7 @@ Route::group(array('prefix' => 'api'), function()
     Route::post('login', 'ApiController@login');
 });
 // Route group for API Contacts
-//Route::group(array('prefix' => 'api',  'before' => 'auth.basic'), function()
-Route::group(array('prefix' => 'api'), function()
+Route::group(array('prefix' => 'api',  'before' => 'auth.basic'), function()
 {
     //Route::resource('contactsByUser', 'ApiController');
     //Route::post('contactsByUser/store', 'ApiController@store');
