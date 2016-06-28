@@ -78,6 +78,7 @@ class ApiAccountController extends Controller
                     $result
                 );  
             }    
+            $idUser = Input::get("id");
             $account = new lb_account();
             $account->id = Input::get("id");
             $account->id_membership = Input::get("id_membership");
@@ -129,14 +130,14 @@ class ApiAccountController extends Controller
            //////////////// $this->scpConnect();
             //$this->sshConnect();
             
-            $this->sendMobile($account->id);
+            $this->sendMobile($idUser);
             //Session::flash('flash_message', 'extension added!');
             //return redirect('users/account');
             $result= array(
                 'errorId' => 0,
                 'errorMessage' => '',
                 'resultObject' => array(  
-                    'id' => $account->id,
+                    'id' => $idUser,
                     'account' => $acc,
                     'extension' => $ext_num,
                     'did' => $route_did['did'],
@@ -292,7 +293,6 @@ class ApiAccountController extends Controller
     }
   
     public function sendMobile($id_user){
-        var_dump($id_user);
         $account = DB::table('lb_account')->where('id', $id_user)->first();
         $extension = DB::table('lb_extension')->where('userAcc', $account->userAcc)->first();
         $city =  DB::table('lb_city')->where('idlb_city', $account->id_city)->first();
