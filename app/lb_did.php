@@ -31,7 +31,7 @@ class lb_did extends Model
                      ->where('is_available', '=', 1)
                      ->first();
              
-          return $did;
+          return (array)$did;
         
               
     } 
