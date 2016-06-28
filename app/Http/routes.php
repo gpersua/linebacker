@@ -141,7 +141,7 @@ Route::group(['prefix' => 'admin/roles'], function(){
 
 Route::get('city',  'AccountController@getCity');
 
-Route::group(['prefix' => 'api'], function(){
+Route::group(['prefix' => 'api', 'before' => 'auth.basic'], function(){
 	Route::post('account', 'ApiAccountController@store');
 });
 
