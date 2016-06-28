@@ -50,8 +50,8 @@ class MembershipController extends Controller
         lb_membership::create($request->all());
 
         
-            $membership->membership = Input::get('description');
-            $member = DB::table('lb_membership')->where('description', $membership->membership)->first();
+            $membership = Input::get('description');
+            $member = DB::table('lb_membership')->where('description', $membership)->first();
             $path = $member->idlb_membership;
             $arrMember= array(
             "levelName" => $member->description
