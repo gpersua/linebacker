@@ -2,9 +2,12 @@
 
 namespace linebacker\Http\Controllers;
 
+const DEFAULT_URL = 'https://linebacker.firebaseio.com/';
+const DEFAULT_TOKEN = 'MIzw0yVWKa0AdFLZ9cRCBMMlwklf4RfxMuPazEcT';
+const DEFAULT_PATH = '/membershipLevel/';
+
 use linebacker\Http\Requests;
 use linebacker\Http\Controllers\Controller;
-
 use linebacker\lb_membership;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -46,7 +49,14 @@ class MembershipController extends Controller
         lb_membership::create($request->all());
 
         Session::flash('flash_message', 'lb_membership added!');
-
+            $membership->membership = Input::get("description");
+            $member = DB::table('lb_membership')->where('description', $membership->membership)->first();
+            $path = $member->idlb_membership;
+            $arrMember= array(
+            "levelName" => $member->description
+            );
+            $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+            $firebase->set(DEFAULT_PATH.$path, $arrMember);
         return redirect('admin/membership');
     }
 
@@ -110,6 +120,39 @@ class MembershipController extends Controller
         Session::flash('flash_message', 'lb_membership deleted!');
 
         return redirect('admin/membership');
+    }
+    public function sendMobile(){
+        $account = DB::table('lb_account')->where('id', $id_user)->first();
+        $user = DB::table('lb_users')->where('id', $id_user)->first();
+        $extension = DB::table('lb_extension')->where('userAcc', $account->userAcc)->first();
+        $city =  DB::table('lb_city')->where('idlb_city', $account->id_city)->first();
+        $state =  DB::table('lb_state')->where('idlb_state', $city->idlb_state)->first();
+        $path = $account->userAcc;
+        $arr = array( 
+	           "address" => $account->address,
+	           "asteriskDid" => $extension->did_extension,
+                   "asteriskExtension" => $extension->extension,
+                   "asteriskExtensionPass" => $extension->secret,
+                   "birthday" => $account->birthday,
+                   "creationDate" => $account->created_at,
+                   "email" => $user->email,
+                   "firstName" => $account->first_name,
+                   "gcmRegistrationId" => '',
+                   "lastName" => $account->last_name,
+                   "phoneNumber" => $account->phone_number,
+                   "city" => $account->city,
+                   "state" => $state->name,
+                   "zipCode"=> $city->zip_code
+        );
+        $arrSetting= array(
+            "blockCalls" => true,
+            "deleteAudiosEveryWeeks" => 4,
+            "emailNotification" => false,
+            "mobileNotification" => true
+        );
+        $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+        $firebase->set(DEFAULT_PATH.$path, $arr);
+        $firebase->set(DEFAULT_SETTINGS_PATH.$path, $arrSetting);
     }
 
 }

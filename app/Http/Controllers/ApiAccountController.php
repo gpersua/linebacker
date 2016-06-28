@@ -60,7 +60,7 @@ class ApiAccountController extends Controller
     {
         
         $rules = [
-            'id' => 'required|unique:lb_account,id',
+                'id' => 'required|unique:lb_account,id',
 		'first_name' => 'required|min:2',
 		'last_name' => 'required',
 		'phone_number' => 'required|min:6|max:30',
