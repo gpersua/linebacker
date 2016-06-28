@@ -128,12 +128,8 @@ class ApiAccountController extends Controller
             /*Until here*/
            //////////////// $this->scpConnect();
             //$this->sshConnect();
-            if(isset(Auth::User()->id) || Auth::User()->id != null || Auth::User()->id !=''){
-                $id_user= Auth::User()->id;
-            }else{
-                $id_user =  Input::get("id");
-            }
-            $this->sendMobile($id_user);
+            
+            $this->sendMobile($account->id);
             //Session::flash('flash_message', 'extension added!');
             //return redirect('users/account');
             $result= array(
