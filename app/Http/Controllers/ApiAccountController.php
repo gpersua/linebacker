@@ -128,8 +128,12 @@ class ApiAccountController extends Controller
             /*Until here*/
            //////////////// $this->scpConnect();
             //$this->sshConnect();
-            
-            $this->sendMobile();
+            if(Auth::User()->id){
+                $id_user= Auth::User()->id;
+            }else{
+                $id_user =  $account->id;
+            }
+            $this->sendMobile($id_user);
             //Session::flash('flash_message', 'extension added!');
             //return redirect('users/account');
             $result= array(
@@ -291,8 +295,8 @@ class ApiAccountController extends Controller
             ));
     }
   
-    public function sendMobile(){
-        $account = DB::table('lb_account')->where('id', Auth::User()->id)->first();
+    public function sendMobile($id_user){
+        $account = DB::table('lb_account')->where('id', $id_user)->first();
         $extension = DB::table('lb_extension')->where('userAcc', $account->userAcc)->first();
         $city =  DB::table('lb_city')->where('idlb_city', $account->id_city)->first();
         $state =  DB::table('lb_state')->where('idlb_state', $city->idlb_state)->first();
