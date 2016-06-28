@@ -128,7 +128,7 @@ class ApiAccountController extends Controller
             /*Until here*/
            //////////////// $this->scpConnect();
             //$this->sshConnect();
-            if(Auth::User()->id == null || Auth::User()->id ==''){
+            if(isset(Auth::User()->id) || Auth::User()->id != null || Auth::User()->id !=''){
                 $id_user= Auth::User()->id;
             }else{
                 $id_user =  Input::get("id");
