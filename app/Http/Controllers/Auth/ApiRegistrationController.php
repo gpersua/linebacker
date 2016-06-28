@@ -56,10 +56,13 @@ class ApiRegistrationController extends Controller {
          try {
             $validator = Validator::make($input, $rules);
             if ($validator->fails()) {
-                return [
+                $result = array (
                     'created' => false,
                     'errors'  => $validator->errors()->all()
-                ];
+                );
+                return Response::json(
+                    $result
+                );  
             }
  
         $confirmation_code  = array( 'confirmation_code' => str_random(32));

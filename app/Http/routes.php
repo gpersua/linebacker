@@ -141,6 +141,10 @@ Route::group(['prefix' => 'admin/roles'], function(){
 
 Route::get('city',  'AccountController@getCity');
 
+Route::group(['prefix' => 'api'], function(){
+	Route::post('account', 'ApiAccountController@store');
+});
+
 // Route group for API login
 Route::group(array('prefix' => 'api'), function()
 {

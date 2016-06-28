@@ -70,7 +70,13 @@ class AccountController extends Controller
         try {
             $validator = Validator::make(Input::all(), lb_account::$new);
             if ($validator->fails()) {
-                    return Redirect::back()->withErrors($validator)->withInput(Input::except("pass"));
+                    $result = array (
+                    'errorId' => 1,
+                    'errorMessage' => $validator->errors()->all()
+                );
+                    return Response::json(
+                    $result
+                );  
             }    
             $account = new lb_account();
             $account->id = Input::get("id");
@@ -86,9 +92,9 @@ class AccountController extends Controller
 
             $account->save();
 
-            $acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
+            $acc = DB::table('lb_account')->where('id', $account->id)->value('userAcc');
 
-            Session::put('userAcc', $acc);
+            //Session::put('userAcc', $acc);
 
            /*Add Extension*/
             $sc = new lb_sip_asterisk();
@@ -103,12 +109,12 @@ class AccountController extends Controller
                 $ext_num = $ext->extension + 1;
 
             }
-            $account = Session::get('userAcc');
+            //$account = Session::get('userAcc');
 
             $extension->did_extension = $route_did['did'];
             $extension->extension = $ext_num;
             $extension->server_url = 'http://voip.mylinebacker.net/';
-            $extension->userAcc = $account;
+            $extension->userAcc = $acc;
             $extension->secret = $secret;
 
             $extension->save();
@@ -126,13 +132,32 @@ class AccountController extends Controller
             $this->sendMobile();
             //Session::flash('flash_message', 'extension added!');
             //return redirect('users/account');
-            
+            $result= array(
+                'errorId' => 0,
+                'errorMessage' => '',
+                'resultObject' => array(  
+                    'id' => $account->id,
+                    'account' => $acc,
+                    'extension' => $ext_num,
+                    'did' => $route_did['did'],
+                    'secret' => $secret
+                ),
+                );
+            return Response::json(
+                $result
+            );
+        
     }catch (\Exception $e)
     {
             DB::rollback();
-            return Redirect::back()->withErrors([
-                    'msg' => array('ERROR ('.$e->getCode().'):'=> $e->getMessage())
-            ]);
+            
+             $result = array (
+                    'errorId' => 1,
+                    'errorMessage' => $e->getMessage()
+                );
+            return Response::json(
+            $result
+            );  
     }
         
     }
