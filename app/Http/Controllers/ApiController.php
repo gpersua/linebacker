@@ -222,13 +222,13 @@ class ApiController extends Controller
             
         } else{
             $confirm = DB::table('lb_users')->where('email', $username)->value('confirmed');
-            if ($confirm == 0){
+            if ($confirm == 0 || $confirm == false){
                $result= array(
                 'errorId' => $error,
                 'errorMessage' => 'Email not confirmed yet',
                 ); 
             }
-            if(Auth::attempt($userdata)){
+            if(!Auth::attempt($userdata)){
             $result= array(
                 'errorId' => $error,
                 'errorMessage' => 'User or password Invalid',
