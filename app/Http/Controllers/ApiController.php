@@ -226,11 +226,12 @@ class ApiController extends Controller
                 'errorId' => $error,
                 'errorMessage' => 'Email not confirmed yet',
                 ); 
-            }
+            }else{
             $result= array(
                 'errorId' => $error,
                 'errorMessage' => 'User or password Invalid',
                 );
+            }
         }
    
         return Response::json(
