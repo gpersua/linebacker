@@ -221,7 +221,8 @@ class ApiController extends Controller
                 );
             
         } else{
-            if (!isset(Auth::User()->confirmed)){
+            $confirm = DB::table('lb_users')->where('email', $username)->value('confirmed');
+            if ($confirm == 0){
                $result= array(
                 'errorId' => $error,
                 'errorMessage' => 'Email not confirmed yet',
