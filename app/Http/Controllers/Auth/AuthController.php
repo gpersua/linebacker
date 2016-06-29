@@ -6,9 +6,9 @@ use linebacker\lb_users;
 use Validator;
 use linebacker\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Response;
+use DB;
 use Auth;
 use Illuminate\Http\Request;
 class AuthController extends Controller
@@ -32,9 +32,8 @@ class AuthController extends Controller
      *
      * @return void
      */
-    public function __construct(Guard $auth)
+    public function __construct()
     {
-        $this->auth  = $auth;
         $this->middleware('guest', ['except' => 'getLogout']);
     }
     
@@ -56,8 +55,8 @@ class AuthController extends Controller
         }
 
         $credentials = $this->getCredentials($request);
-        
-        var_dump($this->auth->user()->confirmed);
+        $confirmed = DB::table('lb_users')->where('email', $this->loginUsername())->value('confirmed');
+        var_dump($confirmed);
         if (Auth::attempt($credentials, $request->has('remember'))) {
             
             return $this->handleUserWasAuthenticated($request, $throttles);
