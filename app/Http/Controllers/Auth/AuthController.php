@@ -54,7 +54,7 @@ class AuthController extends Controller
         }
 
         $credentials = $this->getCredentials($request);
-        var_dump(Auth::User()->confirmed);
+        var_dump(Auth::user());
         if (Auth::attempt($credentials, $request->has('remember'))) {
             return $this->handleUserWasAuthenticated($request, $throttles);
         }
