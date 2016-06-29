@@ -221,7 +221,7 @@ class ApiController extends Controller
                 );
             
         } else{
-            if (!isset(Auth::User()->confirmed)){
+            if (isset(Auth::User()->confirmed)==0){
                $result= array(
                 'errorId' => $error,
                 'errorMessage' => 'Email not confirmed yet',
