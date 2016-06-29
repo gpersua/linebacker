@@ -62,21 +62,16 @@ class SessionsController extends Controller {
             'password' => Input::get('password')
         ];
 
-        $confirmed = DB::table('lb_users')->where('email', Input::get('email'))->value('confirmed');
-        var_dump($confirmed);
+  
         if(!Auth::attempt($credentials))
         {
             return Redirect::back()->withInput()->withErrors(['credentials' => 'We were unable to sign you in']);
         }else{
-            if($confirmed==0){
-                return Redirect::back()->withInput()->withErrors(['credentials' => 'We were unable to sign you in']);
-            }else{
             $acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
 
             Session::put('userAcc', $acc);
  
             return Redirect::home()->with('status','Welcome back ');
-            }
                 
         }
 	}
