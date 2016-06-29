@@ -221,6 +221,12 @@ class ApiController extends Controller
                 );
             
         } else{
+            if (!Auth::User()->confirmed){
+               $result= array(
+                'errorId' => $error,
+                'errorMessage' => 'Email not confirmed yet',
+                ); 
+            }
             $result= array(
                 'errorId' => $error,
                 'errorMessage' => 'User or password Invalid',
