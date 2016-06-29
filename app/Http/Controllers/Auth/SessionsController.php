@@ -64,7 +64,7 @@ class SessionsController extends Controller {
 
        // $confirmed = DB::table('lb_users')->where('email', $this->loginUsername())->value('confirmed');
        // var_dump($confirmed);
-        if(!Auth::attempt($credentials) || ! Auth::User()->confirmed)
+        if(!Auth::attempt($credentials) || Auth::User()->confirmed==0)
         {
             return Redirect::back()->withInput()->withErrors(['credentials' => 'We were unable to sign you in']);
         }else{
