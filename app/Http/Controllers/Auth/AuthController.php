@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Response;
+use Auth;
 use Illuminate\Http\Request;
 class AuthController extends Controller
 {
@@ -31,8 +32,9 @@ class AuthController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Guard $auth)
     {
+        $this->auth  = $auth;
         $this->middleware('guest', ['except' => 'getLogout']);
     }
     
@@ -57,7 +59,7 @@ class AuthController extends Controller
         
         
         if (Auth::attempt($credentials, $request->has('remember'))) {
-            var_dump(Auth::user()->confirmed);
+            var_dump($this->auth->user()->confirmed);
             return $this->handleUserWasAuthenticated($request, $throttles);
         }
 
