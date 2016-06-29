@@ -28,6 +28,8 @@ class PagesController extends Controller {
                 }*/
 		return View::make('home');
 	}
+        Auth::logout();
+        Session::flush();
         return View::make('welcome');
     }
     
