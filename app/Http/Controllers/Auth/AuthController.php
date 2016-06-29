@@ -6,9 +6,9 @@ use linebacker\lb_users;
 use Validator;
 use linebacker\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Response;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 class AuthController extends Controller
 {
