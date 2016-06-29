@@ -207,7 +207,7 @@ class ApiController extends Controller
         $user = array();  
           
         
-        if(Auth::attempt($userdata)&& Auth::User()->confirmed) {  
+        if(Auth::attempt($userdata) && Auth::User()->confirmed) {  
             $error = 0;  
             $acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
            $result= array(
@@ -226,7 +226,8 @@ class ApiController extends Controller
                 'errorId' => $error,
                 'errorMessage' => 'Email not confirmed yet',
                 ); 
-            }else{
+            }
+            if(Auth::attempt($userdata)){
             $result= array(
                 'errorId' => $error,
                 'errorMessage' => 'User or password Invalid',
