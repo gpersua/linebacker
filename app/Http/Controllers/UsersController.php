@@ -90,6 +90,7 @@ class UsersController extends Controller
 			$user->name = Input::get("name");
 			$user->email = Input::get("email");
                         $user->in_active = Input::get("in_active");
+                        var_dump($user);
 			$user->save();
 
 			DB::commit();
