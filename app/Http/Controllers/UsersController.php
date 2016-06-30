@@ -67,7 +67,7 @@ class UsersController extends Controller
                     $user = lb_users::find($id);
                     $rules = [
                     'name' => 'required|min:2',
-                    'email' => 'required|email|unique:lb_users'
+                    'email' => 'required|email'
                     ];
                     $input = Input::only(
                         'name',
