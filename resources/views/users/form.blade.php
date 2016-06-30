@@ -55,6 +55,10 @@
 			<input type="password" placeholder="Retype password..." id="password_confirmation" class="form-control" name="password_confirmation" value="{{ empty($user->password)? Input::old('password_confirmation') : '' }}">
                 </div>
             </div>
+<label>
+                            <input name="in_active" type="checkbox" value="{{ empty($user->in_active)? Input::old('in_active') : $user->in_active }}" <?php if($user->in_active == 1) { echo 'checked'; } ?> >
+                                <?= $value->description ?>
+                          </label>
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <!-- /.box-body -->
