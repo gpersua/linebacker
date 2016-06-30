@@ -207,8 +207,7 @@ class ApiController extends Controller
         $user = array();  
           
         
-        if(Auth::attempt($userdata) && Auth::user()->confirmed && Auth::user()->in_active) {  
-            $error = 0;  
+        if(Auth::attempt($userdata) && Auth::user()->confirmed && Auth::user()->in_active) {              $error = 0;  
             $acc = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc');
            $result= array(
                 'errorId' => $error,
@@ -222,10 +221,17 @@ class ApiController extends Controller
             
         } else{
             $confirm = DB::table('lb_users')->where('email', $username)->value('confirmed');
+            $active = DB::table('lb_users')->where('email', $username)->value('in_active');
             if ($confirm == 0 || $confirm == false){
                $result= array(
                 'errorId' => $error,
                 'errorMessage' => 'Email not confirmed yet',
+                ); 
+            }
+            if ($active == 0 || $active == false){
+               $result= array(
+                'errorId' => $error,
+                'errorMessage' => 'Disabled user',
                 ); 
             }
             if(!Auth::attempt($userdata)){
