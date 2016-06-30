@@ -47,12 +47,12 @@
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 			<label for="password" class="control-label">{!! $errors->has('password') ? '<i class="fa fa-times-circle-o"></i> Password:' : 'Password' !!}@if( $errors->has('password') ) <small class="error">{{ $errors->first('password') }}</small>@endif
 			</label>
-			<input type="password" placeholder="Password..." id="password" class="form-control" name="password" value="{{ empty($user->password)? Input::old('password') : '' }}">
+			<input type="password" placeholder="Password..." id="password" class="form-control" name="password" value="{{ Input::old('password') }}">
                 </div>
                 <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
 			<label for="password_confirmation" class="control-label">{!! $errors->has('password_confirmation') ? '<i class="fa fa-times-circle-o"></i> Retype password:' : 'Retype password' !!}@if( $errors->has('password_confirmation') ) <small class="error">{{ $errors->first('password_confirmation') }}</small>@endif
 			</label>
-			<input type="password" placeholder="Retype password..." id="password_confirmation" class="form-control" name="password_confirmation" value="{{ empty($user->password)? Input::old('password') : '' }}">
+			<input type="password" placeholder="Retype password..." id="password_confirmation" class="form-control" name="password_confirmation" value="{{ Input::old('password_confirmation') }}">
                         <div class="form-group{{ $errors->has('in_active') ? ' has-error' : '' }}">
                         
                          </label>  
