@@ -99,6 +99,7 @@ class UsersController extends Controller
 			$user->password = bcrypt(Input::get('password'));
 			$user->avatar = '/img/user.png';
 			$user->confirmed = 1;
+                        
 			$user->save();
 
 			DB::commit();
