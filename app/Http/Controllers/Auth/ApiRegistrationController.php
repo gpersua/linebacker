@@ -41,7 +41,7 @@ class ApiRegistrationController extends Controller {
     {
         
         $rules = [
-            'name' => 'required|min:3',
+            'name' => 'required|min:2',
             'email' => 'required|email|unique:lb_users',
             'password' => 'required|confirmed|min:6|max:30',
 	    'password_confirmation' => 'required|alpha_dash|min:6|max:30'

@@ -64,16 +64,32 @@ class UsersController extends Controller
     {
 	if($id!=''||$id!=null){
 		try {
-			$validator = Validator::make(Input::all(), lb_users::$edit);
-			if ($validator->fails()) {
+                    $user = lb_users::find($id);
+                    $rules = [
+                    'name' => 'required|min:2',
+                    'email' => 'required|email|unique:lb_users'
+                    ];
+                    $input = Input::only(
+                        'name',
+                        'email'
+                    );
+
+                        if(Input::get('password') == '' || Input::get('password') == null){
+                            $validator = Validator::make($input, $rules);
+                            if ($validator->fails()) {
 				return Redirect::back()->withErrors($validator)->withInput(Input::except("pass"));
 			}
-
-			$user = lb_users::find($id);
+                        }else{
+                            $validator = Validator::make(Input::all(), lb_users::$new);
+                            if ($validator->fails()) {
+				return Redirect::back()->withErrors($validator)->withInput(Input::except("pass"));    
+                        }
+                            $user->password = bcrypt(Input::get("password"));
+                        }
+			
 			$user->name = Input::get("name");
 			$user->email = Input::get("email");
-			$user->password = bcrypt(Input::get('password'));
-                        $user->in_active = Input::get('in_active');
+                        $user->in_active = Input::get("in_active");
 			$user->save();
 
 			DB::commit();
@@ -134,13 +150,12 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-	$users = lb_users::select( 'id', 'name', 'email', 'password', 'in_active')->where('id', '=', $id)->first();
+	$users = lb_users::select( 'id', 'name', 'email', 'in_active')->where('id', '=', $id)->first();
         $user = array();
        // foreach($users as $u){
             $user['id'] = $users->id;
             $user['name'] = $users->name;
             $user['email'] =$users->email;
-            $user['password'] = Crypt::decrypt($users->password);
             $user['in_active'] = $users->in_active;
         //}
 	return View::make('users.form')->with('user', $user);
