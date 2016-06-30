@@ -150,7 +150,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-	$user = lb_users::select( 'id', 'name', 'email', 'in_active')->where('id', '=', $id)->first();
+	$user = lb_users::select( 'id', 'name', 'email', 'password', 'in_active')->where('id', '=', $id)->first();
        
         
 	return View::make('users.form')->with('user', $user);
