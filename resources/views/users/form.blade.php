@@ -53,12 +53,16 @@
 			<label for="password_confirmation" class="control-label">{!! $errors->has('password_confirmation') ? '<i class="fa fa-times-circle-o"></i> Retype password:' : 'Retype password' !!}@if( $errors->has('password_confirmation') ) <small class="error">{{ $errors->first('password_confirmation') }}</small>@endif
 			</label>
 			<input type="password" placeholder="Retype password..." id="password_confirmation" class="form-control" name="password_confirmation" value="{{ empty($user->password)? Input::old('password_confirmation') : '' }}">
-                </div>
-            </div>
-<label>
+                        <div class="form-group{{ $errors->has('in_active') ? ' has-error' : '' }}">
+                        <label for="in_active" class="control-label">{!! $errors->has('in_active') ? '<i class="fa fa-times-circle-o"></i> Is Active?:' : 'Is Active?' !!}@if( $errors->has('in_active') ) <small class="error">{{ $errors->first('password_confirmation') }}</small>@endif
+                         </label>        
                             <input name="in_active" type="checkbox" value="{{ empty($user->in_active)? Input::old('in_active') : $user->in_active }}" @if( $user->in_active == 1 ) {{ 'checked' }} @endif >
                                 @if( $errors->has('in_active') ) <small class="error">{{ $errors->first('in_active') }}</small>@endif
-                          </label>
+                                 
+                        </div>
+                </div>
+            </div>
+
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <!-- /.box-body -->
