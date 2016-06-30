@@ -56,7 +56,7 @@
                         <div class="form-group{{ $errors->has('in_active') ? ' has-error' : '' }}">
                         <label for="in_active" class="control-label">{!! $errors->has('in_active') ? '<i class="fa fa-times-circle-o"></i> Is Active?:' : 'Is Active?' !!}@if( $errors->has('in_active') ) <small class="error">{{ $errors->first('password_confirmation') }}</small>@endif
                          </label>        
-                            <input name="in_active" type="checkbox" value="{{ empty($user->in_active)? Input::old('in_active') : $user->in_active }}">
+                            <input name="in_active" type="checkbox" value="{{ empty($user->in_active)? Input::old('in_active') : $user->in_active }}" @if( $user->in_active ) {{ "checked" }} @endif>
                                 @if( $errors->has('in_active') ) <small class="error">{{ $errors->first('in_active') }}</small>@endif
                                  
                         </div>
