@@ -136,13 +136,13 @@ class UsersController extends Controller
     {
 	$users = lb_users::select( 'id', 'name', 'email', 'password', 'in_active')->where('id', '=', $id)->first();
         $user = array();
-        foreach($users as $u){
-            $user->id = $u['id'];
-            $user->name = $u['name'];
-            $user->email =$u['email'];
-            $user->password = Crypt::decrypt($u['password']);
-            $user->in_active = $u['in_active'];
-        }
+       // foreach($users as $u){
+            $user->id = $users->id;
+            $user->name = $users->name;
+            $user->email =$users->email;
+            $user->password = Crypt::decrypt($users->password);
+            $user->in_active = $users->in_active;
+        //}
 	return View::make('users.form')->with('user', $user);
     }
 
