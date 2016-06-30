@@ -80,7 +80,7 @@ class UsersController extends Controller
 				return Redirect::back()->withErrors($validator)->withInput(Input::except("pass"));
 			}
                         }else{
-                            $validator = Validator::make(Input::all(), lb_users::$new);
+                            $validator = Validator::make(Input::all(), lb_users::$edit);
                             if ($validator->fails()) {
 				return Redirect::back()->withErrors($validator)->withInput(Input::except("pass"));    
                         }
