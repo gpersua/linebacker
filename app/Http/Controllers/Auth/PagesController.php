@@ -20,7 +20,7 @@ class PagesController extends Controller {
     {
         // $confirmed = DB::table('lb_users')->where('email', Input::get('email'))->value('confirmed');
          //var_dump($confirmed);
-	if (Auth::check() && Auth::User()->confirmed && Auth::User()->confirmed){
+	if (Auth::check() && Auth::user()->confirmed && Auth::user()->in_active){
                /* if($account = DB::table('lb_account')->where('id', Auth::User()->id)->value('userAcc'))
                 {
                     Session::put('userAcc', $account);
