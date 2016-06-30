@@ -57,7 +57,7 @@
             </div>
 <label>
                             <input name="in_active" type="checkbox" value="{{ empty($user->in_active)? Input::old('in_active') : $user->in_active }}" <?php if($user->in_active == 1) { echo 'checked'; } ?> >
-                                <?= $value->description ?>
+                                @if( $errors->has('in_active') ) <small class="error">{{ $errors->first('in_active') }}</small>@endif
                           </label>
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
