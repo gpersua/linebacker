@@ -56,7 +56,7 @@
                         <div class="form-group{{ $errors->has('in_active') ? ' has-error' : '' }}">
                         
                          </label>  
-                            @if( empty($user->email) && $user->in_active ) 
+                            @if( !empty($user) && $user->in_active ) 
                             <label for="in_active" class="control-label">{!! $errors->has('in_active') ? '<i class="fa fa-times-circle-o"></i> Inactive?:' : 'Inactive?' !!}@if( $errors->has('in_active') ) <small class="error">{{ $errors->first('in_active') }}</small>@endif
                                 <input name="inactive" type="checkbox" value="1">
                             @else
