@@ -20,8 +20,7 @@
                 {{-- */$x++;/* --}}
                 <tr>
                     <td>{{ $x }}</td>
-                    <td><a href="{{ url('admin/roles', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->slug }}</td><td>{{ $item->description }}</td>
-                                        
+                    <td><a href="{{ url('admin/roles', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->slug }}</td><td>{{ $item->description }}</td>           
                     <td>
                         <a href="{{ url('admin/roles/edit/' . $item->id ) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a>
                         <a title="Destroy" href="{{ URL::to('admin/roles/destroy/' . $item->id ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
