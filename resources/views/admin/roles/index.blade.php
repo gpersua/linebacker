@@ -21,17 +21,11 @@
                 <tr>
                     <td>{{ $x }}</td>
                     <td><a href="{{ url('admin/roles', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->slug }}</td><td>{{ $item->description }}</td>
+                                        
                     <td>
-                        <a href="{{ url('admin/roles/' . $item->id . '/edit') }}">
-                            <button type="submit" class="btn btn-primary btn-xs">Update</button>
-                        </a> /
-                        {!! Form::open([
-                            'method'=>'DELETE',
-                            'url' => ['admin/roles', $item->id],
-                            'style' => 'display:inline'
-                        ]) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                        {!! Form::close() !!}
+                        <a href="{{ url('admin/roles/edit/' . $item->id ) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a>
+                        <a title="Destroy" href="{{ URL::to('admin/roles/destroy/' . $item->id ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+
                     </td>
                 </tr>
             @endforeach
