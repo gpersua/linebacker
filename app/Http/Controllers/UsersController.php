@@ -73,7 +73,6 @@ class UsersController extends Controller
                         'name',
                         'email'
                     );
-
                         if(Input::get('password') == '' || Input::get('password') == null){
                             $validator = Validator::make($input, $rules);
                             if ($validator->fails()) {
@@ -94,7 +93,7 @@ class UsersController extends Controller
 			$user->name = Input::get("name");
 			$user->email = Input::get("email");
                         
-                        var_dump($user);
+                        //var_dump($user);
 			$user->save();
 
 			DB::commit();

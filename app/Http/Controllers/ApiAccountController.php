@@ -135,7 +135,7 @@ class ApiAccountController extends Controller
             //return redirect('users/account');
             $result= array(
                 'errorId' => 0,
-                'errorMessage' => '',
+                'errorMessage' => null,
                 'resultObject' => array(  
                     'id' => $idUser,
                     'account' => $acc,
