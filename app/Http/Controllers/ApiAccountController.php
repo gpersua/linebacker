@@ -65,7 +65,7 @@ class ApiAccountController extends Controller
 		'last_name' => 'required',
 		'phone_number' => 'required|min:6|max:30',
                 'birthday' => 'required|date',
-                'id_city' => 'required|exists:lb_city,zip_code:min:6'
+                'id_city' => 'required|exists:lb_city,zip_code'
             ];
         $input = Input::only(
                 'id',
