@@ -67,8 +67,16 @@ class ApiAccountController extends Controller
                 'birthday' => 'required|date',
                 'id_city' => 'required|exists:lb_city,zip_code:min:6'
             ];
+        $input = Input::only(
+                'id',
+		'first_name',
+		'last_name',
+		'phone_number',
+                'birthday',
+                'id_city'    
+        );
         try {
-            $validator = Validator::make(Input::all(), lb_account::$new);
+            $validator = Validator::make($input, $rules);
             if ($validator->fails()) {
                     $result = array (
                     'errorId' => 1,
