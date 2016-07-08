@@ -36,7 +36,7 @@
             <li class="treeview">
                 <a href="#"><i class="fa fa-cog"></i> <span>Administration</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('users') }}"><i class="fa fa-user"></i> <span>Users</span></a></li>
+                    <li><a href="{{ url('users') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
                 </ul>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('admin/roles') }}">Roles</a></li>
@@ -56,9 +56,9 @@
             </li>
             @endrole
             <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>My Account</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class="fa fa-user"></i> <span>My Account</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
-            <li><a href="{{ url('users/account') }}"><i class="fa fa-users"></i> <span>My Profile Account</span></a></li>
+            <li><a href="{{ url('users/account') }}"><i class="fa fa-phone-square"></i> <span>My Profile Account</span></a></li>
             <li><a href="{{ url('users/contacts') }}"><i class="fa fa-users"></i> <span>My Contacts</span></a></li>
             </ul>
             </li>
