@@ -29,14 +29,14 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="active"><a href="{{ url('home') }}"><i class="fa fa-link"></i> <span>Home</span></a></li>
+            <li class="active"><a href="{{ url('home') }}"><i class="fa fa-home"></i> <span>Home</span></a></li>
             <!--<li class="header">Administration</li>-->
             <!-- Optionally, you can add icons to the links -->
             @role('admin')
             <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>Administration</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class="fa fa-cog"></i> <span>Administration</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('users') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
+                    <li><a href="{{ url('users') }}"><i class="fa fa-user"></i> <span>Users</span></a></li>
                 </ul>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('admin/roles') }}">Roles</a></li>
