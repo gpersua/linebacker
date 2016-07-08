@@ -39,11 +39,11 @@
                     <li><a href="{{ url('users') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
                 </ul>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('admin/roles') }}">Roles</a></li>
+                    <li><a href="{{ url('admin/roles') }}"><i class="fa fa-user-times" aria-hidden="true"></i>Roles</a></li>
                 </ul>
                 
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('admin/membership') }}">Membership</a></li>
+                    <li><a href="{{ url('admin/membership') }}"><i class="fa fa-credit-card" aria-hidden="true"></i>Membership</a></li>
                 </ul>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('admin/did') }}"><i class="fa fa-phone"></i>DIDs</a></li>
