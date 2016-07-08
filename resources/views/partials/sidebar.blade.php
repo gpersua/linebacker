@@ -50,7 +50,7 @@
                 </ul>
                 
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('admin/extension') }}">Extensions</a></li>
+                    <li><i class="fa fa-phone-square"></i><a href="{{ url('admin/extension') }}">Extensions</a></li>
                 </ul>
                 
             </li>
@@ -58,7 +58,7 @@
             <li class="treeview">
                 <a href="#"><i class="fa fa-user"></i> <span>My Account</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
-            <li><a href="{{ url('users/account') }}"><i class="fa fa-phone-square"></i> <span>My Profile Account</span></a></li>
+            <li><a href="{{ url('users/account') }}"><i class="fa fa-phone"></i> <span>My Profile Account</span></a></li>
             <li><a href="{{ url('users/contacts') }}"><i class="fa fa-users"></i> <span>My Contacts</span></a></li>
             </ul>
             </li>
