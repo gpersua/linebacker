@@ -46,11 +46,11 @@
                     <li><a href="{{ url('admin/membership') }}">Membership</a></li>
                 </ul>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('admin/did') }}">DIDs</a></li>
+                    <li><a href="{{ url('admin/did') }}"><i class="fa fa-phone"></i>DIDs</a></li>
                 </ul>
                 
                 <ul class="treeview-menu">
-                    <li><i class="fa fa-phone-square"></i><a href="{{ url('admin/extension') }}">Extensions</a></li>
+                    <li><a href="{{ url('admin/extension') }}"><i class="fa fa-phone-square"></i>Extensions</a></li>
                 </ul>
                 
             </li>
