@@ -95,7 +95,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                                    <a class="navbar-brand" <a href="{{ url('/home') }}">LineBacker</a>
+                                    <a class="navbar-brand" <a href="{{ url('/') }}">LineBacker</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
@@ -404,8 +404,8 @@
 						<span aria-hidden="true" class="social_instagram"></span>
 					</div>
 					<ol class="breadcrumb hidden-470">
-						<li class="wow fadeIn"><a href="#">Terms Of Service</a></li>
-						<li class="wow fadeIn"><a href="#">Privacy Policy</a></li>
+						<li class="wow fadeIn"><a href="{{ asset('/terms/terms') }}">Terms Of Service</a></li>
+						<li class="wow fadeIn"><a href="{{ asset('/terms/privacy') }}">Privacy Policy</a></li>
 						<li class="wow fadeIn"><a href="#">Support</a></li>
 						<li class="wow fadeIn"><a href="#">Trainning Section</a></li>
 						<li class="wow fadeIn"><a href="#">Webinars</a></li>
