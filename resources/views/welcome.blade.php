@@ -101,7 +101,7 @@
 				<div class="collapse navbar-collapse" id="top-navbar-1">
 					<ul class="nav navbar-nav navbar-right">						
 						<li class="active">
-							<a href="{{ url('/home') }}" class="smooth">Home</a>
+							<a href="{{ url('/') }}" class="smooth">Home</a>
 						</li>
 						<li>
 							<a href="#privacy" class="smooth">Privacy Protector</a>
