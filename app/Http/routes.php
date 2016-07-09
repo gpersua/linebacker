@@ -168,3 +168,9 @@ Route::group(array('prefix' => 'wordpress'), function()
 {
     Route::resource('/', '');
 });
+
+/*Terms*/
+Route::group(['prefix' => '/terms'], function(){
+    	Route::get('/terms', 'TermsController@terms');
+        Route::get('/privacy', 'TermsController@terms');
+});
