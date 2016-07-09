@@ -172,5 +172,5 @@ Route::group(array('prefix' => 'wordpress'), function()
 /*Terms*/
 Route::group(['prefix' => '/terms'], function(){
     	Route::get('/terms', 'TermsController@terms');
-        Route::get('/privacy', 'TermsController@terms');
+        Route::get('/privacy', 'TermsController@privacy');
 });
