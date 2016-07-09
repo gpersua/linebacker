@@ -1,5 +1,4 @@
 @extends('auth.auth')
-
 @section('htmlheader_title')
     Log in
 @endsection
@@ -66,7 +65,6 @@ SUITE 14
 FORT MYERS, FL 33966
 customercare@PrivacyProtector.org
 (800) 889-8792
-
 
     </div>
 

@@ -1,4 +1,7 @@
-@extends('layouts.master')
+@extends('auth.auth')
+@section('htmlheader_title')
+    Log in
+@endsection
 
 @section('content')
 
@@ -125,7 +128,15 @@ Please briefly describe the nature of your dispute and attach any supporting doc
 Please briefly describe the relief that you would like from PrivacyProtector.org. If necessary, please use the reverse side or additional sheets of paper.
 ________________________________________________________________________
  
-
-
     </div>
+  
+    <!-- Footer -->
+        <footer>
+			
+            <div class="new">					
+                    <div class="footer-copyright">
+                        <p>&copy; 2015 LineBacker.  All rights reserved.</p>
+                    </div>                   
+            </div>
+        </footer>
 @endsection
