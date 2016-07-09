@@ -1,4 +1,8 @@
-@extends('layouts.master')
+@extends('auth.auth')
+
+@section('htmlheader_title')
+    Log in
+@endsection
 
 @section('content')
 
@@ -65,4 +69,15 @@ customercare@PrivacyProtector.org
 
 
     </div>
+
+    <!-- Footer -->
+        <footer>
+			
+            <div class="new">					
+                    <div class="footer-copyright">
+                        <p>&copy; 2015 LineBacker.  All rights reserved.</p>
+                    </div>                   
+            </div>
+        </footer>
+
 @endsection
