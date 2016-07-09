@@ -35,11 +35,11 @@ class PagesController extends Controller {
     
     public function terms()
     {
-        return View::make('terms'); 
+        return View::make('terms/terms'); 
     }
      public function privacy()
     {
-        return View::make('privacy'); 
+        return View::make('terms/privacy'); 
     }
     public function theme(){
     $theme = Input::get('theme');
