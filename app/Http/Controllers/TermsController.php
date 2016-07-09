@@ -9,7 +9,7 @@ use Session;
 use Input;
 use linebacker\Http\Controllers\Controller;
 
-class PagesController extends Controller {
+class TermsController extends Controller {
 	/**
 	* Create a new password controller instance.
 	*
