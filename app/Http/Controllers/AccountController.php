@@ -317,9 +317,7 @@ class AccountController extends Controller
     }
     
     public function destroyMobile($id){
-        var_dump($id);
-        $account = DB::table('lb_account')->where('userAcc', $id)->first();
-        $path = $account->userAcc;
+        $path = $id;
         /*$arr = array( 
 	           "address" => $account->address,
 	           "asteriskDid" => $extension->did_extension,
