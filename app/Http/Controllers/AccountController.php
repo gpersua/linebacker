@@ -318,7 +318,7 @@ class AccountController extends Controller
     
     public function destroyMobile($id){
         $path = $id;
-        $arr = array( 
+        /*$arr = array( 
 	           "address" => '',
 	           "asteriskDid" => '',
                    "asteriskExtension" => '',
@@ -339,9 +339,9 @@ class AccountController extends Controller
             "deleteAudiosEveryWeeks" => '',
             "emailNotification" => '',
             "mobileNotification" => ''
-        );
+        );*/
         $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
-        $firebase->set(DEFAULT_PATH.$path.':null', $arr);
-        $firebase->set(DEFAULT_SETTINGS_PATH.$path.':null', $arrSetting);
+        $firebase->set(DEFAULT_PATH.$path, null);
+        $firebase->set(DEFAULT_SETTINGS_PATH.$path, null);
     }
 }
