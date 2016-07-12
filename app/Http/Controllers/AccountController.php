@@ -5,6 +5,7 @@ const DEFAULT_URL = 'https://linebacker.firebaseio.com/';
 const DEFAULT_TOKEN = 'MIzw0yVWKa0AdFLZ9cRCBMMlwklf4RfxMuPazEcT';
 const DEFAULT_PATH = '/user/';
 const DEFAULT_SETTINGS_PATH = '/setting/';
+const DEFAULT_CONTACTS = '/contactsByUser/';
 date_default_timezone_set('America/New_York');
 /*Until here*/
 use linebacker\Http\Requests;
@@ -341,6 +342,7 @@ class AccountController extends Controller
             "mobileNotification" => ''
         );*/
         $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+        $firebase->set(DEFAULT_CONTACTS.$path, NULL);
         $firebase->set(DEFAULT_PATH.$path, null);
         $firebase->set(DEFAULT_SETTINGS_PATH.$path, null);
     }
