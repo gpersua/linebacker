@@ -19,7 +19,7 @@
 	{!! Form::open(array('url' => 'users/store', 'id' => 'form')) !!}
 @else
 	{!! Form::open(array('url' => 'users/store/'.$user->id, 'id' => 'form')) !!}
-        @if(!role('admin'))
+        @if(!@role('admin'))
         {!! Form::open(array('url' => 'users/editMy/'.$user->id, 'id' => 'form')) !!}
         @endif
 @endif
