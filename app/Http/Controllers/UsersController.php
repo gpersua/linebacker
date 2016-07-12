@@ -203,7 +203,7 @@ class UsersController extends Controller
 
 			DB::commit();
 			Session::flash('msg', 'User Updated!');
-			return Redirect::to('users.account.index');
+			return Redirect::to('home');
 		}catch (\Exception $e)
 		{
 			DB::rollback();
