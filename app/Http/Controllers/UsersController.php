@@ -190,11 +190,9 @@ class UsersController extends Controller
                         }
                             $user->password = bcrypt(Input::get("password"));
                         }
-			if(Input::get("in_active")!='' || Input::get("in_active")!=null){
-                            $user->in_active = Input::get("in_active");
-                        }else{
-                            $user->in_active =0;
-                        }
+			
+
+                        $user->in_active =1;
 			$user->name = Input::get("name");
 			$user->email = Input::get("email");
                         
