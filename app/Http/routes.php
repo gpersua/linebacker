@@ -67,7 +67,7 @@ Route::group(['prefix' => 'users'], function(){
 	Route::get('create', 'UsersController@create');
 	Route::post('store', 'UsersController@store');
 	Route::get('edit/{id}', 'UsersController@edit');
-        Route::get('editMy/{id}', 'UsersController@editMy');
+        Route::post('editMy/{id}', 'UsersController@editMy');
 	Route::post('store/{id}', 'UsersController@store');
 	Route::get('destroy/{id}', 'UsersController@destroy');
 });
