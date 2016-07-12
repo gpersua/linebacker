@@ -77,7 +77,8 @@
 
             <!-- /.box-body -->
 		<div class="box-footer">
-                <a class="btn btn-default" href="{{ URL::to('users') }}">Cancel</a>
+                @role('admin')<a class="btn btn-default" href="{{ URL::to('users') }}">Cancel</a> @endrole
+                <a class="btn btn-default" href="{{ URL::to('users/account') }}">Cancel</a>
                 <button class="btn btn-info pull-right" type="submit">Save</button>
               </div>
 {!! Form::close() !!}
