@@ -161,6 +161,58 @@ class UsersController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function editMy($id)
+    {
+	try {
+                    $user = lb_users::find($id);
+                    $rules = [
+                    'name' => 'required|min:2',
+                    'email' => 'required|email'
+                    ];
+                    $input = Input::only(
+                        'name',
+                        'email'
+                    );
+                        if(Input::get('password') == '' || Input::get('password') == null){
+                            $validator = Validator::make($input, $rules);
+                            if ($validator->fails()) {
+				return Redirect::back()->withErrors($validator)->withInput(Input::except("pass"));
+			}
+                        }else{
+                            $validator = Validator::make(Input::all(), lb_users::$edit);
+                            if ($validator->fails()) {
+				return Redirect::back()->withErrors($validator)->withInput(Input::except("pass"));    
+                        }
+                            $user->password = bcrypt(Input::get("password"));
+                        }
+			if(Input::get("in_active")!='' || Input::get("in_active")!=null){
+                            $user->in_active = Input::get("in_active");
+                        }else{
+                            $user->in_active =0;
+                        }
+			$user->name = Input::get("name");
+			$user->email = Input::get("email");
+                        
+                        //var_dump($user);
+			$user->save();
+
+			DB::commit();
+			Session::flash('msg', 'User Updated!');
+			return Redirect::to('users.account.index');
+		}catch (\Exception $e)
+		{
+			DB::rollback();
+			return Redirect::back()->withErrors([
+				'msg' => array('ERROR ('.$e->getCode().'):'=> $e->getMessage())
+			]);
+		}
+    }
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
