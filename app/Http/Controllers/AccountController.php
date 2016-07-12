@@ -318,30 +318,30 @@ class AccountController extends Controller
     
     public function destroyMobile($id){
         $path = $id;
-        /*$arr = array( 
-	           "address" => $account->address,
-	           "asteriskDid" => $extension->did_extension,
-                   "asteriskExtension" => $extension->extension,
-                   "asteriskExtensionPass" => $extension->secret,
-                   "birthday" => $account->birthday,
-                   "creationDate" => $account->created_at,
-                   "email" => Auth::User()->email,
-                   "firstName" => $account->first_name,
+        $arr = array( 
+	           "address" => '',
+	           "asteriskDid" => '',
+                   "asteriskExtension" => '',
+                   "asteriskExtensionPass" => '',
+                   "birthday" => '',
+                   "creationDate" => '',
+                   "email" => '',
+                   "firstName" => '',
                    "gcmRegistrationId" => '',
-                   "lastName" => $account->last_name,
-                   "phoneNumber" => $account->phone_number,
-                   "city" => $account->city,
-                   "state" => $state->name,
-                   "zipCode"=> $city->zip_code
+                   "lastName" => '',
+                   "phoneNumber" => '',
+                   "city" => '',
+                   "state" => '',
+                   "zipCode"=> ''
         );
         $arrSetting= array(
-            "blockCalls" => true,
-            "deleteAudiosEveryWeeks" => 4,
-            "emailNotification" => false,
-            "mobileNotification" => true
-        );*/
+            "blockCalls" => '',
+            "deleteAudiosEveryWeeks" => '',
+            "emailNotification" => '',
+            "mobileNotification" => ''
+        );
         $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
-        $firebase->set(DEFAULT_PATH.$path.':null');
-        $firebase->set(DEFAULT_SETTINGS_PATH.$path.':null');
+        $firebase->set(DEFAULT_PATH.$path.':null', $arr);
+        $firebase->set(DEFAULT_SETTINGS_PATH.$path.':null', $arrSetting);
     }
 }
