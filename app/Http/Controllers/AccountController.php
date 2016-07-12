@@ -319,28 +319,6 @@ class AccountController extends Controller
     
     public function destroyMobile($id){
         $path = $id;
-        /*$arr = array( 
-	           "address" => '',
-	           "asteriskDid" => '',
-                   "asteriskExtension" => '',
-                   "asteriskExtensionPass" => '',
-                   "birthday" => '',
-                   "creationDate" => '',
-                   "email" => '',
-                   "firstName" => '',
-                   "gcmRegistrationId" => '',
-                   "lastName" => '',
-                   "phoneNumber" => '',
-                   "city" => '',
-                   "state" => '',
-                   "zipCode"=> ''
-        );
-        $arrSetting= array(
-            "blockCalls" => '',
-            "deleteAudiosEveryWeeks" => '',
-            "emailNotification" => '',
-            "mobileNotification" => ''
-        );*/
         $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
         $firebase->set(DEFAULT_CONTACTS.$path, NULL);
         $firebase->set(DEFAULT_PATH.$path, null);
