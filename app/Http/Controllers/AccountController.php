@@ -141,7 +141,7 @@ class AccountController extends Controller
            //////////////// $this->scpConnect();
             //$this->sshConnect();
             
-            $this->sendMobile();
+            $this->sendMobile($account);
             Session::flash('flash_message', 'extension added!');
             return redirect('users/account');
     }catch (\Exception $e)
@@ -219,7 +219,7 @@ class AccountController extends Controller
         }else{
             lb_account::destroy($id);
         }
-       
+        $this->destroyMobile($id);
 
         Session::flash('flash_message', 'lb_account deleted!');
 
@@ -283,8 +283,8 @@ class AccountController extends Controller
             ));
     }
   
-    public function sendMobile(){
-        $account = DB::table('lb_account')->where('id', Auth::User()->id)->first();
+    public function sendMobile($acc){
+        $account = DB::table('lb_account')->where('userAcc', $acc)->first();
         $extension = DB::table('lb_extension')->where('userAcc', $account->userAcc)->first();
         $city =  DB::table('lb_city')->where('idlb_city', $account->id_city)->first();
         $state =  DB::table('lb_state')->where('idlb_state', $city->idlb_state)->first();
@@ -314,5 +314,35 @@ class AccountController extends Controller
         $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
         $firebase->set(DEFAULT_PATH.$path, $arr);
         $firebase->set(DEFAULT_SETTINGS_PATH.$path, $arrSetting);
+    }
+    
+    public function destroyMobile($id){
+        $account = DB::table('lb_account')->where('userAcc', $id)->first();
+        $path = $account->userAcc;
+        /*$arr = array( 
+	           "address" => $account->address,
+	           "asteriskDid" => $extension->did_extension,
+                   "asteriskExtension" => $extension->extension,
+                   "asteriskExtensionPass" => $extension->secret,
+                   "birthday" => $account->birthday,
+                   "creationDate" => $account->created_at,
+                   "email" => Auth::User()->email,
+                   "firstName" => $account->first_name,
+                   "gcmRegistrationId" => '',
+                   "lastName" => $account->last_name,
+                   "phoneNumber" => $account->phone_number,
+                   "city" => $account->city,
+                   "state" => $state->name,
+                   "zipCode"=> $city->zip_code
+        );
+        $arrSetting= array(
+            "blockCalls" => true,
+            "deleteAudiosEveryWeeks" => 4,
+            "emailNotification" => false,
+            "mobileNotification" => true
+        );*/
+        $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+        $firebase->set(DEFAULT_PATH.$path.':null');
+        $firebase->set(DEFAULT_SETTINGS_PATH.$path.':null');
     }
 }
