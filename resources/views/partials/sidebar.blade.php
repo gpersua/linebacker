@@ -60,7 +60,7 @@
             <ul class="treeview-menu">
             <li><a href="{{ url('users/account') }}"><i class="fa fa-phone"></i> <span>My Profile Account</span></a></li>
             <li><a href="{{ url('users/contacts') }}"><i class="fa fa-users"></i> <span>My Contacts</span></a></li>
-            <li><a href="{{ url('users/edit/'{{ Auth::user()->name }}) }}"><i class="fa fa-users"></i> <span>My User</span></a></li>
+            <li><a href="{{ url('users/edit/{{ Auth::user()->name }}') }}"><i class="fa fa-users"></i> <span>My User</span></a></li>
             </ul>
             </li>
            <!-- <li class="treeview">
