@@ -195,7 +195,7 @@ class AccountController extends Controller
         
         $account = lb_account::findOrFail($id);
         $account->update($request->all());
-
+        $this->sendMobile($id);
         Session::flash('flash_message', 'lb_account updated!');
 
         return redirect('users/account');
