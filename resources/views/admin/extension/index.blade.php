@@ -25,7 +25,7 @@
                         <a href="{{ url('admin/extension/edit/' . $item->did_extension) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> 
                         /
                         
-                        <a href="{{ url('admin/extension/destroy/' . $item->did_extension ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+                        <a onclick="return confirmar('Are sure you want to delete the record?')" href="{{ url('admin/extension/destroy/' . $item->did_extension ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
                         
                     </td>
                 </tr>
@@ -36,3 +36,8 @@
     </div>
 
 @endsection
+<script language="JavaScript">
+function confirmar ( mensaje ) {
+  return confirm( mensaje );
+} 
+</script>
