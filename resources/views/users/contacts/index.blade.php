@@ -25,7 +25,7 @@
                         
                         <a href="{{ url('users/contacts/edit/' . $item->id ) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
                         
-                        <a title="Destroy" href="{{ URL::to('users/contacts/destroy/' . $item->id ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+                        <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record?')" href="{{ URL::to('users/contacts/destroy/' . $item->id ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
 
                     </td>
                 </tr>
@@ -45,7 +45,7 @@
                         
                         <a href="{{ url('users/contacts/edit/' . $contact['id'] ) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
                         
-                        <a title="Destroy" href="{{ URL::to('users/contacts/destroy/' . $contact['id'] ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+                        <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record?')"  href="{{ URL::to('users/contacts/destroy/' . $contact['id'] ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
 
                     </td>
                 </tr>
@@ -57,3 +57,8 @@
     </div>
 
 @endsection
+<script language="JavaScript">
+function confirmar ( mensaje ) {
+  return confirm( mensaje );
+} 
+</script>
