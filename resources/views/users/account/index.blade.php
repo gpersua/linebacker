@@ -25,7 +25,7 @@
                     <td>
                         <a href="{{ url('users/account/edit/' . $item->userAcc) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
                         
-                        <a title="Destroy" href="{{ URL::to('users/account/destroy/' . $item->userAcc ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+                        <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record?')" href="{{ URL::to('users/account/destroy/' . $item->userAcc ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
                         
                         
                     </td>
@@ -47,7 +47,7 @@
                     <td>
                         <a href="{{ url('users/account/edit/' . $account1['userAcc']) }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> /
                         
-                        <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record??')" href="{{ URL::to('users/account/destroy/' . $account1['userAcc'] ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+                        <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record?')" href="{{ URL::to('users/account/destroy/' . $account1['userAcc'] ) }}"><span class="fa fa-trash" aria-hidden="true"></span></a>
                         
                         
                     </td>
