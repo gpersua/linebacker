@@ -49,6 +49,7 @@
 	margin: 0;
 }
 </style>
+<link href="{{ asset('/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
 @section('htmlheader_title')
     Account
 @endsection
@@ -108,7 +109,7 @@
             <div class="form-group {{ $errors->has('birthday') ? 'has-error' : ''}}">
                 {!! Form::label('birthday', 'Birthday: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::date('birthday', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('birthday', null, ['id' => 'birthday', 'class' => 'form-control datepicker', 'required' => 'required','data-provide' => 'datepicker']) !!}
                     {!! $errors->first('birthday', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
@@ -146,5 +147,16 @@
 @endsection
 <script type="text/javascript" src="{{ asset('/assets/js/handlebars-v4.0.5.js') }}" ></script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-
 <script type="text/javascript" src="/assets/js/search.js"></script>
+
+<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+<script>
+    
+$('#birthday').datepicker({
+    format: "yyyy/mm/dd",
+    showWeek: true,
+    todayHighlight: true,
+    showButtonPanel: true
+    });
+  </script>  
