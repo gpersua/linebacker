@@ -29,6 +29,7 @@ use Response;
 use Validator;
 use Redirect;
 use SSH;
+use View;
 class AccountController extends Controller
 {
     /**
