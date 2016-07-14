@@ -288,7 +288,9 @@ class AccountController extends Controller
     }
   
     public function sendMobile($acc){
+        var_dump($acc);
         $account = DB::table('lb_account')->where('userAcc', $acc)->first();
+        var_dump($account);
         $extension = DB::table('lb_extension')->where('userAcc', $account->userAcc)->first();
         $city =  DB::table('lb_city')->where('idlb_city', $account->id_city)->first();
         $state =  DB::table('lb_state')->where('idlb_state', $city->idlb_state)->first();
