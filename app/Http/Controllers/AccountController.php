@@ -183,7 +183,7 @@ class AccountController extends Controller
         $membership = lb_membership::lists('description', 'idlb_membership');
         //return view('users.account.create', compact('membership'));
         //return view('users.account.edit', compact('account'));
-        return View::make('users.account.edit')->with(compact('account'))->with($membership);
+        return View::make('users.account.edit')->with($account)->with($membership);
     }
 
     /**
