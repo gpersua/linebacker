@@ -165,7 +165,7 @@ class AccountController extends Controller
     public function show($id)
     {
         $account = lb_account::findOrFail($id);
-
+        
         return view('users.account.show', compact('account'));
     }
 
@@ -179,8 +179,10 @@ class AccountController extends Controller
     public function edit($id)
     {
         $account = lb_account::findOrFail($id);
-
-        return view('users.account.edit', compact('account'));
+        $membership = lb_membership::lists('description', 'idlb_membership');
+        //return view('users.account.create', compact('membership'));
+        //return view('users.account.edit', compact('account'));
+        return View::make('users.account.edit')->with(compact('account'))->with($membership);
     }
 
     /**
