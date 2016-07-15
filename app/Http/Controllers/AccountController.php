@@ -196,7 +196,7 @@ class AccountController extends Controller
     public function update($id, Request $request)
     {
         //var_dump(Input::get('birthday'));
-           /* $account = lb_account::findOrFail($id);
+            $account = lb_account::findOrFail($id);
             $new_id=explode('.', Input::get('id_city'));
             $account = new lb_account();
             $account->id = $id;
@@ -213,7 +213,7 @@ class AccountController extends Controller
             $account->birthday = Input::get('birthday');
             $account->phone_number = Input::get('phone_number');
             $account->second_phone = Input::get('second_phone');
-            */
+            
             DB::table('account')
             ->where('userAcc', $id)
             ->update(['id_membership' => Input::get("id_membership"), 'id_city' => $new_id[0], 'city' => $city, 'first_name' =>  Input::get('first_name'), 'last_name' => Input::get('last_name'), 'address' => Input::get('address'), \Carbon\Carbon::parse(Input::get('birthday'))->format('Y-m-d'), 'phone_number' => Input::get('phone_number'), 'second_phone' => Input::get('second_phone')]);
