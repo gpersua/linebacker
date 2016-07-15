@@ -1,7 +1,5 @@
 <?php
-
 namespace linebacker;
-
 use Illuminate\Database\Eloquent\Model;
 
 class lb_city extends Model
