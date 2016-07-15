@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="form-group {{ $errors->has('id_city') ? 'has-error' : ''}}">
-                {!! Form::label('id_city', 'Id City: ', ['class' => 'col-sm-3 control-label']) !!}
+                {!! Form::label('id_city', '(Zip Code)City: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">  
     {!! Form::text('id_city', null, ['class' => 'typeahead', 'placeholder' => 'Search...', 'id' => 'id_city', 'data-provide' => 'typeahead', 'autocomplete' => 'off']) !!}
                        
