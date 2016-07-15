@@ -19,7 +19,6 @@ use linebacker\lb_incoming_asterisk;
 use linebacker\lb_account;
 use linebacker\lb_did;
 use linebacker\lb_extension;
-use linebacker\lb_city;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Session;
@@ -199,23 +198,13 @@ class AccountController extends Controller
         //var_dump(Input::get('birthday'));
             $account = lb_account::findOrFail($id);
             $new_id=explode('.', Input::get('id_city'));
-            $account = new lb_account();
-            $account->id = $id;
-            $account->id_membership = Input::get("id_membership");
-            $account->id_city = $new_id[0];
             if(count($new_id)>1){
                 $city = trim($new_id[1]);
             }else{
                 $city = $account->city;
             }
-            $account->first_name = Input::get('first_name');
-            $account->last_name = Input::get('last_name');
-            $account->address = Input::get('address');
-            $account->birthday = Input::get('birthday');
-            $account->phone_number = Input::get('phone_number');
-            $account->second_phone = Input::get('second_phone');
             
-            DB::table('account')
+            DB::table('lb_account')
             ->where('userAcc', $id)
             ->update(['id_membership' => Input::get("id_membership"), 'id_city' => $new_id[0], 'city' => $city, 'first_name' =>  Input::get('first_name'), 'last_name' => Input::get('last_name'), 'address' => Input::get('address'), \Carbon\Carbon::parse(Input::get('birthday'))->format('Y-m-d'), 'phone_number' => Input::get('phone_number'), 'second_phone' => Input::get('second_phone')]);
             DB::commit();
@@ -311,9 +300,9 @@ class AccountController extends Controller
     }
   
     public function sendMobile($acc){
-        var_dump($acc);
+        
         $account = DB::table('lb_account')->where('userAcc', $acc)->first();
-        var_dump($account);
+        
         $extension = DB::table('lb_extension')->where('userAcc', $account->userAcc)->first();
         $city =  DB::table('lb_city')->where('idlb_city', $account->id_city)->first();
         $state =  DB::table('lb_state')->where('idlb_state', $city->idlb_state)->first();
