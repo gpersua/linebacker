@@ -210,7 +210,7 @@ class AccountController extends Controller
             $account->phone_number = Input::get('phone_number');
             $account->second_phone = Input::get('second_phone');
 
-            $account->save();
+            $account->update();
             DB::commit();
 
 //        $account->update($request->all());
