@@ -65,31 +65,21 @@
         'url' => ['users/account/update', $account->userAcc],
         'class' => 'form-horizontal'
     ]) !!}
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                <div class="form-group {{ $errors->has('id_membership') ? 'has-error' : ''}}">
-                     
-                {!! Form::label('id_membership', 'Membership: ', ['class' => 'col-sm-3 control-label']) !!}
+    <div class="form-group {{ $errors->has('id_membership') ? 'has-error' : ''}}">
+                {!! Form::label('id_membership', 'Id Membership: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::select('id_membership', $membership, null, ['id' => 'id_membership']) !!}
+                    {!! Form::number('id_membership', null, ['class' => 'form-control', 'required' => 'required']) !!}
                     {!! $errors->first('id_membership', '<p class="help-block">:message</p>') !!}
-                    
                 </div>
             </div>
- <div class="form-group">
-     <label class="col-sm-3 control-label" for="query">City:</label>
-     
-                         
-<div class="col-sm-6">  
+            <div class="form-group {{ $errors->has('id_city') ? 'has-error' : ''}}">
+                {!! Form::label('id_city', 'Id City: ', ['class' => 'col-sm-3 control-label']) !!}
+                <div class="col-sm-6">  
     {!! Form::text('id_city', null, ['class' => 'typeahead', 'placeholder' => 'Search...', 'id' => 'id_city', 'data-provide' => 'typeahead', 'autocomplete' => 'off']) !!}
                        
      {!! $errors->first('id_city', '<p class="help-block">:message</p>') !!}
-</div>              
-            
- </div>
-    <input type="hidden" name="id" id="id" value="{{ $account->id }}" />
-   
-
+</div>  
+            </div>
             <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
                 {!! Form::label('first_name', 'First Name: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
@@ -114,7 +104,7 @@
             <div class="form-group {{ $errors->has('birthday') ? 'has-error' : ''}}">
                 {!! Form::label('birthday', 'Birthday: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::text('birthday', null, ['id' => 'birthday', 'class' => 'form-control datepicker', 'required' => 'required','data-provide' => 'datepicker']) !!}
+                    {!! Form::date('birthday', null, ['class' => 'form-control', 'required' => 'required']) !!}
                     {!! $errors->first('birthday', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
