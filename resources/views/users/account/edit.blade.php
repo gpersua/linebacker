@@ -105,7 +105,7 @@
             <div class="form-group {{ $errors->has('birthday') ? 'has-error' : ''}}">
                 {!! Form::label('birthday', 'Birthday: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::text('birthday', null, ['id' => 'birthday','class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('birthday', null, ['id' => 'birthday','class' => 'form-control datepicker', 'required' => 'required']) !!}
                     {!! $errors->first('birthday', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
@@ -148,9 +148,8 @@
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 <script>
-    
-$('#birthday').datepicker({
-    format: "yyyy/mm/dd",
+ $('#birthday').datepicker({
+    format: "yyyy-mm-dd",
     showWeek: true,
     todayHighlight: true,
     showButtonPanel: true
