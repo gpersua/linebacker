@@ -199,7 +199,7 @@ class AccountController extends Controller
             //$account = lb_account::findOrFail($id);
             $new_id=explode('.', Input::get('id_city'));
             $account = new lb_account();
-            $account->id = Input::get("id");
+            $account->id = $id;
             $account->id_membership = Input::get("id_membership");
             $account->id_city = $new_id[0];
             $account->city = trim($new_id[1]);
