@@ -154,7 +154,7 @@
 <script>
     
 $('#birthday').datepicker({
-    format: "mm/dd/yyyy",
+    format: "yyyy/mm/dd",
     showWeek: true,
     todayHighlight: true,
     showButtonPanel: true
