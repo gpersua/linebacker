@@ -195,7 +195,7 @@ class AccountController extends Controller
      */
     public function update($id, Request $request)
     {
-        
+        var_dump($id);
             //$account = lb_account::findOrFail($id);
             $new_id=explode('.', Input::get('id_city'));
             $account = new lb_account();
