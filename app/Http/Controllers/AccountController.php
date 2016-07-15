@@ -100,7 +100,7 @@ class AccountController extends Controller
             $account->first_name = Input::get('first_name');
             $account->last_name = Input::get('last_name');
             $account->address = Input::get('address');
-            $account->birthday = Input::get('birthday');
+            $account->birthday = \Carbon\Carbon::parse(Input::get('birthday'))->format('Y-m-d');
             $account->phone_number = Input::get('phone_number');
             $account->second_phone = Input::get('second_phone');
 
