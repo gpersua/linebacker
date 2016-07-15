@@ -72,7 +72,7 @@
                 </div>
             </div>
  <div class="form-group">
-     <label class="col-sm-3 control-label" for="query">City:</label>
+     <label class="col-sm-3 control-label" for="query">(Zip Code)City:</label>
      
                          
 <div class="col-sm-6">  
