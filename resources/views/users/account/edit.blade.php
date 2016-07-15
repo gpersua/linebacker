@@ -87,9 +87,7 @@
 </div>              
             
  </div>
-    <input type="hidden" name="id" id="id" value="{{ Auth::User()->id }}" />
-   
-
+    
             <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
                 {!! Form::label('first_name', 'First Name: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
