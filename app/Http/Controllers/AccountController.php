@@ -202,7 +202,7 @@ class AccountController extends Controller
             $account->id = $id;
             $account->id_membership = Input::get("id_membership");
             $account->id_city = $new_id[0];
-            if(isset(trim($new_id[1]))){
+            if(!is_null(trim($new_id[1]))){
                 $account->city = trim($new_id[1]);
             }
             $account->first_name = Input::get('first_name');
