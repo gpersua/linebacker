@@ -105,7 +105,7 @@
             <div class="form-group {{ $errors->has('birthday') ? 'has-error' : ''}}">
                 {!! Form::label('birthday', 'Birthday: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::text('birthday', null, ['id' => 'birthday','class' => 'form-control datepicker', 'required' => 'required']) !!}
+                    {!! Form::text('birthday', null, ['id' => 'birthday','class' => 'form-control datepicker', 'required' => 'required','data-provide' => 'datepicker']) !!}
                     {!! $errors->first('birthday', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
