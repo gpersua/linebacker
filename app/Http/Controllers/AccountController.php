@@ -196,8 +196,25 @@ class AccountController extends Controller
     public function update($id, Request $request)
     {
         
-        $account = lb_account::findOrFail($id);
-        $account->update($request->all());
+            //$account = lb_account::findOrFail($id);
+            
+            $new_id=explode('.', Input::get('id_city'));
+            $account = new lb_account();
+            $account->id = Input::get("id");
+            $account->id_membership = Input::get("id_membership");
+            $account->id_city = $new_id[0];
+            $account->city = trim($new_id[1]);
+            $account->first_name = Input::get('first_name');
+            $account->last_name = Input::get('last_name');
+            $account->address = Input::get('address');
+            $account->birthday = Input::get('birthday');
+            $account->phone_number = Input::get('phone_number');
+            $account->second_phone = Input::get('second_phone');
+
+            $account->save();
+            DB::commit();
+
+//        $account->update($request->all());
         $this->sendMobile($id);
         Session::flash('flash_message', 'lb_account updated!');
 
