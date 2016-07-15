@@ -149,7 +149,7 @@
 <script src="{{ asset('/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 <script>
  $('#birthday').datepicker({
-    format: "yyyy-mm-dd",
+    format: "mm/dd/yyyy",
     showWeek: true,
     todayHighlight: true,
     showButtonPanel: true
