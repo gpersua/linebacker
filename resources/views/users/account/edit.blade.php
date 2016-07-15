@@ -68,8 +68,9 @@
     <div class="form-group {{ $errors->has('id_membership') ? 'has-error' : ''}}">
                 {!! Form::label('id_membership', 'Id Membership: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::number('id_membership', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::select('id_membership', $membership, null, ['id' => 'id_membership']) !!}
                     {!! $errors->first('id_membership', '<p class="help-block">:message</p>') !!}
+                    
                 </div>
             </div>
             <div class="form-group {{ $errors->has('id_city') ? 'has-error' : ''}}">
