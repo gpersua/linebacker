@@ -81,7 +81,7 @@
      
                          
 <div class="col-sm-6">  
-    {!! Form::text('id_city', null, ['class' => 'typeahead', 'placeholder' => 'Search...', 'id' => 'id_city', 'data-provide' => 'typeahead', 'autocomplete' => 'off']) !!}
+    {!! Form::text('id_city', null, ['class' => 'typeahead', 'placeholder' => 'Search...', 'id' => 'id_city', 'data-provide' => 'typeahead', 'autocomplete' => 'off', 'value' => 'id_city. city']) !!}
                        
      {!! $errors->first('id_city', '<p class="help-block">:message</p>') !!}
 </div>              
