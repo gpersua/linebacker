@@ -16,7 +16,7 @@ global $flaton;
 if ( ! function_exists( '_wp_render_title_tag' ) ) :
     function flaton_render_title() {
 ?>
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+<title><?php wp_title( '|', true, 'right' ); ?>Perra</title>
 <?php
     }
     add_action( 'wp_head', 'flaton_render_title' );
@@ -24,6 +24,8 @@ endif;
 ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+  <link type="text/css" rel="stylesheet" href="/wp-content/themes/tema/bootstrap.min.css" />
+
 <?php wp_head(); ?>
 </head>
 
@@ -70,4 +72,5 @@ endif;
 
 <?php	if ( ! is_front_page() ) : ?>
 	<div id="content" class="site-content container">
+
 <?php endif; ?>
