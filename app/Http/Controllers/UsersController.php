@@ -35,7 +35,7 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
 	$user = lb_users::select('id', 'name', 'email', 'confirmed', 'in_active', 'created_at')
 	->filter($request->get('name'))

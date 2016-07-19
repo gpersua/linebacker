@@ -253,6 +253,7 @@ class ApiController extends Controller
         $result = str_replace($garbage,'',$stringphone);
         return $result;
     }
+    
     public function jsonToMysql($id){
         
         $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);

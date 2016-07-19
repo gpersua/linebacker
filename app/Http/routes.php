@@ -175,3 +175,14 @@ Route::group(['prefix' => '/terms'], function(){
     	Route::get('/terms', 'TermsController@terms');
         Route::get('/privacy', 'TermsController@privacy');
 });
+
+/*Extension*/
+Route::group(['prefix' => 'admin/reports'], function(){
+        Route::get('/', 'ReportController@index');
+    Route::get('create', 'ReportController@create');
+    Route::post('store', 'ReportController@store');
+    Route::get('edit/{id}', 'ReportController@edit');
+    Route::get('update/{id}', 'ReportController@update');
+    Route::get('destroy/{id}', 'ReportController@destroy');
+        Route::get('show/{id}', 'ReportController@show');
+});

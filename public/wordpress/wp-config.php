@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'linebacker');
+define('DB_NAME', 'linebacker_backend');
 
 #linebacker.privacyprotector.org
 /** MySQL database username */

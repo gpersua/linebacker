@@ -11,6 +11,7 @@
             </div>
             <div class="pull-left info">
                 <p>{{ Auth::user()->name }}</p>
+
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -56,9 +57,13 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ url('admin/extension') }}"><i class="fa fa-phone-square"></i>Extensions</a></li>
                 </ul>
+            <!--    <ul class="treeview-menu">
+                    <li><a href="{{ url('admin/reports') }}"><i class="fa fa-phone-square"></i>Reports</a></li>
+                </ul> -->
                 
             </li>
             @endrole
+
             <li class="treeview">
                 <a href="#"><i class="fa fa-user"></i> <span>My Account</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
