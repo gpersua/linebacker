@@ -42,14 +42,20 @@ class ReportController extends Controller
         $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
         $jsondata = file_get_contents('https://linebacker.firebaseio.com/recordedAudiosByUser/.json'); 
         $array = json_decode($jsondata, true);
-        
+        var_dump($array);
+        if( sizeof($array) != 0 ){ 
+            foreach ($array as $key){
+               if ($key['isOnCase']==false)
+               {
+                echo "si";
+               }
+           }
+       }
         // foreach ($$array as $key => $value) {
         //     echo $key;
         //     var_dump($value);           
         //  } 
-        for ($i=0; $i < count($array); $i++) { 
-            echo $i;
-        }
+  
     }
 
     /**

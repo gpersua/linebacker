@@ -22,7 +22,6 @@
 /** The name of the database for WordPress */
 define('DB_NAME', 'linebacker_backend');
 
-#linebacker.privacyprotector.org
 /** MySQL database username */
 define('DB_USER', 'root');
 
@@ -37,7 +36,7 @@ define('DB_CHARSET', 'utf8mb4');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-#24388425lu
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -78,7 +77,7 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
@@ -88,3 +87,4 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
