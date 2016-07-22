@@ -23,10 +23,10 @@
 define('DB_NAME', 'linebacker_backend');
 
 /** MySQL database username */
-define('DB_USER', 'line');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'Lineback3r2016#');
+define('DB_PASSWORD', 'cxonkara!8');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
