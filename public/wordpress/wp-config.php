@@ -26,7 +26,7 @@ define('DB_NAME', 'linebacker_backend');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'Lineback3r2016#');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
