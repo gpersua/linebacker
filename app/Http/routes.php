@@ -11,6 +11,10 @@
 |
 */
 
+//Ruta de ejemplo para el LandingPage
+
+Route::get('/', ['as' => 'landing', 'uses' => 'homeController@index']);
+
 
 /*
  * Registration
