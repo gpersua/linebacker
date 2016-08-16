@@ -11,31 +11,24 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500italic,500,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{{ asset('/assets/bootstrap/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('/assets/elegant-font/code/style.css') }}">
-	<link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
-	<link rel="stylesheet" href="{{ asset('/assets/css/magnific-popup.css') }}">
-	<link rel="stylesheet" href="{{ asset('/assets/flexslider/flexslider.css') }}">
-	<link rel="stylesheet" href="{{ asset('/assets/css/form-elements.css') }}">
-	<link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
-	<link rel="stylesheet" href="{{ asset('/assets/css/media-queries.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('/elegant-font/code/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('/css/animate.css') }}">
+	<link rel="stylesheet" href="{{ asset('/css/magnific-popup.css') }}">
+	<link rel="stylesheet" href="{{ asset('/flexslider/flexslider.css') }}">
+	<link rel="stylesheet" href="{{ asset('/css/form-elements.css') }}">
+	<link rel="stylesheet" href="{{ asset('/css/style_con_body.css') }}">
+	<link rel="stylesheet" href="{{ asset('/css/media-queries.css') }}">
 	<!--<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">-->
-	<link rel="stylesheet" href="{{ asset('/assets/css/jquery.carousel-3d.default.css') }}">
+	<link rel="stylesheet" href="{{ asset('/css/jquery.carousel-3d.default.css') }}">
 	
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
 	<!-- Favicon and touch icons -->
-	<link rel="shortcut icon" href="{{ asset('/assets/ico/favicon.png') }}">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('/assets/ico/apple-touch-icon-144-precomposed.png') }}">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('/assets/ico/apple-touch-icon-114-precomposed.png') }}">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('/assets/ico/apple-touch-icon-72-precomposed.png') }}">
-	<link rel="apple-touch-icon-precomposed" href="{{ asset('/assets/ico/apple-touch-icon-57-precomposed.png') }}">	
+	<link rel="shortcut icon" href="{{ asset('/ico/favicon.png') }}">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('/ico/apple-touch-icon-144-precomposed.png') }}">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('/ico/apple-touch-icon-114-precomposed.png') }}">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('/ico/apple-touch-icon-72-precomposed.png') }}">
+	<link rel="apple-touch-icon-precomposed" href="{{ asset('/ico/apple-touch-icon-57-precomposed.png') }}">	
         <style>
         a.button {
     -webkit-appearance: button;
@@ -119,23 +112,13 @@
 				</div>
 			</div>
 		</nav>
-        <div class="video-container" ><video id="video" controls loop="yes" src="http://linebacker.privacyprotector.org/assets/img/bannerproject720p.flv.mp4" type="video/mp4"></video></div>
-
-        <!-- Slider -->
-        <!--<div class="slider-container">
-            <div class="slider">
-                <div class="flexslider">
-                    <ul class="slides">
-                        <li>
-                            
-                            <!--<video id="video" loop="" width="100%" height="auto" autoplay="true">
-                            <source src="http://linebacker.privacyprotector.org/assets/img/bannerproject720p.flv.mp4" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2">
-                                            </video>
-            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        
+<div class="video-container" >
+ <video auto loop id="video">
+  <source    src="http://localhost/linebacker_respaldo/public/img/bannerproject720p.flv.mp4" type="video/mp4">
+  </video>
+</div>
+<!--        <div class="video-container" ><video id="video" controls loop="yes" src="http://linebacker.privacyprotector.org/img/bannerproject.mp4" type="video/mp4"></video></div>
 -->
         <!-- Presentation -->
         <div class="presentation-container clearfix">
@@ -212,27 +195,27 @@
 						</div>
 						<div data-carousel-3d>														
 							<figure selected>
-								<img class="popup-video" src="{{ asset('/assets/img/video-testimonials/video-1.jpg') }}" data-url="XNh4WdN0p8U"/>
+								<img class="popup-video" src="{{ asset('/img/video-testimonials/video-1.jpg') }}" data-url="XNh4WdN0p8U"/>
 								<!--<figcaption>Busy mom</figcaption>-->
 							</figure>
 							<figure>
-								<img class="popup-video" src="{{ asset('/assets/img/video-testimonials/video-2.png') }}" data-url="qK2jYeDVNlc"/>
+								<img class="popup-video" src="{{ asset('/img/video-testimonials/video-2.png') }}" data-url="qK2jYeDVNlc"/>
 								<!--<figcaption>Busy mom</figcaption>-->
 							</figure>
 							<figure >
-								<img class="popup-video" src="{{ asset('/assets/img/video-testimonials/video-3.png') }}" data-url="yqGNmdmkAk0"/>
+								<img class="popup-video" src="{{ asset('/img/video-testimonials/video-3.png') }}" data-url="yqGNmdmkAk0"/>
 								<!--<figcaption>Busy mom</figcaption>-->
 							</figure>																						
 							<figure>
-								<img class="popup-video" src="{{ asset('/assets/img/video-testimonials/video-4.jpg') }}" data-url="nkaCsDtXKtE"/>
+								<img class="popup-video" src="{{ asset('/img/video-testimonials/video-4.jpg') }}" data-url="nkaCsDtXKtE"/>
 								<!--<figcaption>Busy mom</figcaption>-->
 							</figure>		
 							<figure>
-								<img class="popup-video" src="{{ asset('/assets/img/video-testimonials/video-2.png') }}" data-url="qK2jYeDVNlc"/>
+								<img class="popup-video" src="{{ asset('/img/video-testimonials/video-2.png') }}" data-url="qK2jYeDVNlc"/>
 								<!--<figcaption>Busy mom</figcaption>-->
 							</figure>
 							<figure>
-								<img class="popup-video" src="{{ asset('/assets/img/video-testimonials/video-3.png') }}" data-url="yqGNmdmkAk0"/>
+								<img class="popup-video" src="{{ asset('/img/video-testimonials/video-3.png') }}" data-url="yqGNmdmkAk0"/>
 								<!--<figcaption>Busy mom</figcaption>-->
 							</figure> 							
 						</div>
@@ -244,7 +227,7 @@
 		<!-- Video Testimonials - Popup -->		
 		<div id="myModal" class="white-popup" >
 			<!-- <a href="#a" id="close">X</a> -->
-			<img id="close" src="{{ asset('/assets/img/video-testimonials/close.png') }}"></img>
+			<img id="close" src="{{ asset('/img/video-testimonials/close.png') }}"></img>
 			<iframe id="myFrame" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<div class="popup-overlay"></div>
@@ -259,7 +242,7 @@
 						Did you know that you can turn those irritating telemarketing calls into CASH?<br/><br/>
 						<span class="blue">Download</span> this <span class="blue">FREE</span>
 						 e-book and learn how you too can turn annoying telemarketing calls into cash.
-						<a class="btn btn-primary button-blue" href="{{ asset('/assets/doc/DNC_e-book.pdf') }}" target="_back">Download Now</a>
+						<a class="btn btn-primary button-blue" href="{{ asset('/doc/DNC_e-book.pdf') }}" target="_back">Download Now</a>
 
 						<strong>This is your first step to get cash out of unwanted calls!</strong><br/><br/>
 						<div class="facebook">
@@ -271,7 +254,7 @@
 						Share this information with friends and Get 30 days of our Premium service for FREE
 					</div>
 					<div class="col-xs-12 col-sm-6 col-lg-5 wow fadeInRightBig">
-					  <img src="{{ asset('/assets/img/annoying-call-image.jpg') }}" class="img-responsive center-block">
+					  <img src="{{ asset('/img/annoying-call-image.jpg') }}" class="img-responsive center-block">
 					</div>
 				</div>
 			</div>	
@@ -311,28 +294,28 @@
 					<tbody>
 					  <tr class="wow fadeInLeftBig">
 						<td>Trainings</td>
-						<td><img src="{{ asset('/assets/img/check.png') }}" class="img-responsive"></td>
-						<td><img src="{{ asset('/assets/img/check.png') }}" class="img-responsive"></td>
+						<td><img src="{{ asset('/img/check.png') }}" class="img-responsive"></td>
+						<td><img src="{{ asset('/img/check.png') }}" class="img-responsive"></td>
 					  </tr>
 					  <tr class="wow fadeInRightBig">
 						<td>Webinars</td>
-						<td><img src="{{ asset('/assets/img/check.png') }}" class="img-responsive"></td>
-						<td><img src="{{ asset('/assets/img/check.png') }}" class="img-responsive"></td>
+						<td><img src="{{ asset('/img/check.png') }}" class="img-responsive"></td>
+						<td><img src="{{ asset('/img/check.png') }}" class="img-responsive"></td>
 					  </tr>
 					  <tr class="wow fadeInLeftBig">
 						<td>Filing a Case</td>
 						<td></td>
-						<td><img src="{{ asset('/assets/img/check.png') }}" class="img-responsive"></td>
+						<td><img src="{{ asset('/img/check.png') }}" class="img-responsive"></td>
 					  </tr>
 					  <tr class="wow fadeInRightBig">
 						<td>Forms</td>
 						<td></td>
-						<td><img src="{{ asset('/assets/img/check.png') }}" class="img-responsive"></td>
+						<td><img src="{{ asset('/img/check.png') }}" class="img-responsive"></td>
 					  </tr>
 					  <tr class="wow fadeInLeftBig">
 						<td>Track Your Case</td>
 						<td></td>
-						<td><img src="{{ asset('/assets/img/check.png') }}" class="img-responsive"></td>
+						<td><img src="{{ asset('/img/check.png') }}" class="img-responsive"></td>
 					  </tr>
 					</tbody>
 				</table>
@@ -344,18 +327,18 @@
 					Register for FREE and you will receive:
 				</h2>
 				<p>
-					<img src="{{ asset('/assets/img/check-white.png') }}" class="img-responsive">  Our exclusive e-book that will teach you how to turn telemarketing calls into cash
+					<img src="{{ asset('/img/check-white.png') }}" class="img-responsive">  Our exclusive e-book that will teach you how to turn telemarketing calls into cash
 				</p>
 				<p>
-					<img src="{{ asset('/assets/img/check-white.png') }}" class="img-responsive">  A link to download our free Mobile App to start protecting your cell phone right now
+					<img src="{{ asset('/img/check-white.png') }}" class="img-responsive">  A link to download our free Mobile App to start protecting your cell phone right now
 				</p>
 				<p>
-					<img src="{{ asset('/assets/img/check-white.png') }}" class="img-responsive">  Access to all our free contents
+					<img src="{{ asset('/img/check-white.png') }}" class="img-responsive">  Access to all our free contents
 				</p>
 				<p>
-					<img src="{{ asset('/assets/img/check-white.png') }}" class="img-responsive">  And, if you share this, 30 days or our Premium service for free
+					<img src="{{ asset('/img/check-white.png') }}" class="img-responsive">  And, if you share this, 30 days or our Premium service for free
 				</p>
-				<a href="{{ URL::to('register') }}" class="btn btn-primary button-white">REGISTER NOW <img src="{{ asset('/assets/img/register-arrow.png') }}" class="img-responsive"></a>
+				<a href="{{ URL::to('register') }}" class="btn btn-primary button-white">REGISTER NOW <img src="{{ asset('/img/register-arrow.png') }}" class="img-responsive"></a>
 			</div>
 		</div>
 		<div id="app" class="download-app">
@@ -375,7 +358,7 @@
 						</p>
 					</div>
 					<div class="googleplay">
-						<a href="#"><img src="{{ asset('/assets/img/googleplay.png') }}" /></a>
+						<a href="#"><img src="{{ asset('/img/googleplay.png') }}" /></a>
 					</div>
 					
 				</div>
@@ -421,23 +404,23 @@
         </footer>
 		<a href="#0" class="cd-top cd-fade-out"><span aria-hidden="true" class="arrow_carrot-up"></span></a>
         <!-- Javascript -->
-        <script src="{{ asset('/assets/js/jquery-1.11.1.min.js') }}"></script>
-        <script src="{{ asset('/assets/bootstrap/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('/assets/js/bootstrap-hover-dropdown.min.js') }}"></script>
-        <script src="{{ asset('/assets/js/wow.min.js') }}"></script>
-        <script src="{{ asset('/assets/js/retina-1.1.0.min.js') }}"></script>
-        <script src="{{ asset('/assets/js/jquery.magnific-popup.min.js') }}"></script>
-        <script src="{{ asset('/assets/flexslider/jquery.flexslider-min.js') }}"></script>
-        <script src="{{ asset('/assets/js/jflickrfeed.min.js') }}"></script>
-        <script src="{{ asset('/assets/js/masonry.pkgd.min.js') }}"></script>
+        <script src="{{ asset('/js/jquery-1.11.1.min.js') }}"></script>
+        <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('/js/bootstrap-hover-dropdown.min.js') }}"></script>
+        <script src="{{ asset('/js/wow.min.js') }}"></script>
+        <script src="{{ asset('/js/retina-1.1.0.min.js') }}"></script>
+        <script src="{{ asset('/js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('/flexslider/jquery.flexslider-min.js') }}"></script>
+        <script src="{{ asset('/js/jflickrfeed.min.js') }}"></script>
+        <script src="{{ asset('/js/masonry.pkgd.min.js') }}"></script>
         <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
-        <script src="{{ asset('/assets/js/jquery.ui.map.min.js') }}"></script>
-        <script src="{{ asset('/assets/js/scripts.js') }}"></script>
+        <script src="{{ asset('/js/jquery.ui.map.min.js') }}"></script>
+        <script src="{{ asset('/js/scripts.js') }}"></script>
 		<!-- Carousel-3d -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-resize/1.1/jquery.ba-resize.min.js"></script>
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		<script src="{{ asset('/assets/js/jquery.waitforimages.js') }}"></script>
-		<script src="{{ asset('/assets/js/jquery.carousel-3d.js') }}"></script>	
+		<script src="{{ asset('/js/jquery.waitforimages.js') }}"></script>
+		<script src="{{ asset('/js/jquery.carousel-3d.js') }}"></script>	
 		<!--- Pop-up -->
 		<script>
 			$(document).ready(function (){
