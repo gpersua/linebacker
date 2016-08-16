@@ -1,6 +1,6 @@
 <!doctype html> 
 <html> 
-    <head> @include('layouts.head')
+    <head> @include('includes.head') 
     <!-- CSS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500italic,500,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -49,9 +49,9 @@
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
  
         <div class="container"> 
-            <header class="row"> @include('layouts.header') </header>
+            <header class="row"> @include('includes.header') </header> 
             <div id="main" class="row"> @yield('content') </div> 
-            <footer class="row"> @include('layouts.footer') </footer>
+            <footer class="row"> @include('includes.footer') </footer> 
         </div> 
         <!-- Javascript -->
         <script src="{{ asset('/js/jquery-1.11.1.min.js') }}"></script>
