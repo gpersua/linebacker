@@ -1,4 +1,5 @@
-<!doctype html> 
+<!--Archivo Layout PRINCIPAL-->
+<!doctype html>
 <html> 
     <head> @include('layouts.head') 
     <!-- CSS -->
