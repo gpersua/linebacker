@@ -115,7 +115,7 @@
         
 <div class="video-container" >
  <video auto loop id="video">
-  <source    src="http://localhost/linebacker_respaldo/public/img/bannerproject720p.flv.mp4" type="video/mp4">
+  <source    src="http://localhost/linebacker/public/img/bannerproject720p.flv.mp4" type="video/mp4">
   </video>
 </div>
 <!--        <div class="video-container" ><video id="video" controls loop="yes" src="http://linebacker.privacyprotector.org/img/bannerproject.mp4" type="video/mp4"></video></div>

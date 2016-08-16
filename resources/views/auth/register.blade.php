@@ -88,7 +88,7 @@
 </div>
         </div><!-- /.form-box -->
     </div><!-- /.register-box -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style_con_body.css') }}">
     @include('auth.scripts')
 
     <script>
