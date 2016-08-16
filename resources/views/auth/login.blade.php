@@ -87,7 +87,7 @@
 </div><!-- /.login-box -->
 
     @include('auth.scripts')
-<link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/style_con_body.css') }}">
     <script>
         $(function () {
             $('input').iCheck({

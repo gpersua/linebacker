@@ -113,7 +113,7 @@
 			</div>
 		</nav>
         
-<div class="video-container" >
+<div class="video" >
  <video auto loop id="video">
   <source    src="http://localhost/linebacker/public/img/bannerproject720p.flv.mp4" type="video/mp4">
   </video>
