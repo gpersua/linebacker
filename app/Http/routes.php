@@ -13,10 +13,7 @@
 
 //Ruta de ejemplo para el LandingPage
 
-Route::get('/', ['as' => 'landing', 'uses' => 'homeController@index']);
-Route::get('/', function() { return View::make('home.home'); }); 
-Route::get('about', function() { return View::make('home.about'); }); 
-Route::get('projects', function() { return View::make('home.projects'); }); 
-Route::get('contact', function() { return View::make('home.contact'); });
+Route::get('/', ['as' => '/', 'uses' => 'homeController@index']);
+
 
 
