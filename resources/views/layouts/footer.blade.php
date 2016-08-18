@@ -19,7 +19,9 @@
                                         <li class="wow fadeIn"><a href="#">Track my case</a></li>
                                 </ol>
             <div class="footer-copyright wow fadeIn">
-                <p>&copy; 2015 LineBacker. All rights reserved. Designed and Developed by <a href="https://www.cmsysconsulting.com"><img src="{{ asset('/img/logo_cmsys.png') }}"/></a></p>
+                <p>&copy; 2016 LineBacker. All rights reserved. Designed and Developed by <a
+                            href="https://www.cmsysconsulting.com"><img src="{{ asset('/img/logo_cmsys.png') }}"/></a>
+                </p>
             </div>                   
         </div>
     </div>
