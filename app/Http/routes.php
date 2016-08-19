@@ -14,6 +14,8 @@
 //Ruta de ejemplo para el LandingPage
 
 Route::get('/', ['as' => '/', 'uses' => 'homeController@index']);
+Route::get('terms/terms', ['as' => 'terms/terms', 'uses' => 'homeController@terms']);
+Route::get('terms/privacy', ['as' => 'terms/privacy', 'uses' => 'homeController@privacy']);;
 
 
 
