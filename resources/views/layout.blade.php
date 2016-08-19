@@ -7,6 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500italic,500,700,700italic,900,900italic'
           rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/AdminLTE.css') }}">
     <link rel="stylesheet" href="{{ asset('/elegant-font/code/style.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/magnific-popup.css') }}">

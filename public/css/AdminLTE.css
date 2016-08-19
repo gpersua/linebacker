@@ -3047,7 +3047,7 @@ table.text-center th {
 }
 .login-page,
 .register-page {
-    background-image: url('/backgrounds/background-login.jpg');
+    background-image: url('../backgrounds/background-login.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #3d3d3d;     

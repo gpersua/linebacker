@@ -14,7 +14,7 @@
 
 				<div class="panel-body">-->
                                     <div class="col-md-3">
-                                        <a href="{{ asset('/users/account/create') }}"><img src="{{ asset('/assets/img/telefono-icon-grande.png') }}"><br /> Complete Linebacker Setup</a>	
+                                        <a href="{{ asset('/users/account/create') }}"><img src="{{ asset('/img/telefono-icon-grande.png') }}"><br /> Complete Linebacker Setup</a>
                                     </div>
 				<!--</div>-->
 			</div>
