@@ -20,7 +20,8 @@ Route::get('terms/privacy', ['as' => 'terms/privacy', 'uses' => 'homeController@
 Route::get('auth/login',['as'=>'login_path','uses'=>'SessionsController@create']);
 Route::post('auth/login',['as'=>'login_path','uses'=>'SessionsController@store']);
 Route::get('auth/login',['as'=>'logout_path','uses'=>'SessionsController@destroy']);
-Route::get('users/filing',['as'=>'filing/index','uses'=>'filingController@index']);
+//cuando dejo este activo me da un error en la linea 137 del archivo fileviewfinder.php
+//Route::get('users/filing',['as'=>'filing/index','uses'=>'filingController@index']);
 /*Filing A Case*/
 
 /*
