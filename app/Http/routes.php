@@ -20,7 +20,9 @@ Route::get('terms/privacy', ['as' => 'terms/privacy', 'uses' => 'homeController@
 Route::get('auth/login',['as'=>'login_path','uses'=>'SessionsController@create']);
 Route::post('auth/login',['as'=>'login_path','uses'=>'SessionsController@store']);
 Route::get('auth/login',['as'=>'logout_path','uses'=>'SessionsController@destroy']);
-Route::get('filingacase/index',['as'=>'filingacase/index','uses'=>'filingacaseController@index']);
+Route::get('users/filing',['as'=>'filing/index','uses'=>'filingController@index']);
+/*Filing A Case*/
+
 /*
  * Registration
  */

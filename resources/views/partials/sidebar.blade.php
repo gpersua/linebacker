@@ -70,7 +70,7 @@
                     <li><a href="{{ url('users/account') }}"><i class="fa fa-phone"></i> <span>My Profile Account</span></a></li>
                     <li><a href="{{ url('users/contacts') }}"><i class="fa fa-users"></i> <span>My Contacts</span></a></li>
                     <li><a href="{{ URL::to('users/edit/'. Auth::user()->id ) }}"><i class="fa fa-user"></i> <span>My User</span></a></li>
-                    <li><a href="{{ url('users/filingacase') }}"><i class="glyphicon glyphicon-edit glyphicon-class"></i> <span>Filing a Case</span></a></li>
+                    <li><a href="{{ url('users/filing') }}"><i class="glyphicon glyphicon-edit glyphicon-class"></i> <span>Filing a Case</span></a></li>
                     <li><a href="{{ url('users/formsclaims') }}"><i class="glyphicon glyphicon-level-up"></i> <span>Forms For Claims</span></a></li>
                     <li><a href="{{ url('users/trackmycase') }}"><i class="glyphicon glyphicon-search"></i> <span>Track My Case</span></a></li>
                 </ul>
