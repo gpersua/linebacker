@@ -38,7 +38,9 @@
                             <a href="{{ url('users/filing/edit') }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>
                             </a> /
                             <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record?')" href="#">
-                                <span class="fa fa-trash" aria-hidden="true"></span>
+                                <span class="fa fa-trash" aria-hidden="true"
+
+                                ></span>
                             </a>
                         </td>
                     </tr>
