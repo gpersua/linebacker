@@ -23,6 +23,9 @@ Route::get('auth/login',['as'=>'logout_path','uses'=>'SessionsController@destroy
 //cuando dejo este activo me da un error en la linea 137 del archivo fileviewfinder.php
 //Route::get('users/filing',['as'=>'filing/index','uses'=>'filingController@index']);
 /*Filing A Case*/
+Route::get('users/filing',['as'=>'filing','uses'=>'FilingController@index']);
+Route::get('users/claims',['as'=>'claims','uses'=>'ClaimsController@index']);
+Route::get('users/trackmycase',['as'=>'trackmycase','uses'=>'TrackMyCaseController@index']);
 
 /*
  * Registration

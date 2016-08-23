@@ -34,6 +34,7 @@ class ApiSendController extends Controller
      */
     public function index()
     {
+        //llamado al modelo donde estan los datos recojidos por el asterisk
 	$data = lb_cdr_asterisk::select('calldate', 'clid', 'src', 'dst', 'dcontext', 'channel', 'dstchannel', 'lastapp', 'lastdata', 'duration', 'billsec', 'disposition', 'amaflags', 'accountcode', 'uniqueid', 'userfield', 'did', 'recordingfile', 'user_id', 'is_contact', 'sent')
 	//->where('userAcc', '=', $id)
 	->get()->toArray();

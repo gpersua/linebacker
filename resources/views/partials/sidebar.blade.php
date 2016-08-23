@@ -71,15 +71,15 @@
                     <li><a href="{{ url('users/contacts') }}"><i class="fa fa-users"></i> <span>My Contacts</span></a></li>
                     <li><a href="{{ URL::to('users/edit/'. Auth::user()->id ) }}"><i class="fa fa-user"></i> <span>My User</span></a></li>
                     <li><a href="{{ url('users/filing') }}"><i class="glyphicon glyphicon-edit glyphicon-class"></i> <span>Filing a Case</span></a></li>
-                    <li><a href="{{ url('users/formsclaims') }}"><i class="glyphicon glyphicon-level-up"></i> <span>Forms For Claims</span></a></li>
+                    <li><a href="{{ url('users/claims') }}"><i class="glyphicon glyphicon-level-up"></i> <span>Forms For Claims</span></a></li>
                     <li><a href="{{ url('users/trackmycase') }}"><i class="glyphicon glyphicon-search"></i> <span>Track My Case</span></a></li>
                 </ul>
             </li>
-           <!-- <li class="treeview">
+            <!--<li class="treeview">
                 <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
+                    <li><a href=>Link in level 2</a></li>
+                    <li><a href="">Link in level 2</a></li>
                 </ul>
             </li>-->
         </ul><!-- /.sidebar-menu -->

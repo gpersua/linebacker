@@ -1,9 +1,9 @@
 @extends('app')
 @section('htmlheader_title')
-    Track My Case
+    Filing a Case
 @endsection
 @section('main-content')
-    <h1>Track My Case <a href="#" class="btn btn-primary pull-right btn-sm">Add New Filing a Case</a></h1>
+    <h1>Filing a Case <a href="#" class="btn btn-primary pull-right btn-sm">Add New Filing a Case</a></h1>
         <div class="table">
             <table class="table table-bordered table-striped table-hover">
                 <thead>
