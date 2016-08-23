@@ -1,28 +1,26 @@
 @extends('app')
-
 @section('htmlheader_title')
     Contacts
 @endsection
-
 @section('main-content')
-
-    <h1>Create New Contact</h1>
-    <hr/>
-
-    {!! Form::open(['url' => 'users/contacts/store', 'class' => 'form-horizontal']) !!}
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Create New Contact</h3>
+            <hr/>
+            {!! Form::open(['url' => 'users/contacts/store', 'class' => 'form-horizontal']) !!}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <!--<div class="form-group {{ $errors->has('userAcc') ? 'has-error' : ''}}">
+        <!--<div class="form-group {{ $errors->has('userAcc') ? 'has-error' : ''}}">
                 {!! Form::label('userAcc', 'Useracc: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::text('userAcc', null, ['class' => 'form-control', 'required' => 'required']) !!}
-                    {!! $errors->first('userAcc', '<p class="help-block">:message</p>') !!}
+            {!! $errors->first('userAcc', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>-->
-                @if(Session::has('userAcc'))
-              <input type="hidden" name="userAcc" id="userAcc" value="{{ Session::get('userAcc') }}" />
-                @endif
-                  <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
+            @if(Session::has('userAcc'))
+                <input type="hidden" name="userAcc" id="userAcc" value="{{ Session::get('userAcc') }}" />
+            @endif
+            <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
                 {!! Form::label('first_name', 'First Name: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
@@ -73,21 +71,43 @@
             </div>
 
 
-    <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-3">
-            {!! Form::submit('Create', ['class' => 'btn btn-primary form-control']) !!}
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-3">
+                    {!! Form::submit('Create', ['class' => 'btn btn-primary form-control']) !!}
 
-        <a class="btn btn-danger" href="{{ URL::to('users/filingacase') }}">Cancel</a>
+                    <a class="btn btn-danger" href="{{ URL::to('users/filingacase') }}">Cancel</a>
 
+                </div>
+                {!! Form::close() !!}
+
+                @if ($errors->any())
+                    <ul class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+
+
+
+            </div>
     </div>
-    {!! Form::close() !!}
 
-    @if ($errors->any())
-        <ul class="alert alert-danger">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
+
 
 @endsection
+<script type="text/javascript" src="{{ asset('/assets/js/handlebars-v4.0.5.js') }}" ></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/search.js"></script>
+
+<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+<script>
+
+    $('#birthday').datepicker({
+        format: "yyyy/mm/dd",
+        showWeek: true,
+        todayHighlight: true,
+        showButtonPanel: true
+    });
+</script>
