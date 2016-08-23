@@ -77,8 +77,8 @@
 
             <!-- /.box-body -->
 		<div class="box-footer">
-                @if(Auth::check() && Auth::user()->is('admin'))<a class="btn btn-default" href="{{ URL::to('users') }}">Cancel</a> @else
-                <a class="btn btn-default" href="{{ URL::to('users/account') }}">Cancel</a>@endif
+                @if(Auth::check() && Auth::user()->is('admin'))<a class="btn btn-danger" href="{{ URL::to('users') }}">Cancel</a> @else
+                <a class="btn btn-danger" href="{{ URL::to('users/account') }}">Cancel</a>@endif
                 <button class="btn btn-info pull-right" type="submit">Save</button>
               </div>
 {!! Form::close() !!}

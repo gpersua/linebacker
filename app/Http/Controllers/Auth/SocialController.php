@@ -241,9 +241,7 @@ class SocialController extends Controller
 	    	 $user = lb_users::where('email', $googleUser->email)->first();
 
 		if(empty($user)) {
-
         		$confirmation_code  = array( 'confirmation_code' => str_random(32));
-
 			$user = lb_users::create([
 				'name' => $googleUser->name,
 				'email' => $googleUser->email,
@@ -253,7 +251,6 @@ class SocialController extends Controller
 				'confirmed' => 0,
 				'in_active' => 0
 			]);
-
         		try{
 				Mail::send('email.social', ['user' => $user, 'confirmation_code' => $confirmation_code], function ($message) use ($user) {
 					$message->from('no-reply@privacyprotector.org', 'Linebacker'); 
@@ -263,9 +260,7 @@ class SocialController extends Controller
 			}catch(\Exception $e){
 			    return Redirect::back()->with('status', 'There was an error sending email');
 			}
-
 		    	return $user;
-
 		}else{
 			$profile = lb_users::find($user->id);
 			$profile->google_id= $googleUser->id;
