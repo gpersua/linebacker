@@ -3,12 +3,12 @@
     Track My Case
 @endsection
 @section('main-content')
-    <h1>Track My Case <a href="#" class="btn btn-primary pull-right btn-sm">Add New Filing a Case</a></h1>
+    <h1>Track My Case <a href="#" class="btn btn-primary pull-right btn-sm">Add New Track My Case</a></h1>
         <div class="table">
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>
-                    <th>S.No</th><th>case presented</th><th>Company name</th><th>Telemarketing service</th><th>Telemarketing phone number</th><th>Actions</th>
+                    <th>S.No</th><th>case presented</th><th>Status</th><th>Date</th><th>Hour</th><th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,7 +29,7 @@
                             <div class="pagination">  </div>
                         </td>
                     </tr>
-                    <tr>
+                    <!--<tr>
                         <td></td>
                         <td></td>
                         <td>
@@ -41,7 +41,7 @@
                                 <span class="fa fa-trash" aria-hidden="true"></span>
                             </a>
                         </td>
-                    </tr>
+                    </tr>-->
                 </tbody>
             </table>
         </div>

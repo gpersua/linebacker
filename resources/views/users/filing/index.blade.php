@@ -3,7 +3,7 @@
     Filing a Case
 @endsection
 @section('main-content')
-    <h1>Filing a Case <a href="#" class="btn btn-primary pull-right btn-sm">Add New Filing a Case</a></h1>
+    <h1>Filing a Case <a href="{{ url('users/filing/create') }}" class="btn btn-primary pull-right btn-sm">Add New Filing a Case</a></h1>
         <div class="table">
             <table class="table table-bordered table-striped table-hover">
                 <thead>
@@ -16,7 +16,7 @@
                         <td></td>
                         <td><a href="#"></a></td><td></td><td></td><td></td>
                         <td>
-                            <a href="">
+                            <a href="{{ url('users/filing/edit') }}">
                                 <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
                             </a>/
                             <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record?')" href="#">
@@ -35,7 +35,7 @@
                         <td>
                             <a href="#"></a></td><td></td><td></td>
                         <td>
-                            <a href="#"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                            <a href="{{ url('users/filing/edit') }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>
                             </a> /
                             <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record?')" href="#">
                                 <span class="fa fa-trash" aria-hidden="true"></span>

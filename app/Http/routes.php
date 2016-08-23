@@ -24,7 +24,13 @@ Route::get('auth/login',['as'=>'logout_path','uses'=>'SessionsController@destroy
 //Route::get('users/filing',['as'=>'filing/index','uses'=>'filingController@index']);
 /*Filing A Case*/
 Route::get('users/filing',['as'=>'filing','uses'=>'FilingController@index']);
+Route::get('users/filing/create',['as'=>'filing/create','uses'=>'FilingController@create']);
+Route::get('users/filing/edit',['as'=>'filing/edit','uses'=>'FilingController@edit']);
+Route::get('users/filing/destroy',['as'=>'filing/destroy','uses'=>'FilingController@destroy']);
+Route::get('users/filing/update',['as'=>'filing/update','uses'=>'FilingController@update']);
+/*FORMS FOR CLAIMS*/
 Route::get('users/claims',['as'=>'claims','uses'=>'ClaimsController@index']);
+/*TRACK MY CASE*/
 Route::get('users/trackmycase',['as'=>'trackmycase','uses'=>'TrackMyCaseController@index']);
 
 /*

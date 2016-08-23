@@ -3,7 +3,7 @@
     Forms For Claims
 @endsection
 @section('main-content')
-    <h1> Forms For Claims  <a href="#" class="btn btn-primary pull-right btn-sm">Add New Filing a Case</a></h1>
+    <h1> Forms For Claims  <a href="#" class="btn btn-primary pull-right btn-sm">Add New Forms For Claims</a></h1>
         <div class="table">
             <table class="table table-bordered table-striped table-hover">
                 <thead>
