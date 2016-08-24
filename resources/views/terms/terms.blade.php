@@ -41,9 +41,8 @@
             <div class="container-fluid">
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="#">Disclaimer</a></li>
-                        <li><a href="#">Terms of use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="{{ route('terms/terms') }}">Terms of use</a></li>
+                        <li><a href="{{ route('terms/privacy') }}">Privacy Policy</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ route('auth.login') }}">Go</a></li>

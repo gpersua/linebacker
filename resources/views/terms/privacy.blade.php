@@ -41,9 +41,8 @@
             <div class="container-fluid">
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="#">Disclaimer</a></li>
-                        <li><a href="#">Terms of use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="{{ route('terms/terms') }}">Terms of use</a></li>
+                        <li><a href="{{ route('terms/privacy') }}">Privacy Policy</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ route('auth.login') }}">Go</a></li>
@@ -61,7 +60,7 @@
     </div>
     <div class="col-md-9" id="modificado">
 
-        <h1>DISCLAIMER</h1>
+        <h1>Disclaimer</h1>
 
         <div class="content">
             Disclaimer: Communications between you and PrivacyProtector.org are protected by our Privacy Policy but not
@@ -78,7 +77,7 @@
             website is subject to our Terms of Use.
 
         </div>
-        <h1>PRIVACY POLICY</h1>
+        <h1>Privacy policy</h1>
 
         <div class="content">
             PrivacyProtector.org, Inc. (“PrivacyProtector.org” “We”, “Us”) is sensitive to your concerns about how we
