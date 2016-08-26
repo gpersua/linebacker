@@ -19,7 +19,7 @@
                             <a href="{{ url('users/filing/edit') }}">
                                 <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
                             </a>/
-                            <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record?')" href="#">
+                            <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record?')" href="{{ url('users/filing/destroy') }}">
                                 <span class="fa fa-trash" aria-hidden="true"></span>
                             </a>
                         </td>
@@ -29,25 +29,11 @@
                             <div class="pagination">  </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#"></a></td><td></td><td></td>
-                        <td>
-                            <a href="{{ url('users/filing/edit') }}"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>
-                            </a> /
-                            <a title="Destroy" onclick="return confirmar('Are sure you want to delete the record?')" href="#">
-                                <span class="fa fa-trash" aria-hidden="true"
 
-                                ></span>
-                            </a>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </div>
-@endsection
+    @endsection
 <script language="JavaScript">
     function confirmar ( mensaje )
     {

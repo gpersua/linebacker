@@ -99,12 +99,12 @@
 
 
 @endsection
-<script type="text/javascript" src="{{ asset('/assets/js/handlebars-v4.0.5.js') }}" ></script>
+<script type="text/javascript" src="{{ asset('/js/handlebars-v4.0.5.js') }}" ></script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="/assets/js/search.js"></script>
+<script type="text/javascript" src="{{ asset('/js/search.js') }}"></script>
 
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('/js/bootstrap-datepicker.min.js') }}"></script>
 <script>
 
     $('#birthday').datepicker({
