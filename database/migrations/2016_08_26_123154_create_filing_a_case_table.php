@@ -18,7 +18,7 @@ class CreateFilingACaseTable extends Migration
      */
     public function up()
     {
-        Schema::table('lb_filing_a_case', function (Blueprint $table)
+        Schema::create('lb_filing_a_case', function (Blueprint $table)
         {
             $table->increments('id_filing_a_case');
             $table->integer('id_account')->unsigned();
